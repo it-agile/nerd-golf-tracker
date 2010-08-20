@@ -1,5 +1,5 @@
 When ich den Ball einmal schlage,
 When ich die Schlagzahl zuruecksetze,
-Then antwortet mir der NerdGolfTracker "Ich habe Deine Schlagzahl zurückgesetzt."
+Then antwortet mir der NerdGolfTracker "Ich habe Deine Schlagzahl zur√ºckgesetzt."
 When ich den Ball einmal schlage,
 Then antwortet mir der NerdGolfTracker "Du hast 1 Schlag."

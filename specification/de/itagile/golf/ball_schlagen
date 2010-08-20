@@ -2,7 +2,7 @@ When ich den Ball einmal schlage,
 Then antwortet mir der NerdGolfTracker "Du hast 1 Schlag."
 
 When ich den Ball noch einmal schlage,
-Then antwortet mir der NerdGolfTracker "Du hast 2 Schläge."
+Then antwortet mir der NerdGolfTracker "Du hast 2 Schl√§ge."
 
 When ich den Ball noch einmal schlage,
-Then antwortet mir der NerdGolfTracker "Du hast 3 Schläge."
+Then antwortet mir der NerdGolfTracker "Du hast 3 Schl√§ge."
