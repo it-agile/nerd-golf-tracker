@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+    <info organisation="" module="" />
+	<dependencies>
+		<dependency org="junit" name="junit" rev="4.7" />
+		<dependency org="org.hamcrest" name="hamcrest-library" rev="1.1" />
+		<dependency org="org.mockito" name="mockito-core" rev="1.8.+" />
+		<dependency org="org.jbehave" name="jbehave-core" rev="2.5.+" />
+	</dependencies>
+</ivy-module>
