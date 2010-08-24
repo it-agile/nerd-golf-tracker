@@ -1,5 +1,7 @@
 apply plugin: 'java'
 
+defaultTasks 'build'
+
 sourceSets {
     main {
         java {
@@ -10,6 +12,6 @@ sourceSets {
 
 jar {
     manifest {
-        attributes('Main-Class': 'de.itagile.golf.GolfTracker')
+        attributes('Main-Class': 'de.itagile.golf.Main')
     }
 }

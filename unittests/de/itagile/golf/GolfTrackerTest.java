@@ -9,7 +9,7 @@ public class GolfTrackerTest {
 
     @Test
     public void zaehltEinenSchlag() throws Exception {
-        GolfTracker golfTracker = new GolfTracker();
-        assertThat(golfTracker.reagiereAuf("schlage Ball"), is("Du hast einen Schlag."));
+        Tracker tracker = new Tracker();
+        assertThat(tracker.reagiereAuf("Schlage Ball"), is("Du hast 1 Schlag."));
     }
 }

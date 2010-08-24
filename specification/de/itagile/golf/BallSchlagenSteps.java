@@ -15,7 +15,7 @@ public class BallSchlagenSteps extends Steps {
     }
     
     @Then("antwortet mir der NerdGolfTracker \"$erwarteteAntwort\"")
-    public void golfTrackerAntwortet(String erwarteteAntwort) {
+    public void golfTrackerAntwortet(String erwarteteAntwort) throws Exception {
         trackerDriver.gibtAntwort(erwarteteAntwort);
     }
 
