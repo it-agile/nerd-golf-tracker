@@ -3,15 +3,27 @@ apply plugin: 'java'
 defaultTasks 'build'
 
 sourceSets {
-    main {
-        java {
-            srcDir 'src'
-        }
+	main {
+		java {
+			srcDir 'src'
+		}
     }
+	test {
+		java {
+			srcDir 'specification'
+		}
+		resources {
+			    srcDir 'specification'
+		}
+	}
 }
 
 jar {
     manifest {
-        attributes('Main-Class': 'de.itagile.golf.Main')
+		attributes('Main-Class': 'de.itagile.golf.Main')
     }
+}
+
+dependencies {
+    testCompile fileTree(dir: libsDir, include: '*.jar')
 }
