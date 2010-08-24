@@ -26,6 +26,23 @@ jar {
     }
 }
 
+configurations {
+	online
+}
+
 dependencies {
     testCompile fileTree(dir: libsDir, include: '*.jar')
+    online group: 'org.jbehave', name: 'jbehave-core', version: '2.5.+'
+	online group: 'junit', name: 'junit', version: '4.+'
 }
+
+repositories {
+	mavenCentral()
+}
+
+task download(type: Copy) {
+	into libsDir
+	from configurations.online
+}
+
+task update(dependsOn: [download, eclipse])
