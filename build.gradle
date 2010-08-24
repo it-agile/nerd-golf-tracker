@@ -13,7 +13,3 @@ jar {
         attributes('Main-Class': 'de.itagile.golf.GolfTracker')
     }
 }
-
-task hello << {
-	println 'Hello world!'
-}
