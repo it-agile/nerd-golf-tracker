@@ -24,4 +24,11 @@ public class TrackerTest {
 	public void setztDieSchlagzahlZurueckBeimLochwechsel() throws Exception {
 		assertThat(tracker.reagiereAuf("Nächstes Loch"), is("Deine Schlagzahl wurde zurück gesetzt."));
 	}
+	
+	@Test
+	public void zaehltNachLochwechselVonVorne() throws Exception {
+		tracker.reagiereAuf("Schlage Ball");
+		tracker.reagiereAuf("Nächstes Loch");
+		assertThat(tracker.reagiereAuf("Schlage Ball"), is("Du hast 1 Schlag."));
+	}
 }
