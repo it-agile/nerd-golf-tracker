@@ -1,8 +1,8 @@
 When ich den Ball einmal schlage,
-Then antwortet mir der NerdGolfTracker "Du hast 1 Schlag."
+Then zählt der NerdGolfTracker 1 Schlag.
 
 When ich den Ball noch einmal schlage,
-Then antwortet mir der NerdGolfTracker "Du hast 2 Schläge."
+Then zählt der NerdGolfTracker 2 Schläge.
 
 When ich den Ball noch einmal schlage,
-Then antwortet mir der NerdGolfTracker "Du hast 3 Schläge."
+Then zählt der NerdGolfTracker 3 Schläge.

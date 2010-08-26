@@ -9,13 +9,15 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
-public class GolfTrackerDriver {
+import org.hamcrest.Matcher;
+
+public class TrackerDriver {
 
 	private Process process;
 	private BufferedReader reader;
 	private PrintWriter writer;
 	
-	public GolfTrackerDriver() {
+	public TrackerDriver() {
 		process = startNerdGolfTracker();
 		reader = readerFor(process);
 		writer = writerFor(process);
@@ -50,12 +52,31 @@ public class GolfTrackerDriver {
 	}
 
 	public void schlageBall() {
-		writer.println("Schlage Ball");
-		writer.flush();
+		empfangeAnweisung("Schlage Ball");
     }
 
-    public void gibtAntwort(String erwarteteAntwort) throws Exception {
-		String antwort = reader.readLine();
-        assertThat(antwort, is(erwarteteAntwort));
-    }
+	private void empfangeAnweisung(String anweisung) {
+		writer.println(anweisung);
+		writer.flush();
+	}
+
+	public void zaehltSchlaege(int anzahl, String einheit) {
+        assertThatAntwort(is(String.format("Du hast %d %s.", anzahl, einheit)));
+	}
+
+	private void assertThatAntwort(Matcher<String> matcher) {
+		try {
+			assertThat(reader.readLine(), matcher);
+		} catch (IOException exception) {
+			throw new RuntimeException(exception);
+		}
+	}
+
+	public void geheZumNaechstenLoch() {
+		empfangeAnweisung("Nächstes Loch");
+	}
+
+	public void setztSchlagzahlZurueck() {
+		assertThatAntwort(is("Deine Schlagzahl wurde zurückgesetzt."));
+	}
 }

@@ -8,17 +8,22 @@ import org.jbehave.scenario.steps.Steps;
 
 public class BallSchlagenSteps extends Steps {
 
-    private GolfTrackerDriver trackerDriver = new GolfTrackerDriver();
+    private TrackerDriver driver;
     
-    @When("ich den Ball einmal schlage,")
+    public BallSchlagenSteps(TrackerDriver driver) {
+		this.driver = driver;
+	}
+
+	@When("ich den Ball einmal schlage,")
     @Alias("ich den Ball noch einmal schlage,")
-    public void ballEinmalSchlagen() {
-        trackerDriver.schlageBall();
+    public void schlageBall() {
+        driver.schlageBall();
     }
     
-    @Then("antwortet mir der NerdGolfTracker \"$erwarteteAntwort\"")
-    public void golfTrackerAntwortet(String erwarteteAntwort) throws Exception {
-        trackerDriver.gibtAntwort(erwarteteAntwort);
-    }
+    @Then("zählt der NerdGolfTracker $anzahl $einheit.")
+	public void zaehltSchlaege(int anzahl, String einheit) throws Exception {
+		driver.zaehltSchlaege(anzahl, einheit);
+	}
+	
 
 }
