@@ -12,23 +12,49 @@ import java.io.PrintWriter;
 public class GolfTrackerDriver {
 
 	private Process process;
-
+	private BufferedReader reader;
+	private PrintWriter writer;
+	
 	public GolfTrackerDriver() {
+		process = startNerdGolfTracker();
+		reader = readerFor(process);
+		writer = writerFor(process);
+		shutDownWhenSystemExits(process);
+	}
+
+	private PrintWriter writerFor(Process process) {
+		return new PrintWriter(new OutputStreamWriter(process.getOutputStream()));
+	}
+
+	private BufferedReader readerFor(Process process) {
+		return new BufferedReader(new InputStreamReader(process.getInputStream()));
+	}
+
+	private Process startNerdGolfTracker() {
 		try {
-			process = Runtime.getRuntime().exec("java -jar build/libs/nerd-golf-tracker.jar");
+			return Runtime.getRuntime().exec(
+					"java -jar build/libs/nerd-golf-tracker.jar");
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
 	}
 
+	private void shutDownWhenSystemExits(final Process process) {
+		Runtime.getRuntime().addShutdownHook(new Thread(){
+			@Override
+			public void run() {
+				process.destroy();
+				super.run();
+			}
+		});
+	}
+
 	public void schlageBall() {
-		PrintWriter writer = new PrintWriter(new OutputStreamWriter(process.getOutputStream()));
 		writer.println("Schlage Ball");
 		writer.flush();
     }
 
     public void gibtAntwort(String erwarteteAntwort) throws Exception {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 		String antwort = reader.readLine();
         assertThat(antwort, is(erwarteteAntwort));
     }

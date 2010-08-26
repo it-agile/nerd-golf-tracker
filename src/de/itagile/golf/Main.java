@@ -8,8 +8,10 @@ public class Main {
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		String befehl = reader.readLine();
-		System.out.println(new Tracker().reagiereAuf(befehl));
-
+		Tracker tracker = new Tracker();
+		while (true) {
+			String befehl = reader.readLine();
+			System.out.println(tracker.reagiereAuf(befehl));
+		}
 	}
 }
