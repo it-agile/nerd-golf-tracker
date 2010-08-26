@@ -1,6 +1,7 @@
 When ich den Ball einmal schlage,
 And ich zum nächsten Loch gehe,
-Pending Then setzt der NerdGolfTracker die Schlagzahl zurück.
+Then setzt der NerdGolfTracker die Schlagzahl zurück.
 
 When ich den Ball einmal schlage,
+Pending
 Then zählt der NerdGolfTracker 1 Schlag.

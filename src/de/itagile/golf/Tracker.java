@@ -4,7 +4,10 @@ public class Tracker {
 
 	private int anzahlSchlaege;
 	
-	public String reagiereAuf(String befehl) {
+	public String reagiereAuf(String anweisung) {
+		if (anweisung.equals("Nächstes Loch")) {
+			return "Deine Schlagzahl wurde zurück gesetzt.";
+		}
 		anzahlSchlaege++;
 		String vorlage = "Du hast %d %s.";
 		return String.format(vorlage, anzahlSchlaege, einheit());

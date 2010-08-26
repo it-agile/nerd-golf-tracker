@@ -16,6 +16,7 @@ public class TrackerDriver {
 	private Process process;
 	private BufferedReader reader;
 	private PrintWriter writer;
+	private String letzteAntwort;
 	
 	public TrackerDriver() {
 		process = startNerdGolfTracker();
@@ -58,6 +59,7 @@ public class TrackerDriver {
 	private void empfangeAnweisung(String anweisung) {
 		writer.println(anweisung);
 		writer.flush();
+		speichereAntwort();
 	}
 
 	public void zaehltSchlaege(int anzahl, String einheit) {
@@ -65,8 +67,12 @@ public class TrackerDriver {
 	}
 
 	private void assertThatAntwort(Matcher<String> matcher) {
+		assertThat(letzteAntwort, matcher);
+	}
+
+	private void speichereAntwort() {
 		try {
-			assertThat(reader.readLine(), matcher);
+			letzteAntwort = reader.readLine();
 		} catch (IOException exception) {
 			throw new RuntimeException(exception);
 		}
@@ -77,6 +83,6 @@ public class TrackerDriver {
 	}
 
 	public void setztSchlagzahlZurueck() {
-		assertThatAntwort(is("Deine Schlagzahl wurde zurückgesetzt."));
+		assertThatAntwort(is("Deine Schlagzahl wurde zurück gesetzt."));
 	}
 }
