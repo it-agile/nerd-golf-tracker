@@ -36,6 +36,7 @@ dependencies {
 	testCompile fileTree(dir: libsDir, include: '*.jar')
 	online group: 'org.jbehave', name: 'jbehave-core', version: '2.5.+'
 	online group: 'junit', name: 'junit', version: '4.+'
+	online group: 'org.mockito', name: 'mockito-core', version: '1.8.+'
 }
 
 repositories {

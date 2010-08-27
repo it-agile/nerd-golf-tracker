@@ -3,7 +3,7 @@ package de.itagile.golf;
 import de.itagile.golf.operation.Schlag;
 import de.itagile.golf.operation.Lochwechsel;
 
-enum Anweisung {
+enum Anweisung implements EingabeInterpreter {
 
 	LOCHWECHSEL("Nächstes Loch", new Lochwechsel()), SCHLAG("Schlage Ball", new Schlag());
 
@@ -24,6 +24,10 @@ enum Anweisung {
 			if (operation.anweisung.equals(anweisung))
 				return operation;
 		}
+		return null;
+	}
+
+	public String fuehreOperationAusFuerEingabe(String eingabe, Scorecard scorecard) {
 		return null;
 	}
 }

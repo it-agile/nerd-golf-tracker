@@ -4,6 +4,7 @@ import de.itagile.golf.Operation;
 import de.itagile.golf.Scorecard;
 
 public final class Schlag implements Operation {
+	
 	public String fuehreAus(Scorecard scorecard) {
 		scorecard.erhoeheAnzahlSchlaege();
 		String vorlage = "Du hast %d %s.";
