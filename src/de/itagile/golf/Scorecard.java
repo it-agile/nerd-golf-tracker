@@ -1,19 +1,11 @@
 package de.itagile.golf;
 
-public class Scorecard {
+public interface Scorecard {
 
-	private int anzahlSchlaege;
+	void erhoeheAnzahlSchlaege();
 
-	public void erhoeheAnzahlSchlaege() {
-		anzahlSchlaege++;
-	}
+	void setzeZurueckAnzahlSchlaege();
 
-	public void setzeZurueckAnzahlSchlaege() {
-		anzahlSchlaege = 0;
-	}
-
-	public int anzahlSchlaege() {
-		return anzahlSchlaege;
-	}
+	int anzahlSchlaege();
 
 }

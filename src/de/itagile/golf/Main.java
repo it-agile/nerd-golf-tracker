@@ -8,7 +8,7 @@ public class Main {
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		Tracker tracker = new Tracker();
+		Tracker tracker = new Tracker(new EinfacherInterpreter());
 		while (true) {
 			String befehl = reader.readLine();
 			System.out.println(tracker.reagiereAuf(befehl));

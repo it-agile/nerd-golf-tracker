@@ -2,6 +2,6 @@ package de.itagile.golf;
 
 public interface EingabeInterpreter {
 
-	String fuehreOperationAusFuerEingabe(String eingabe, Scorecard scorecard);
+	String verarbeiteEingabe(String eingabe, Scorecard scorecard);
 
 }
