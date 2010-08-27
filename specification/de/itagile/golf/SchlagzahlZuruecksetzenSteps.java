@@ -2,9 +2,10 @@ package de.itagile.golf;
 
 import org.jbehave.scenario.annotations.Then;
 import org.jbehave.scenario.annotations.When;
-import org.jbehave.scenario.steps.Steps;
 
-public class SchlagzahlZuruecksetzenSteps extends Steps {
+import de.itagile.golf.jbehave.BaseSteps;
+
+public class SchlagzahlZuruecksetzenSteps extends BaseSteps {
 
 	private final TrackerDriver driver;
 

@@ -1,8 +1,9 @@
 package de.itagile.golf;
 
-import org.jbehave.scenario.Scenario;
+import de.itagile.golf.jbehave.BaseScenario;
 
-public class SchlagzahlZuruecksetzen extends Scenario {
+
+public class SchlagzahlZuruecksetzen extends BaseScenario {
 
 	public SchlagzahlZuruecksetzen() {
 		TrackerDriver driver = new TrackerDriver();

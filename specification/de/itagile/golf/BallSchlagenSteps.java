@@ -4,9 +4,10 @@ package de.itagile.golf;
 import org.jbehave.scenario.annotations.Alias;
 import org.jbehave.scenario.annotations.Then;
 import org.jbehave.scenario.annotations.When;
-import org.jbehave.scenario.steps.Steps;
 
-public class BallSchlagenSteps extends Steps {
+import de.itagile.golf.jbehave.BaseSteps;
+
+public class BallSchlagenSteps extends BaseSteps {
 
     private TrackerDriver driver;
     

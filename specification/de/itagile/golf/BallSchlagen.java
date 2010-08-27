@@ -1,10 +1,11 @@
 package de.itagile.golf;
 
-import org.jbehave.scenario.Scenario;
+import de.itagile.golf.jbehave.BaseScenario;
 
-public class BallSchlagen extends Scenario {
-    
-    public BallSchlagen() {
-        super(new BallSchlagenSteps(new TrackerDriver()));
-    }
+
+public class BallSchlagen extends BaseScenario {
+	
+	public BallSchlagen() {
+		addSteps(new BallSchlagenSteps(new TrackerDriver()));
+	}
 }

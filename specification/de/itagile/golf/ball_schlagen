@@ -1,8 +1,8 @@
-When ich den Ball einmal schlage,
-Then zählt der NerdGolfTracker 1 Schlag.
+Wenn ich den Ball einmal schlage,
+Dann zählt der NerdGolfTracker 1 Schlag.
 
-When ich den Ball noch einmal schlage,
-Then zählt der NerdGolfTracker 2 Schläge.
+Wenn ich den Ball noch einmal schlage,
+Dann zählt der NerdGolfTracker 2 Schläge.
 
-When ich den Ball noch einmal schlage,
-Then zählt der NerdGolfTracker 3 Schläge.
+Wenn ich den Ball noch einmal schlage,
+Dann zählt der NerdGolfTracker 3 Schläge.
