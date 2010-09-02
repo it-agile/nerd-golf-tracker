@@ -36,7 +36,7 @@ public class TrackerDriver {
 	private Process startNerdGolfTracker() {
 		try {
 			return Runtime.getRuntime().exec(
-					"java -jar libs/nerd-golf-tracker.jar");
+					"java -jar build/libs/nerd-golf-tracker.jar");
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
