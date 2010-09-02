@@ -9,19 +9,17 @@ import de.itagile.golf.jbehave.BaseSteps;
 
 public class SchlagzahlZuruecksetzenSteps extends BaseSteps {
 
-	private final TrackerDriver driver;
-
 	public SchlagzahlZuruecksetzenSteps(TrackerDriver driver) {
-		this.driver = driver;
+		super(driver);
 	}
 
 	@When("ich zum nächsten Loch gehe,")
 	public void geheZumNaechstenLoch() {
-		driver.empfangeAnweisung("Nächstes Loch");
+		empfangeAnweisung("Nächstes Loch");
 	}
 		
 	@Then("setzt der NerdGolfTracker die Schlagzahl zurück.")
 	public void setztSchlagzahlZurueck() {
-		driver.assertThatAntwort(is("Deine Schlagzahl wurde zurück gesetzt."));
+		assertThatAntwort(is("Deine Schlagzahl wurde zurück gesetzt."));
 	}
 }

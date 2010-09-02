@@ -9,15 +9,16 @@ import de.itagile.golf.jbehave.BaseSteps;
 
 public class AktuellesLochAnzeigenSteps extends BaseSteps {
 	
-	private TrackerDriver driver;
-
+	public AktuellesLochAnzeigenSteps(TrackerDriver driver) {
+		super(driver);
+	}
+	
 	@When("ich den NerdGolfTracker starte,")
 	public void starteNerdGolfTracker() {
-		driver = new TrackerDriver();
 	}
 	
 	@Then("zählt er die Schläge auf dem 1. Loch.")
 	public void zaehltSchlaegeAufLoch() {
-		driver.assertThatAntwort(containsString("auf dem 1. Loch"));
+		assertThatAntwort(containsString("auf dem 1. Loch"));
 	}
 }

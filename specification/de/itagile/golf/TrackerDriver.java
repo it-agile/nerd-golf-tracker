@@ -1,14 +1,10 @@
 package de.itagile.golf;
 
-import static org.junit.Assert.assertThat;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-
-import org.hamcrest.Matcher;
 
 public class TrackerDriver {
 
@@ -56,9 +52,9 @@ public class TrackerDriver {
 		writer.println(anweisung);
 		speichereAntwort();
 	}
-
-	public void assertThatAntwort(Matcher<String> matcher) {
-		assertThat(letzteAntwort, matcher);
+	
+	public String letzteAntwort() {
+		return letzteAntwort;
 	}
 
 	private void speichereAntwort() {

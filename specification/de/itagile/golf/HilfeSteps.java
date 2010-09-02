@@ -10,6 +10,7 @@ import de.itagile.golf.jbehave.BaseSteps;
 public class HilfeSteps extends BaseSteps {
 
 	public HilfeSteps(TrackerDriver driver) {
+		super(driver);
 	}
 	
 	@When("ich die Hilfe aufrufe,")
