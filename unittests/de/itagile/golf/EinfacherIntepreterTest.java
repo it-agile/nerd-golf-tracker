@@ -17,7 +17,7 @@ import de.itagile.golf.operation.Schlag;
 @RunWith(Parameterized.class)
 public class EinfacherIntepreterTest {
 
-	private EingabeInterpreter interpreter = new EinfacherInterpreter();
+	private Interpreter interpreter = new EinfacherInterpreter();
 	private final String befehl;
 	private final Class<? super Operation> operation;
 

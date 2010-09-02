@@ -7,7 +7,7 @@ import de.itagile.golf.operation.Lochwechsel;
 import de.itagile.golf.operation.Schlag;
 import de.itagile.golf.operation.Schlagzahlausgabe;
 
-public class EinfacherInterpreter implements EingabeInterpreter {
+public class EinfacherInterpreter implements Interpreter {
 
 	private Map<String, Operation> operationen = new HashMap<String, Operation>();
 

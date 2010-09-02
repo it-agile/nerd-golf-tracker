@@ -1,6 +1,6 @@
 package de.itagile.golf;
 
-public interface EingabeInterpreter {
+public interface Interpreter {
 
 	Operation interpretiere(String string);
 

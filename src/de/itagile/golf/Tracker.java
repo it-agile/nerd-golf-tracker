@@ -3,10 +3,10 @@ package de.itagile.golf;
 public class Tracker {
 
 	private Scorecard scorecard = new EinfacheScorecard();
-	private EingabeInterpreter interpreter;
+	private Interpreter interpreter;
 	private Operation startoperation;
 
-	public Tracker(EingabeInterpreter interpreter) {
+	public Tracker(Interpreter interpreter) {
 		this.interpreter = interpreter;
 	}
 

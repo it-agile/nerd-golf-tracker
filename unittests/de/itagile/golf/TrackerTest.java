@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class TrackerTest {
 
-	private EingabeInterpreter interpreter = mock(EingabeInterpreter.class);		
+	private Interpreter interpreter = mock(Interpreter.class);		
 	private Tracker tracker = new Tracker(interpreter);
 	private Operation operation = mock(Operation.class);
 
