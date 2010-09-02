@@ -23,6 +23,7 @@ public class TrackerDriver {
 		reader = readerFor(process);
 		writer = writerFor(process);
 		shutDownWhenSystemExits(process);
+		speichereAntwort();
 	}
 
 	private PrintWriter writerFor(Process process) {
@@ -66,7 +67,7 @@ public class TrackerDriver {
         assertThatAntwort(is(String.format("Du hast %d %s.", anzahl, einheit)));
 	}
 
-	private void assertThatAntwort(Matcher<String> matcher) {
+	public void assertThatAntwort(Matcher<String> matcher) {
 		assertThat(letzteAntwort, matcher);
 	}
 
