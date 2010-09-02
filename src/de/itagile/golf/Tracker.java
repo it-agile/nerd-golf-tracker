@@ -10,6 +10,6 @@ public class Tracker {
 	}
 
 	public String reagiereAuf(String eingabe) {
-		return interpreter.verarbeiteEingabe(eingabe, scorecard);
+		return interpreter.interpretiere(eingabe).fuehreAus(scorecard);
 	}
 }
