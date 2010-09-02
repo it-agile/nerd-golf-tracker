@@ -1,6 +1,6 @@
 package de.itagile.golf;
 
-import static org.junit.Assert.fail;
+import static org.hamcrest.Matchers.containsString;
 
 import org.jbehave.scenario.annotations.Then;
 import org.jbehave.scenario.annotations.When;
@@ -15,11 +15,11 @@ public class HilfeSteps extends BaseSteps {
 	
 	@When("ich die Hilfe aufrufe,")
 	public void rufeHilfeAuf() {
-		fail();
+		empfangeAnweisung("Hilfe");
 	}
 	
 	@Then("zeigt der NerdGolfTracker seine Benutzung an.")
 	public void zeigtBenutzungAn() {		
-		fail();
+		assertThatAntwort(containsString("Ich reagiere auf:"));
 	}
 }
