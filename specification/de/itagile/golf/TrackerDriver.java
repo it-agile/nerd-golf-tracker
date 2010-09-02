@@ -26,7 +26,7 @@ public class TrackerDriver {
 	}
 
 	private PrintWriter writerFor(Process process) {
-		return new PrintWriter(new OutputStreamWriter(process.getOutputStream()));
+		return new PrintWriter(new OutputStreamWriter(process.getOutputStream()), true);
 	}
 
 	private BufferedReader readerFor(Process process) {
@@ -54,7 +54,6 @@ public class TrackerDriver {
 
 	public void empfangeAnweisung(String anweisung) {
 		writer.println(anweisung);
-		writer.flush();
 		speichereAntwort();
 	}
 
