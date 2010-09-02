@@ -36,3 +36,4 @@ repositories {
 	mavenCentral()
 }
 
+eclipse.dependsOn(cleanEclipse)
