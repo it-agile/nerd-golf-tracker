@@ -1,6 +1,5 @@
 package de.itagile.golf;
 
-import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 import java.io.BufferedReader;
@@ -53,18 +52,10 @@ public class TrackerDriver {
 		});
 	}
 
-	public void schlageBall() {
-		empfangeAnweisung("Schlage Ball");
-    }
-
-	private void empfangeAnweisung(String anweisung) {
+	public void empfangeAnweisung(String anweisung) {
 		writer.println(anweisung);
 		writer.flush();
 		speichereAntwort();
-	}
-
-	public void zaehltSchlaege(int anzahl, String einheit) {
-        assertThatAntwort(is(String.format("Du hast %d %s.", anzahl, einheit)));
 	}
 
 	public void assertThatAntwort(Matcher<String> matcher) {
@@ -77,13 +68,5 @@ public class TrackerDriver {
 		} catch (IOException exception) {
 			throw new RuntimeException(exception);
 		}
-	}
-
-	public void geheZumNaechstenLoch() {
-		empfangeAnweisung("Nächstes Loch");
-	}
-
-	public void setztSchlagzahlZurueck() {
-		assertThatAntwort(is("Deine Schlagzahl wurde zurück gesetzt."));
 	}
 }
