@@ -1,5 +1,7 @@
-package de.itagile.golf;
+package de.itagile.golf.befehl;
 
+import de.itagile.golf.Befehl;
+import de.itagile.golf.Operation;
 import de.itagile.golf.operation.Hilfe;
 
 public class HilfeBefehl implements Befehl {
