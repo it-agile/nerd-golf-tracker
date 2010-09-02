@@ -15,7 +15,6 @@ public class EinfacherInterpreter implements EingabeInterpreter {
 		operationen.put("Schlage Ball", new Schlag());
 	}
 
-	@Override
 	public Operation interpretiere(String string) {
 		return operationen.get(string);
 	}
