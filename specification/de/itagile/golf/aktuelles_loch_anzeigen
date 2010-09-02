@@ -1,0 +1,14 @@
+Wenn ich den NerdGolfTracker starte,
+Dann zählt der NerdGolfTracker 0 Schläge auf dem 1. Loch.
+
+Wenn ich den Ball einmal schlage,
+Dann zählt der NerdGolfTracker 1 Schlag auf dem 1. Loch.
+
+Wenn ich den Ball noch einmal schlage,
+Dann zählt der NerdGolfTracker 2 Schlag auf dem 1. Loch.
+
+Wenn ich zum nächsten Loch gehe,
+Dann zählt der NerdGolfTracker 0 Schläge auf dem 2. Loch.
+
+Wenn ich den Ball einmal schlage,
+Dann zählt der NerdGolfTracker 1 Schläge auf dem 2. Loch.
