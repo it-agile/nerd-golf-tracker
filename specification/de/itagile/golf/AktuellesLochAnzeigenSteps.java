@@ -20,6 +20,4 @@ public class AktuellesLochAnzeigenSteps extends BaseSteps {
 	public void zaehltSchlaegeAufLoch() {
 		driver.assertThatAntwort(containsString("auf dem 1. Loch"));
 	}
-	
-	
 }

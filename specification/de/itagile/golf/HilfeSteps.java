@@ -21,6 +21,4 @@ public class HilfeSteps extends BaseSteps {
 	public void zeigtBenutzungAn() {		
 		fail();
 	}
-	
-
 }
