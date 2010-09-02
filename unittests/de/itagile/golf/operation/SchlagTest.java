@@ -8,13 +8,15 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 
+import de.itagile.golf.Operation;
 import de.itagile.golf.Scorecard;
 
 
 public class SchlagTest {
 
 	private Scorecard scorecard = mock(Scorecard.class);
-	private Schlag schlag = new Schlag();
+	private Operation folgeoperation = mock(Operation.class);
+	private Schlag schlag = new Schlag(folgeoperation);
 
 	@Test
 	public void erhoehtAnzahlSchlaegeAufScorecard() throws Exception {
@@ -23,14 +25,8 @@ public class SchlagTest {
 	}
 
 	@Test
-	public void meldetEinenSchlag() throws Exception {
-		when(scorecard.anzahlSchlaege()).thenReturn(1);
-		assertThat(schlag.fuehreAus(scorecard), is("Du hast 1 Schlag."));
-	}
-	
-	@Test
-	public void meldetMehrereSchlaege() throws Exception {
-		when(scorecard.anzahlSchlaege()).thenReturn(2);
-		assertThat(schlag.fuehreAus(scorecard), is("Du hast 2 Schläge."));
+	public void gibtErgebnisDerFolgeoperationZurueck() throws Exception {
+		when(folgeoperation.fuehreAus(scorecard)).thenReturn("foo");
+		assertThat(schlag.fuehreAus(scorecard), is("foo"));
 	}
 }
