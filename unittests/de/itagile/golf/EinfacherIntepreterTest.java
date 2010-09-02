@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import de.itagile.golf.operation.Hilfe;
 import de.itagile.golf.operation.Lochwechsel;
 import de.itagile.golf.operation.Schlag;
 
@@ -31,6 +32,7 @@ public class EinfacherIntepreterTest {
 		Object[][] testData = new Object[][] {
 				{"Schlage Ball", Schlag.class},
 				{"Nächstes Loch", Lochwechsel.class},
+				{"Hilfe", Hilfe.class},
 				};
 		return Arrays.asList(testData);
 	}

@@ -7,9 +7,9 @@ import org.jbehave.scenario.annotations.When;
 
 import de.itagile.golf.jbehave.BaseSteps;
 
-public class HilfeSteps extends BaseSteps {
+public class HilfeAnzeigenSteps extends BaseSteps {
 
-	public HilfeSteps(TrackerDriver driver) {
+	public HilfeAnzeigenSteps(TrackerDriver driver) {
 		super(driver);
 	}
 	
