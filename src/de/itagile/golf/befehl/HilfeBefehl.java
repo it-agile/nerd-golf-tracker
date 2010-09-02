@@ -16,7 +16,7 @@ public class HilfeBefehl implements Befehl {
 	}
 
 	public String beschreibung() {
-		return null;
+		return "dann zeige ich Dir das hier";
 	}
 
 }

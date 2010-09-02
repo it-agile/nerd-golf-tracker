@@ -28,5 +28,4 @@ public class Hilfe implements Operation {
 		builder.append(befehl.beschreibung());
 		builder.append("); ");
 	}
-
 }

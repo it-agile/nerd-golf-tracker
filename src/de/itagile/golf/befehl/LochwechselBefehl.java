@@ -14,7 +14,7 @@ public class LochwechselBefehl implements Befehl {
 	}
 
 	public String beschreibung() {
-		return null;
+		return "dann zähle ich für das nächste Loch mit";
 	}
 
 }
