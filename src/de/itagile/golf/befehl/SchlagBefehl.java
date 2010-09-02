@@ -14,4 +14,8 @@ public class SchlagBefehl implements Befehl {
 		return "Schlage Ball";
 	}
 
+	public String beschreibung() {
+		return "dann zähle ich mit";
+	}
+
 }

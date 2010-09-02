@@ -6,4 +6,6 @@ public interface Befehl {
 
 	Operation operation();
 
+	String beschreibung();
+
 }

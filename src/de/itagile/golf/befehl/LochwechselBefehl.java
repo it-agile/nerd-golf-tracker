@@ -13,4 +13,8 @@ public class LochwechselBefehl implements Befehl {
 		return "Nächstes Loch";
 	}
 
+	public String beschreibung() {
+		return null;
+	}
+
 }

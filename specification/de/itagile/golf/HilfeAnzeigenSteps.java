@@ -22,4 +22,11 @@ public class HilfeAnzeigenSteps extends BaseSteps {
 	public void zeigtBenutzungAn() {		
 		assertThatAntwort(containsString("Ich reagiere auf:"));
 	}
+	
+	@Then("listet der NerdGolfTracker einen Eintrag zu \"Schlage Ball\" inkl. entsprechender Beschreibung.")
+	public void zeigtBenutzungVonSchlageBallAn() {
+		assertThatAntwort(containsString("Schlage Ball"));
+		assertThatAntwort(containsString("..."));
+	}
+	
 }
