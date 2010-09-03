@@ -10,12 +10,16 @@ public class Main {
 	
 	public static void main(String[] args) throws IOException {
 		Tracker tracker = new Tracker(new EinfacherInterpreter(), new Lochausgabe());
-		System.out.println(tracker.starte());
+		gibtAus(tracker.starte());
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
 			String befehl = reader.readLine();
-			System.out.println(tracker.reagiereAuf(befehl));
+			gibtAus(tracker.reagiereAuf(befehl));
 		}
+	}
+
+	private static void gibtAus(String ausgabe) {
+		System.out.println(ausgabe);
 	}
 }

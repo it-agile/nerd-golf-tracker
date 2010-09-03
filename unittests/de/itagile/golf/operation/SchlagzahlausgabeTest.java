@@ -1,6 +1,6 @@
 package de.itagile.golf.operation;
 
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.containsString;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -18,13 +18,19 @@ public class SchlagzahlausgabeTest {
 	@Test
 	public void meldetEinenSchlag() throws Exception {
 		when(scorecard.anzahlSchlaege()).thenReturn(1);
-		assertThat(schlagzahlausgabe.fuehreAus(scorecard), is("Du hast 1 Schlag."));
+		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("1 Schlag"));
 	}
 	
 	@Test
 	public void meldetMehrereSchlaege() throws Exception {
 		when(scorecard.anzahlSchlaege()).thenReturn(2);
-		assertThat(schlagzahlausgabe.fuehreAus(scorecard), is("Du hast 2 Schläge."));
+		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("2 Schläge"));
+	}
+	
+	@Test
+	public void meldetAktuellesLoch() throws Exception {
+		when(scorecard.aktuellesLoch()).thenReturn(42);
+		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("42. Loch"));
 	}
 
 }

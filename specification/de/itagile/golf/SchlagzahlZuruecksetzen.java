@@ -8,6 +8,7 @@ public class SchlagzahlZuruecksetzen extends BaseScenario {
 	public SchlagzahlZuruecksetzen() {
 		TrackerDriver driver = new TrackerDriver();
 		addSteps(new BallSchlagenSteps(driver),
-				new SchlagzahlZuruecksetzenSteps(driver));
+				 new SchlaegeZaehlenSteps(driver),
+				 new SchlagzahlZuruecksetzenSteps(driver));
 	}
 }
