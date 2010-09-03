@@ -4,15 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import de.itagile.golf.operation.Schlagzahlausgabe;
+import de.itagile.golf.operation.Lochausgabe;
 
 public class Main {
 	
 	public static void main(String[] args) throws IOException {
-		Tracker tracker = new Tracker(new EinfacherInterpreter());
-		tracker.setStartoperation(new Schlagzahlausgabe());
-		
-		System.out.println("auf dem 1. Loch");
+		Tracker tracker = new Tracker(new EinfacherInterpreter(), new Lochausgabe());
+		System.out.println(tracker.starte());
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {

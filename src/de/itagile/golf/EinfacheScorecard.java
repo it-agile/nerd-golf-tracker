@@ -15,4 +15,8 @@ public class EinfacheScorecard implements Scorecard {
 	public int anzahlSchlaege() {
 		return anzahlSchlaege;
 	}
+
+	public int aktuellesLoch() {
+		return 1;
+	}
 }

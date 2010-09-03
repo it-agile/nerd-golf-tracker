@@ -8,4 +8,6 @@ public interface Scorecard {
 
 	int anzahlSchlaege();
 
+	int aktuellesLoch();
+
 }
