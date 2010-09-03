@@ -13,7 +13,7 @@ import de.itagile.golf.Scorecard;
 public class SchlagzahlausgabeTest {
 
 	private Scorecard scorecard = mock(Scorecard.class);
-	private Operation schlagzahlausgabe = new Schlagzahlausgabe();
+	private Operation schlagzahlausgabe = new Schlagzahlausgabe(new Lochausgabe());
 	
 	@Test
 	public void meldetEinenSchlag() throws Exception {
