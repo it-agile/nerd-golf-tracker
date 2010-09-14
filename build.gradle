@@ -39,11 +39,11 @@ jar {
 	}
 }
 
-eclipse.dependsOn(cleanEclipse)
-
 task copyToLib(type: Copy) {
-	into libsDir
 	from configurations.runtime
+	into libsDir
 }
 
 jar.dependsOn copyToLib
+
+eclipse.dependsOn(cleanEclipse)
