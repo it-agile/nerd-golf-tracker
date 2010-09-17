@@ -7,6 +7,6 @@ public final class Lochwechsel implements Operation {
 	
 	public String fuehreAus(Scorecard scorecard) {
 		scorecard.setzeZurueckAnzahlSchlaege();
-		return "Deine Schlagzahl wurde zurück gesetzt.";
+		return "Deine Schlagzahl wurde zurück gesetzt und Du bist auf dem 2. Loch.";
 	}
 }
