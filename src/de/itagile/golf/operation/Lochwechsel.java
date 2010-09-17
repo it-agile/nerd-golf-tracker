@@ -5,8 +5,14 @@ import de.itagile.golf.Scorecard;
 
 public final class Lochwechsel implements Operation {
 	
+	private final Operation folgeoperation;
+
+	public Lochwechsel(Operation folgeoperation) {
+		this.folgeoperation = folgeoperation;
+	}
+
 	public String fuehreAus(Scorecard scorecard) {
 		scorecard.setzeZurueckAnzahlSchlaege();
-		return "Deine Schlagzahl wurde zurück gesetzt und Du bist auf dem 2. Loch.";
+		return "Deine Schlagzahl wurde zurückgesetzt und Du bist " + folgeoperation.fuehreAus(scorecard);
 	}
 }
