@@ -2,6 +2,7 @@ package de.itagile.golf;
 
 public class EinfacheScorecard implements Scorecard {
 
+	private int aktuellesLoch = 1;
 	private int anzahlSchlaege;
 
 	public void erhoeheAnzahlSchlaege() {
@@ -10,6 +11,7 @@ public class EinfacheScorecard implements Scorecard {
 
 	public void setzeZurueckAnzahlSchlaege() {
 		anzahlSchlaege = 0;
+		aktuellesLoch++;
 	}
 
 	public int anzahlSchlaege() {
@@ -17,6 +19,6 @@ public class EinfacheScorecard implements Scorecard {
 	}
 
 	public int aktuellesLoch() {
-		return 1;
+		return aktuellesLoch;
 	}
 }

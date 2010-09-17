@@ -29,4 +29,15 @@ public class EinfacheScorecardTest {
 		scorecard.setzeZurueckAnzahlSchlaege();
 		assertThat(scorecard.anzahlSchlaege(), is(0));
 	}
+	
+	@Test
+	public void hatInitialErstesLoch() throws Exception {
+		assertThat(scorecard.aktuellesLoch(), is(1));
+	}
+	
+	@Test
+	public void zaehltAktuellesLoch() throws Exception {
+		scorecard.setzeZurueckAnzahlSchlaege();
+		assertThat(scorecard.aktuellesLoch(), is(2));
+	}
 }
