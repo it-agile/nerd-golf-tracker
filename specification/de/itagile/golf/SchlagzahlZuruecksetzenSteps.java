@@ -1,5 +1,6 @@
 package de.itagile.golf;
 
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
 
 import org.jbehave.scenario.annotations.Then;
@@ -14,6 +15,6 @@ public class SchlagzahlZuruecksetzenSteps extends BaseSteps {
 
 	@Then("setzt der NerdGolfTracker die Schlagzahl zurück.")
 	public void setztSchlagzahlZurueck() {
-		assertThatAntwort(is("Deine Schlagzahl wurde zurück gesetzt."));
+		assertThatAntwort(containsString("Deine Schlagzahl wurde zurück gesetzt"));
 	}
 }
