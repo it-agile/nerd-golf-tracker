@@ -1,22 +1,22 @@
 package de.itagile.golf.operation;
 
 import de.itagile.golf.Befehl;
-import de.itagile.golf.BefehleSammler;
+import de.itagile.golf.Sammler;
 import de.itagile.golf.Operation;
 import de.itagile.golf.Scorecard;
 
 public class Hilfe implements Operation {
 
-	private final BefehleSammler sammler;
+	private final Sammler<Befehl> sammler;
 
-	public Hilfe(BefehleSammler sammler) {
+	public Hilfe(Sammler<Befehl> sammler) {
 		this.sammler = sammler;
 	}
 
 	@Override
 	public String fuehreAus(Scorecard scorecard) {
 		StringBuilder builder = new StringBuilder("Ich reagiere auf: ");
-		for (Befehl befehl : sammler.befehle()) {
+		for (Befehl befehl : sammler.sammle()) {
 			appendBefehl(builder, befehl);
 		}
 		return builder.toString();

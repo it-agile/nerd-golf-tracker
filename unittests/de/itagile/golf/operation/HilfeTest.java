@@ -10,11 +10,12 @@ import java.util.Arrays;
 import org.junit.Test;
 
 import de.itagile.golf.Befehl;
-import de.itagile.golf.BefehleSammler;
+import de.itagile.golf.Sammler;
 
 public class HilfeTest {
 
-	private BefehleSammler sammler = mock(BefehleSammler.class);
+	@SuppressWarnings("unchecked")
+	private Sammler<Befehl> sammler = mock(Sammler.class);
 
 	@Test
 	public void zeigtIntroAn() throws Exception {
@@ -23,11 +24,11 @@ public class HilfeTest {
 	}
 
 	@Test
-	public void zeigtSchlageBallAn() throws Exception {
+	public void zeigtBeschreibungZumKommando() throws Exception {
 		Befehl befehl = mock(Befehl.class);
 		when(befehl.kommando()).thenReturn("Kommando");
 		when(befehl.beschreibung()).thenReturn("Beschreibung");
-		when(sammler.befehle()).thenReturn(Arrays.asList(befehl));
+		when(sammler.sammle()).thenReturn(Arrays.asList(befehl));
 		assertThat(new Hilfe(sammler).fuehreAus(null),
 				containsString("Kommando (...Beschreibung); "));
 	}

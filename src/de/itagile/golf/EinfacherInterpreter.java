@@ -9,7 +9,7 @@ public class EinfacherInterpreter implements Interpreter {
 	private Map<String, Operation> operationen = new HashMap<String, Operation>();
 
 	public EinfacherInterpreter() {
-		for (Befehl befehl : new BefehleSammler().befehle()) {
+		for (Befehl befehl : new Sammler<Befehl>(Befehl.class).sammle()) {
 			operationen.put(befehl.kommando(), befehl.operation());
 		}
 	}
