@@ -32,7 +32,7 @@ public class LochwechselTest {
 	@Test
 	public void setztAnzahlSchlaegeZurueck() throws Exception {
 		lochwechsel.fuehreAus(scorecard);
-		verify(scorecard).setzeZurueckAnzahlSchlaege();
+		verify(scorecard).schliesseLochAb();
 	}
 	
 	@Test

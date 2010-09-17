@@ -12,7 +12,7 @@ public final class Lochwechsel implements Operation {
 	}
 
 	public String fuehreAus(Scorecard scorecard) {
-		scorecard.setzeZurueckAnzahlSchlaege();
+		scorecard.schliesseLochAb();
 		return folgeoperation.fuehreAus(scorecard);
 	}
 }
