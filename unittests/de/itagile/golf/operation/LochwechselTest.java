@@ -1,6 +1,7 @@
 package de.itagile.golf.operation;
 
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
@@ -35,14 +36,9 @@ public class LochwechselTest {
 	}
 	
 	@Test
-	public void gibtZuruecksetzenAus() throws Exception {
-		assertThat(lochwechsel.fuehreAus(scorecard), containsString("Deine Schlagzahl wurde zurückgesetzt"));
-	}
-	
-	@Test
 	public void gibtAusgabeDerFolgeoperationMitAus() throws Exception {
 		when(folgeOperation.fuehreAus(any(Scorecard.class))).thenReturn("folgeoperationAusgabe");
 		
-		assertThat(lochwechsel.fuehreAus(scorecard), containsString("folgeoperationAusgabe"));	
+		assertThat(lochwechsel.fuehreAus(scorecard), is("folgeoperationAusgabe"));	
 	}
 }
