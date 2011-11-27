@@ -4,6 +4,7 @@ import java.util.Locale;
 
 import org.jbehave.scenario.MostUsefulConfiguration;
 import org.jbehave.scenario.definition.KeyWords;
+import org.jbehave.scenario.errors.PendingErrorStrategy;
 import org.jbehave.scenario.i18n.I18nKeyWords;
 import org.jbehave.scenario.i18n.StringEncoder;
 
@@ -14,5 +15,10 @@ public class ScenarioConfiguration extends MostUsefulConfiguration {
 	@Override
 	public KeyWords keywords() {
 		return KEYWORDS;
+	}
+	
+	@Override
+	public PendingErrorStrategy forPendingSteps() {
+		return PendingErrorStrategy.FAILING;
 	}
 }
