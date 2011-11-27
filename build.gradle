@@ -46,9 +46,3 @@ task copyToLib(type: Copy) {
 jar.dependsOn copyToLib
 
 tasks.eclipse.dependsOn(cleanEclipse)
-
-eclipseClasspath {
-    whenConfigured { classpath ->
-        classpath.entries.findAll { entry -> entry.kind == 'src' }*.output = null
-    }
-}
