@@ -45,7 +45,7 @@ task copyToLib(type: Copy) {
 
 jar.dependsOn copyToLib
 
-eclipse.dependsOn(cleanEclipse)
+tasks.eclipse.dependsOn(cleanEclipse)
 
 eclipseClasspath {
     whenConfigured { classpath ->
