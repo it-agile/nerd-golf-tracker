@@ -22,7 +22,6 @@ sourceSets {
 
 repositories {
 	mavenCentral()
-	mavenRepo urls: 'http://reflections.googlecode.com/svn/repo'
 }
 
 dependencies {
