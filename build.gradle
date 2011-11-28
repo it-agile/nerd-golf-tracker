@@ -46,3 +46,7 @@ task copyToLib(type: Copy) {
 jar.dependsOn copyToLib
 
 tasks.eclipse.dependsOn(cleanEclipse)
+eclipse.jdt {
+    sourceCompatibility = 1.6
+    targetCompatibility = 1.5
+}
