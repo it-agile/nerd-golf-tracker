@@ -59,9 +59,18 @@ public class TrackerDriver {
 
 	private void speichereAntwort() {
 		try {
-			letzteAntwort = reader.readLine();
+			letzteAntwort = readOutputFrom(reader);
 		} catch (IOException exception) {
 			throw new RuntimeException(exception);
 		}
+	}
+
+	private String readOutputFrom(BufferedReader reader) throws IOException {
+		StringBuilder collector = new StringBuilder();
+		collector.append(reader.readLine());
+		while (reader.ready()) {
+			collector.append(reader.readLine());
+		}
+		return collector.toString();
 	}
 }

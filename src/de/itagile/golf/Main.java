@@ -12,16 +12,16 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		Startausgabe startoperation = new Startausgabe(new Lochausgabe());
 		Tracker tracker = new Tracker(new EinfacherInterpreter(), startoperation);
-		gibtAus(tracker.starte());
+		gibAus(tracker.starte());
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
 			String befehl = reader.readLine();
-			gibtAus(tracker.reagiereAuf(befehl));
+			gibAus(tracker.reagiereAuf(befehl));
 		}
 	}
 
-	private static void gibtAus(String ausgabe) {
+	private static void gibAus(String ausgabe) {
 		System.out.println(ausgabe);
 	}
 }
