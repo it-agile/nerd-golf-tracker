@@ -12,6 +12,7 @@ sourceSets {
 	test {
 		java {
 			srcDir 'unittests'
+            srcDir 'integration'
 			srcDir 'specification'
 		}
 		resources {
