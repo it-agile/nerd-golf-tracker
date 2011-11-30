@@ -9,8 +9,6 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import java.util.List;
-
 import org.junit.Test;
 
 import de.itagile.golf.Befehl;
@@ -18,32 +16,42 @@ import de.itagile.golf.Sammler;
 
 public class HilfeTest {
 
-	@SuppressWarnings("unchecked")
-	private Sammler<Befehl> sammler = mock(Sammler.class);
-	private Hilfe hilfe = new Hilfe(sammler);
-
 	@Test
 	public void zeigtIntroAn() throws Exception {
-		assertThat(new Hilfe(sammler).fuehreAus(null),
-				containsString("Ich reagiere auf:"));
+		assertThat(hilfetext(), containsString("Ich reagiere auf:"));
 	}
 
 	@Test
 	public void zeigtBeschreibungZumKommando() throws Exception {
-		Befehl befehl = mock(Befehl.class);
-		when(befehl.kommando()).thenReturn("Kommando");
-		when(befehl.beschreibung()).thenReturn("Beschreibung");
-		when(sammler.sammle()).thenReturn(asList(befehl));
-		assertThat(hilfe.fuehreAus(null), 
+		assertThat(hilfetext(dummyBefehl("Kommando", "Beschreibung")), 
 				containsString("Kommando (...Beschreibung)"));
 	}
-	
+
 	@Test
-	public void gibtEinKommandoProZeileAus() throws Exception {
-		List<Befehl> dummyBefehle = asList(mock(Befehl.class), mock(Befehl.class));
-		when(sammler.sammle()).thenReturn(dummyBefehle);
-		String hilfeText = hilfe.fuehreAus(null);
-		String[] zeilen = hilfeText.split(LINE_SEPARATOR);
-		assertThat(zeilen.length, is(greaterThanOrEqualTo(2)));
+	public void gibtProKommandoEineZeileAus() throws Exception {
+		String hilfetextFuerZweiBefehle = hilfetext(mock(Befehl.class), mock(Befehl.class));
+		assertThat(anzahlZeilen(hilfetextFuerZweiBefehle), is(greaterThanOrEqualTo(2)));
+	}
+
+	private int anzahlZeilen(String string) {
+		String[] zeilen = string.split(LINE_SEPARATOR);
+		return zeilen.length;
+	}
+
+	
+	private String hilfetext(Befehl... befehle) {
+		@SuppressWarnings("unchecked")
+		Sammler<Befehl> sammler = mock(Sammler.class);
+		
+		Hilfe hilfe = new Hilfe(sammler);
+		when(sammler.sammle()).thenReturn(asList(befehle));
+		return hilfe.fuehreAus(null);
+	}
+
+	private Befehl dummyBefehl(String kommando, String beschreibung) {
+		Befehl befehl = mock(Befehl.class);
+		when(befehl.kommando()).thenReturn(kommando);
+		when(befehl.beschreibung()).thenReturn(beschreibung);
+		return befehl;
 	}
 }
