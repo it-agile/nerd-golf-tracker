@@ -1,5 +1,6 @@
 package de.itagile.golf.operation;
 
+import static de.itagile.golf.util.SystemProperties.LINE_SEPARATOR;
 import de.itagile.golf.Befehl;
 import de.itagile.golf.Operation;
 import de.itagile.golf.Sammler;
@@ -17,17 +18,12 @@ public class Hilfe implements Operation {
 	public String fuehreAus(Scorecard scorecard) {
 		StringBuilder builder = new StringBuilder("Ich reagiere auf: ");
 		for (Befehl befehl : sammler.sammle()) {
-			appendBefehl(builder, befehl);
+			builder.append(hilfeZeileFuer(befehl));
 		}
 		return builder.toString();
 	}
 
-	private void appendBefehl(StringBuilder builder, Befehl befehl) {
-		builder.append(System.getProperty("line.separator"));
-		builder.append(" * ");
-		builder.append(befehl.kommando());
-		builder.append(" (...");
-		builder.append(befehl.beschreibung());
-		builder.append("); ");
+	private String hilfeZeileFuer(Befehl befehl) {
+		return String.format("%s * %s (...%s)", LINE_SEPARATOR, befehl.kommando(), befehl.beschreibung());
 	}
 }

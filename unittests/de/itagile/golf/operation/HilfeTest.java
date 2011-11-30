@@ -1,5 +1,6 @@
 package de.itagile.golf.operation;
 
+import static de.itagile.golf.util.SystemProperties.LINE_SEPARATOR;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.containsString;
@@ -33,8 +34,8 @@ public class HilfeTest {
 		when(befehl.kommando()).thenReturn("Kommando");
 		when(befehl.beschreibung()).thenReturn("Beschreibung");
 		when(sammler.sammle()).thenReturn(asList(befehl));
-		assertThat(hilfe.fuehreAus(null),
-				containsString("Kommando (...Beschreibung); "));
+		assertThat(hilfe.fuehreAus(null), 
+				containsString("Kommando (...Beschreibung)"));
 	}
 	
 	@Test
@@ -42,7 +43,7 @@ public class HilfeTest {
 		List<Befehl> dummyBefehle = asList(mock(Befehl.class), mock(Befehl.class));
 		when(sammler.sammle()).thenReturn(dummyBefehle);
 		String hilfeText = hilfe.fuehreAus(null);
-		String[] zeilen = hilfeText.split(System.getProperty("line.separator"));
+		String[] zeilen = hilfeText.split(LINE_SEPARATOR);
 		assertThat(zeilen.length, is(greaterThanOrEqualTo(2)));
 	}
 }
