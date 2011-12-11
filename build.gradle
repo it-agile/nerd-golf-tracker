@@ -32,6 +32,12 @@ dependencies {
 	compile group: 'org.reflections', name: 'reflections', version: '0.9.5-RC2'
 }
 
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+test {
+    systemProperty 'file.encoding', 'UTF-8'
+}
+
+
 jar {
 	manifest {
 		attributes('Main-Class': 'de.itagile.golf.Main')
