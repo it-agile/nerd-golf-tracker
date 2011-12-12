@@ -12,7 +12,7 @@ import static org.mockito.Mockito.when;
 import org.junit.Test;
 
 import de.itagile.golf.Befehl;
-import de.itagile.golf.Sammler;
+import de.itagile.golf.BefehleSammler;
 
 public class HilfeTest {
 
@@ -40,8 +40,7 @@ public class HilfeTest {
 
 	
 	private String hilfetext(Befehl... befehle) {
-		@SuppressWarnings("unchecked")
-		Sammler<Befehl> sammler = mock(Sammler.class);
+		BefehleSammler sammler = mock(BefehleSammler.class);
 		
 		Hilfe hilfe = new Hilfe(sammler);
 		when(sammler.sammle()).thenReturn(asList(befehle));

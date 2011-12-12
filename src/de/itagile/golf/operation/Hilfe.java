@@ -3,14 +3,14 @@ package de.itagile.golf.operation;
 import static de.itagile.golf.util.SystemProperties.LINE_SEPARATOR;
 import de.itagile.golf.Befehl;
 import de.itagile.golf.Operation;
-import de.itagile.golf.Sammler;
+import de.itagile.golf.BefehleSammler;
 import de.itagile.golf.Scorecard;
 
 public class Hilfe implements Operation {
 
-	private final Sammler<Befehl> sammler;
+	private final BefehleSammler sammler;
 
-	public Hilfe(Sammler<Befehl> sammler) {
+	public Hilfe(BefehleSammler sammler) {
 		this.sammler = sammler;
 	}
 
