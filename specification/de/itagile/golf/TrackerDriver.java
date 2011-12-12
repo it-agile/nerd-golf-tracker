@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
+import de.itagile.golf.util.SystemProperties;
+
 public class TrackerDriver {
 
 	private Process process;
@@ -31,8 +33,12 @@ public class TrackerDriver {
 
 	private Process startNerdGolfTracker() {
 		try {
+			String command = String.format(
+					"java -Dfile.encoding=%s -jar %s", 
+					SystemProperties.FILE_ENCODING,
+					"build/libs/nerd-golf-tracker.jar");
 			return Runtime.getRuntime().exec(
-					"java -jar build/libs/nerd-golf-tracker.jar");
+					command);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}

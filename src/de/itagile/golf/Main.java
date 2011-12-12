@@ -2,6 +2,7 @@ package de.itagile.golf;
 
 import java.io.IOException;
 
+import de.itagile.golf.konsole.Konsole;
 import de.itagile.golf.operation.Lochausgabe;
 import de.itagile.golf.operation.Startausgabe;
 
