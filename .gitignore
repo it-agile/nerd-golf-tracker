@@ -1,8 +1,12 @@
+# Gradle
 .gradle/
 build/
 
+# Eclipse
 bin/
 .classpath
 .project
 .settings/org.eclipse.jdt.core.prefs
+
+# Idea
 nerd-golf-tracker.i??
