@@ -20,9 +20,13 @@ public class Konsole {
 		reader = new BufferedReader(new InputStreamReader(System.in, encoding));
 	}
 	
-	public void gibAus(String ausgabe) {
-		writer.println(ausgabe);
+	public void beendeAusgabe() {
 		writer.flush();
+	}
+
+	public Konsole println(String line) {
+		writer.println(line);
+		return this;
 	}
 
 	public String liesZeileEin() throws IOException {

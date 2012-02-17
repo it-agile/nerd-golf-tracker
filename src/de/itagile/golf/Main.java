@@ -14,11 +14,11 @@ public class Main {
 		Startausgabe startoperation = new Startausgabe(new Lochausgabe());
 		Tracker tracker = new Tracker(new EinfacherInterpreter(), startoperation);
 
-		konsole.gibAus(tracker.starte());
+		konsole.println(tracker.starte()).beendeAusgabe();
 		
 		while (true) {
 			String befehl = konsole.liesZeileEin();
-			konsole.gibAus(tracker.reagiereAuf(befehl));
+			konsole.println(tracker.reagiereAuf(befehl)).beendeAusgabe();
 		}
 	}
 }
