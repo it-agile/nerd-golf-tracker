@@ -24,6 +24,6 @@ public class AktuellesLochAnzeigenSteps extends BaseSteps {
 			"zählt der NerdGolfTracker die Schläge auf dem $lochNo. Loch."
 		})
 	public void zaehltSchlaegeAufLoch(int lochNo) {
-		assertThatAntwort(containsString(String.format("auf dem %d. Loch", lochNo)));
+		assertThatAntwort(containsString(String.format("auf dem %d.", lochNo)));
 	}
 }
