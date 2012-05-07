@@ -1,3 +1,5 @@
+Quotes Language: german
+
 
 # Code-Formatierung
 
@@ -14,8 +16,7 @@ Die ausführbare Spezifikation verlässt sich darauf, dass der NerdGolfTracker s
 
 # Absichtliche Fehler
 
-Bei der Ausgabe der aktuellen Schläge wird "Schlag" nur im Singular ausgegeben.
-
-Beim Lochwechsel wird die Zahl der Schläge nicht zurückgesetzt.
-
-Bei der Hilfe-Ausgabe ist die Einleitung nicht durch einen Zeilenumbruch abgetrennt.
+* Bei der Ausgabe der aktuellen Schläge wird "Schlag" nur im Singular ausgegeben.
+* Beim Lochwechsel wird die Zahl der Schläge nicht zurückgesetzt.
+* Bei der Ausgabe des aktuellen Lochs fehlt ein Leerzeichen zwischen Zahl and "Loch".
+* Bei der Hilfe-Ausgabe ist die Einleitung nicht durch einen Zeilenumbruch abgetrennt.
