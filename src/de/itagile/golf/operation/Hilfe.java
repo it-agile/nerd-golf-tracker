@@ -1,10 +1,14 @@
 package de.itagile.golf.operation;
 
-import static de.itagile.golf.util.SystemProperties.LINE_SEPARATOR;
+import java.util.ArrayList;
+import java.util.List;
+
 import de.itagile.golf.Befehl;
-import de.itagile.golf.Operation;
 import de.itagile.golf.BefehleSammler;
+import de.itagile.golf.Operation;
 import de.itagile.golf.Scorecard;
+import de.itagile.golf.util.CollectionUtils;
+import de.itagile.golf.util.SystemProperties;
 
 public class Hilfe implements Operation {
 
@@ -16,14 +20,14 @@ public class Hilfe implements Operation {
 
 	@Override
 	public String fuehreAus(Scorecard scorecard) {
-		StringBuilder builder = new StringBuilder("Ich reagiere auf: ");
+		List<String> hilfeTexte = new ArrayList<String>();
 		for (Befehl befehl : sammler.sammle()) {
-			builder.append(hilfeZeileFuer(befehl));
+			hilfeTexte.add(hilfeZeileFuer(befehl));
 		}
-		return builder.toString();
+		return "Ich reagiere auf: " + CollectionUtils.join(hilfeTexte, SystemProperties.LINE_SEPARATOR);
 	}
 
 	private String hilfeZeileFuer(Befehl befehl) {
-		return String.format("%s * %s (...%s)", LINE_SEPARATOR, befehl.kommando(), befehl.beschreibung());
+		return String.format(" * %s (...%s)", befehl.kommando(), befehl.beschreibung());
 	}
 }

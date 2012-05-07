@@ -4,7 +4,6 @@ import static de.itagile.golf.util.SystemProperties.LINE_SEPARATOR;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -30,7 +29,7 @@ public class HilfeTest {
 	@Test
 	public void gibtProKommandoEineZeileAus() throws Exception {
 		String hilfetextFuerZweiBefehle = hilfetext(mock(Befehl.class), mock(Befehl.class));
-		assertThat(anzahlZeilen(hilfetextFuerZweiBefehle), is(greaterThanOrEqualTo(2)));
+		assertThat(anzahlZeilen(hilfetextFuerZweiBefehle), is(2));
 	}
 
 	private int anzahlZeilen(String string) {
@@ -38,7 +37,6 @@ public class HilfeTest {
 		return zeilen.length;
 	}
 
-	
 	private String hilfetext(Befehl... befehle) {
 		BefehleSammler sammler = mock(BefehleSammler.class);
 		
