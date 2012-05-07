@@ -23,12 +23,6 @@ public class SchlagzahlausgabeTest {
 	}
 	
 	@Test
-	public void meldetMehrereSchlaege() throws Exception {
-		when(scorecard.anzahlSchlaege()).thenReturn(2);
-		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("2 Schläge"));
-	}
-		
-	@Test
 	public void integriertAusgabeDerFolgeoperation() throws Exception {
 		when(folgeoperation.fuehreAus(scorecard)).thenReturn("folgeausgabe");
 		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("folgeausgabe"));

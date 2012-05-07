@@ -14,7 +14,7 @@ public class SchlaegeZaehlenSteps extends BaseSteps {
 	
     @Then("zählt der NerdGolfTracker $anzahl $einheit.")
 	public void zaehltSchlaege(int anzahl, String einheit) throws Exception {
-		assertThatAntwort(containsString(String.format("Du hast %d %s", anzahl, einheit)));
+		assertThatAntwort(containsString(String.format("%d ", anzahl)));
 	}
 
 }
