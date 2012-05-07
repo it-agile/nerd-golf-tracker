@@ -16,4 +16,6 @@ Die ausführbare Spezifikation verlässt sich darauf, dass der NerdGolfTracker s
 
 Bei der Ausgabe der aktuellen Schläge wird "Schlag" nur im Singular ausgegeben.
 
+Beim Lochwechsel wird die Zahl der Schläge nicht zurückgesetzt.
+
 Bei der Hilfe-Ausgabe ist die Einleitung nicht durch einen Zeilenumbruch abgetrennt.

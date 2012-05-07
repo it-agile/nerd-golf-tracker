@@ -10,7 +10,6 @@ public class EinfacheScorecard implements Scorecard {
 	}
 
 	public void schliesseLochAb() {
-		anzahlSchlaege = 0;
 		aktuellesLoch++;
 	}
 
