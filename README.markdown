@@ -9,6 +9,20 @@ Einrücktiefe
 * `build.gradle`: 4 Leerzeichen
 
 
+# Inkompatibilitäten
+
+Gradle 1.0-m7 scheint mit Java 7 nicht funktionieren.
+
+Gradle spätestens ab 1.0-m9 funktioniert mit unserem JBehave-Setup nicht: Steps mit Umlauten matchen nicht. JBehave 2.5 liest die Text-Dateien mit dem Encoding, das in der System-Property "file.encoding" hinterlegt ist. Gradle startet den Test-Task aber nicht mehr mit dem richtigen Encoding. Das hier wird schlichtweg ignoriert:
+
+    test {
+        systemProperty 'file.encoding', 'UTF-8'
+    }
+
+Vermutlich steht dies im Zusammenhang mit <http://issues.gradle.org/browse/GRADLE-1618>.
+
+
+
 # Fallstricke
 
 Die ausführbare Spezifikation verlässt sich darauf, dass der NerdGolfTracker seine Ausgabe auf einmal tätigt, technisch gesprochen: dass der Output-Stream nur einmal geflusht wird. Würde mehrmals geflusht werden, wäre das Lesen der Ausgabe im `TrackerDriver` unzuverlässig.
