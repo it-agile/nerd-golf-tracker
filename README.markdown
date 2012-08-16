@@ -11,16 +11,12 @@ Einrücktiefe
 
 # Inkompatibilitäten
 
-Gradle 1.0-m7 scheint mit Java 7 nicht funktionieren.
+Derzeit keine bekannt.
 
-Gradle spätestens ab 1.0-m9 funktioniert mit unserem JBehave-Setup nicht: Steps mit Umlauten matchen nicht. JBehave 2.5 liest die Text-Dateien mit dem Encoding, das in der System-Property "file.encoding" hinterlegt ist. Gradle startet den Test-Task aber nicht mehr mit dem richtigen Encoding. Das hier wird schlichtweg ignoriert:
+Als funktionierend bekannte Setups:
 
-    test {
-        systemProperty 'file.encoding', 'UTF-8'
-    }
-
-Vermutlich steht dies im Zusammenhang mit <http://issues.gradle.org/browse/GRADLE-1618>.
-
+* Java 6 & 7
+* Gradle 1.0
 
 
 # Fallstricke
