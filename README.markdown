@@ -16,7 +16,7 @@ Derzeit keine bekannt.
 Als funktionierend bekannte Setups:
 
 * Java 6 & 7
-* Gradle 1.0
+* Gradle 1.0, 1.1
 
 
 # Fallstricke
