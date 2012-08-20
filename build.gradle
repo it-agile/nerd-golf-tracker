@@ -29,10 +29,8 @@ dependencies {
 
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-jar {
-    manifest {
-        attributes('Main-Class': 'de.itagile.golf.Main')
-    }
+jar.manifest {
+    attributes('Main-Class': 'de.itagile.golf.Main')
 }
 
 tasks.eclipse.dependsOn(cleanEclipse)
