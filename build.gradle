@@ -38,15 +38,7 @@ dependencies {
 jar {
     manifest {
         attributes('Main-Class': 'de.itagile.golf.Main')
-        attributes('Class-Path': configurations.compile.collect{ it.name }.join(' '))
     }
 }
-
-task copyToLib(type: Copy) {
-    from configurations.runtime
-    into libsDir
-}
-
-jar.dependsOn copyToLib
 
 tasks.eclipse.dependsOn(cleanEclipse)
