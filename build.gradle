@@ -6,20 +6,14 @@ defaultTasks 'clean', 'build'
 
 project.sourceCompatibility = '1.6'
 
-sourceSets {
-    main {
-        java {
-            srcDir 'src'
-        }
+sourceSets.main.java { srcDir 'src' }
+sourceSets.test {
+    java {
+        srcDir 'unittests'
+        srcDir 'specification'
     }
-    test {
-        java {
-            srcDir 'unittests'
-            srcDir 'specification'
-        }
-        resources {
-            srcDir 'specification'
-        }
+    resources {
+        srcDir 'specification'
     }
 }
 
