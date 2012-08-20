@@ -4,7 +4,7 @@ apply plugin: 'idea'
 
 defaultTasks 'clean', 'build'
 
-project.sourceCompatibility = '1.6'
+sourceCompatibility = '1.6'
 
 sourceSets.main.java { srcDir 'src' }
 sourceSets.test {
