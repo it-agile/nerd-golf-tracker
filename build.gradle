@@ -4,6 +4,8 @@ apply plugin: 'idea'
 
 defaultTasks 'clean', 'build'
 
+project.sourceCompatibility = '1.6'
+
 sourceSets {
     main {
         java {
@@ -48,7 +50,3 @@ task copyToLib(type: Copy) {
 jar.dependsOn copyToLib
 
 tasks.eclipse.dependsOn(cleanEclipse)
-eclipse.jdt {
-    sourceCompatibility = 1.6
-    targetCompatibility = 1.5
-}
