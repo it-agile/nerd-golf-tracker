@@ -5,6 +5,9 @@ apply plugin: 'idea'
 defaultTasks 'clean', 'build'
 
 sourceCompatibility = '1.6'
+tasks.withType(Compile) { 
+    options.compilerArgs << "-Xlint:-options" 
+}
 
 sourceSets.main.java { srcDir 'src' }
 sourceSets.test {
