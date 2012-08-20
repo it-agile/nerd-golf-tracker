@@ -33,4 +33,3 @@ jar.manifest {
     attributes('Main-Class': 'de.itagile.golf.Main')
 }
 
-tasks.eclipse.dependsOn(cleanEclipse)
