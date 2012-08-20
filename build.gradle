@@ -4,11 +4,6 @@ apply plugin: 'idea'
 
 defaultTasks 'clean', 'build'
 
-sourceCompatibility = '1.6'
-tasks.withType(Compile) { 
-    options.compilerArgs << "-Xlint:-options" 
-}
-
 sourceSets.main.java { srcDir 'src' }
 sourceSets.test {
     java {
@@ -19,18 +14,21 @@ sourceSets.test {
         srcDir 'specification'
     }
 }
+sourceCompatibility = '1.6'
+tasks.withType(Compile) { 
+    options.compilerArgs << "-Xlint:-options" 
+}
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 repositories {
     mavenCentral()
 }
-
 dependencies {
     testCompile 'org.jbehave:jbehave-core:2.5.9'
     testCompile 'junit:junit:4.8.1'
     testCompile 'org.mockito:mockito-core:1.8.5'
 }
 
-[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 jar.manifest {
     attributes('Main-Class': 'de.itagile.golf.Main')
