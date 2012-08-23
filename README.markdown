@@ -30,3 +30,17 @@ Die ausführbare Spezifikation verlässt sich darauf, dass der NerdGolfTracker s
 * Beim Lochwechsel wird die Zahl der Schläge nicht zurückgesetzt.
 * Bei der Ausgabe des aktuellen Lochs fehlt ein Leerzeichen zwischen Zahl and "Loch".
 * Bei der Hilfe-Ausgabe ist die Einleitung nicht durch einen Zeilenumbruch abgetrennt.
+
+
+# Definition of done
+
+Der Build sollte auf Kombinationen folgender Parameter funktionieren:
+
+* OS X/Windows/Ubuntu
+* Java 6/7
+* `gradle --daemon`/`gradle --no-daemon`
+    
+Eine praktikable einfachere Lösung scheint:
+
+* OS X Java 6, OS X Java 7, Windows Java 7
+* daemon/no-daemon
