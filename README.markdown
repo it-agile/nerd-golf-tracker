@@ -11,7 +11,7 @@ Einrücktiefe
 
 # Inkompatibilitäten
 
-Derzeit keine bekannt.
+Gradle 1.0-m7 schaltet auf stumm, wenn der Daemon standardmäßig aktiviert ist (er ist). Allerdings mit `--no-daemon` geht es auch dort.
 
 Als funktionierend bekannte Setups:
 
