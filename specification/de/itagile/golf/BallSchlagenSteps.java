@@ -12,10 +12,10 @@ public class BallSchlagenSteps extends BaseSteps {
 		super(driver);
 	}
 
-	@When("ich den Ball einmal schlage,")
+	@When("ich den Ball einmal schlage")
     @Aliases(values = {
-    		"ich den Ball noch einmal schlage,",  
-    		"ich nun den Ball schlage,"
+    		"ich den Ball noch einmal schlage",
+    		"ich nun den Ball schlage"
     })
     public void schlageBall() {
         empfangeAnweisung("Schlage Ball");

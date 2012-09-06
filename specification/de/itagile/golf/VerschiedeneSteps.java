@@ -8,7 +8,7 @@ public class VerschiedeneSteps extends BaseSteps {
 		super(driver);
 	}
 
-	@When("ich den NerdGolfTracker starte,")
+	@When("ich den NerdGolfTracker starte")
 	public void starteNerdGolfTracker() {
 	}
 }

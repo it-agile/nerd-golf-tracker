@@ -11,7 +11,7 @@ public class AktuellesLochSteps extends BaseSteps {
 		super(driver);
 	}
 
-	@Then("bin ich auf dem $lochNo. Loch.")
+	@Then("bin ich auf dem $lochNo. Loch")
 	public void pruefeAktuellesLoch(int loch) {
 		pruefeLochAnzeige(loch);
 		empfangeAnweisung("Schlage Ball");

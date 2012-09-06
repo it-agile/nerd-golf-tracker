@@ -15,7 +15,7 @@ public class HilfeAnzeigenSteps extends BaseSteps {
 		super(driver);
 	}
 	
-	@When("ich die Hilfe aufrufe,")
+	@When("ich die Hilfe aufrufe")
 	public void rufeHilfeAuf() {
 		empfangeAnweisung("Hilfe");
 	}
@@ -25,8 +25,8 @@ public class HilfeAnzeigenSteps extends BaseSteps {
 		assertThatAntwort(containsString("Ich reagiere auf:"));
 	}
 	
-	@Then("listet der NerdGolfTracker einen Eintrag zu \"$kommando\" inkl. entsprechender Beschreibung.")
-	@Alias("listet einen Eintrag zu \"$kommando\" inkl. entsprechender Beschreibung.")
+	@Then("listet der NerdGolfTracker einen Eintrag zu \"$kommando\" inkl. entsprechender Beschreibung")
+	@Alias("listet einen Eintrag zu \"$kommando\" inkl. entsprechender Beschreibung")
 	public void zeigtBenutzungVonSchlageBallAn(String kommando) {
 		assertThatAntwort(containsString(kommando));
 		assertThatAntwort(containsString("..."));

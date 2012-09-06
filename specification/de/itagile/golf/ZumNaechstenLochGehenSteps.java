@@ -10,7 +10,7 @@ public class ZumNaechstenLochGehenSteps extends BaseSteps {
 		super(driver);
 	}
 
-	@When("ich zum nächsten Loch gehe,")
+	@When("ich zum nächsten Loch gehe")
 	public void geheZumNaechstenLoch() {
 		empfangeAnweisung("Nächstes Loch");
 	}

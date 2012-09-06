@@ -12,7 +12,7 @@ public class SchlagzahlZuruecksetzenSteps extends BaseSteps {
 		super(driver);
 	}
 
-	@Then("setzt der NerdGolfTracker die Schlagzahl zurück.")
+	@Then("setzt der NerdGolfTracker die Schlagzahl zurück")
 	public void setztSchlagzahlZurueck() {
 		assertThatAntwort(containsString("Deine Schlagzahl wurde zurückgesetzt"));
 	}
