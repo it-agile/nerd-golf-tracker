@@ -6,9 +6,8 @@ public class LochHochzaehlen extends BaseScenario {
 
 	public LochHochzaehlen() {
 		TrackerDriver driver = new TrackerDriver();
-		addSteps(new AktuellesLochAnzeigenSteps(driver),
-				 new BallSchlagenSteps(driver),
-				 new ZumNaechstenLochGehenSteps(driver)
-		);
+		addSteps(new AktuellesLochSteps(driver),
+				new VerschiedeneSteps(driver),
+				new ZumNaechstenLochGehenSteps(driver));
 	}
 }

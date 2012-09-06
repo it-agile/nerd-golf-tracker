@@ -2,18 +2,13 @@ package de.itagile.golf;
 
 import de.itagile.golf.jbehave.BaseSteps;
 import org.jbehave.scenario.annotations.Then;
-import org.jbehave.scenario.annotations.When;
 
 import static org.hamcrest.Matchers.containsString;
 
-public class AktuellesLochAnzeigenSteps extends BaseSteps {
+public class AktuellesLochSteps extends BaseSteps {
 
-	public AktuellesLochAnzeigenSteps(TrackerDriver driver) {
+	public AktuellesLochSteps(TrackerDriver driver) {
 		super(driver);
-	}
-
-	@When("ich den NerdGolfTracker starte,")
-	public void starteNerdGolfTracker() {
 	}
 
 	@Then("bin ich auf dem $lochNo. Loch.")
