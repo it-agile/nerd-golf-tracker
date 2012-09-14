@@ -21,6 +21,7 @@ tasks.withType(Compile) {
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 repositories {
+    maven { url "http://localhost:8081/nexus/content/groups/public/" }
     mavenCentral()
 }
 dependencies {
