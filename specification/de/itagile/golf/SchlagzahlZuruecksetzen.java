@@ -1,8 +1,7 @@
 package de.itagile.golf;
 
-import org.junit.Ignore;
-
 import de.itagile.golf.jbehave.BaseScenario;
+import org.junit.Ignore;
 
 @Ignore("in Arbeit")
 public class SchlagzahlZuruecksetzen extends BaseScenario {
@@ -10,10 +9,7 @@ public class SchlagzahlZuruecksetzen extends BaseScenario {
 	public SchlagzahlZuruecksetzen() {
 		TrackerDriver driver = new TrackerDriver();
 		addSteps(new StarteNerdGolfTrackerSteps(driver),
-                 new BallSchlagenSteps(driver),
-				 new SchlaegeZaehlenSteps(driver),
-				 new SchlagzahlZuruecksetzenSteps(driver),
-				 new ZumNaechstenLochGehenSteps(driver)
+				 new SchlagzahlZuruecksetzenSteps(driver)
 		);
 	}
 }
