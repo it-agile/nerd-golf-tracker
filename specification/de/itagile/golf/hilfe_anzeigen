@@ -1,3 +1,8 @@
-Wenn ich die Hilfe aufrufe,
-Dann zeigt der NerdGolfTracker seine Benutzung an
-Und listet einen Eintrag zu "Hilfe" inkl. entsprechender Beschreibung.
+Wenn ich die Hilfe aufrufe
+Dann listet der NerdGolfTracker einen Eintrag zu <Kommando> auf
+
+Beispiele:
+|Kommando|
+|Schlage Ball|
+|Nächstes Loch|
+|Hilfe|
