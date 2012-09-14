@@ -2,6 +2,7 @@ package de.itagile.golf;
 
 import de.itagile.golf.jbehave.BaseSteps;
 import org.jbehave.scenario.annotations.Then;
+import org.jbehave.scenario.annotations.When;
 
 import static org.hamcrest.Matchers.containsString;
 
@@ -11,7 +12,12 @@ public class AktuellesLochSteps extends BaseSteps {
 		super(driver);
 	}
 
-	@Then("bin ich auf dem $lochNo. Loch")
+    @When("ich zum nächsten Loch gehe")
+    public void geheZumNaechstenLoch() {
+        empfangeAnweisung("Nächstes Loch");
+    }
+
+    @Then("bin ich auf dem $lochNo. Loch")
 	public void pruefeAktuellesLoch(int loch) {
 		pruefeLochAnzeige(loch);
 		empfangeAnweisung("Schlage Ball");
