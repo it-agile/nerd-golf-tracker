@@ -1,8 +1,7 @@
-Wenn ich den Ball einmal schlage
-Dann zählt der NerdGolfTracker 1 Schlag
+Wenn ich den Ball <x>-mal schlage
+Dann zählt der NerdGolfTracker auch so viele Schläge
 
-Wenn ich den Ball noch einmal schlage
-Dann zählt der NerdGolfTracker 2 Schläge
-
-Wenn ich den Ball noch einmal schlage
-Dann zählt der NerdGolfTracker 3 Schläge
+Beispiele:
+|x|
+|1|
+|2|
