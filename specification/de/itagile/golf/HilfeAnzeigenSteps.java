@@ -19,7 +19,7 @@ public class HilfeAnzeigenSteps extends BaseSteps {
 	}
 
 	@Then("listet der NerdGolfTracker einen Eintrag zu <Kommando> auf")
-	public void foo(@Named("Kommando") String kommando) {
+	public void pruefeHilfeEintrag(@Named("Kommando") String kommando) {
 		assertThatAntwort(containsString(kommando));
 	}
 	
