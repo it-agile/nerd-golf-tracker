@@ -1,11 +1,10 @@
 package de.itagile.golf.jbehave;
 
-import static org.junit.Assert.assertThat;
-
+import de.itagile.golf.TrackerDriver;
 import org.hamcrest.Matcher;
 import org.jbehave.scenario.steps.Steps;
 
-import de.itagile.golf.TrackerDriver;
+import static org.junit.Assert.assertThat;
 
 public abstract class BaseSteps extends Steps {
 
@@ -13,7 +12,6 @@ public abstract class BaseSteps extends Steps {
 
 	public BaseSteps(TrackerDriver driver) {
 		super(ScenarioConfiguration.KEYWORDS);
-		
 		this.driver = driver;
 	}
 	
@@ -24,4 +22,8 @@ public abstract class BaseSteps extends Steps {
 	public void assertThatAntwort(Matcher<String> matcher) {
 		assertThat(driver.letzteAntwort(), matcher);
 	}
+
+    public TrackerDriver getDriver() {
+        return driver;
+    }
 }

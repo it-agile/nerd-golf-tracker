@@ -1,12 +1,8 @@
 package de.itagile.golf;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-
 import de.itagile.golf.util.SystemProperties;
+
+import java.io.*;
 
 public class TrackerDriver {
 
@@ -15,15 +11,15 @@ public class TrackerDriver {
 	private PrintWriter writer;
 	private String letzteAntwort;
 	
-	public TrackerDriver() {
-		process = startNerdGolfTracker();
-		reader = readerFor(process);
-		writer = writerFor(process);
-		shutDownWhenSystemExits(process);
-		speichereAntwort();
-	}
+    public void starte() {
+        process = starteProzess();
+        reader = readerFor(process);
+        writer = writerFor(process);
+        shutDownWhenSystemExits(process);
+        speichereAntwort();
+    }
 
-	private PrintWriter writerFor(Process process) {
+    private PrintWriter writerFor(Process process) {
 		return new PrintWriter(new OutputStreamWriter(process.getOutputStream()), true);
 	}
 
@@ -31,7 +27,7 @@ public class TrackerDriver {
 		return new BufferedReader(new InputStreamReader(process.getInputStream()));
 	}
 
-	private Process startNerdGolfTracker() {
+	private Process starteProzess() {
 		try {
 			String command = String.format(
 					"java -Dfile.encoding=%s -jar %s", 

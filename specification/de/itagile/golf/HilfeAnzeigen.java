@@ -5,6 +5,8 @@ import de.itagile.golf.jbehave.BaseScenario;
 public class HilfeAnzeigen extends BaseScenario {
 	
 	public HilfeAnzeigen() {
-		addSteps(new HilfeAnzeigenSteps(new TrackerDriver()));
+        TrackerDriver driver = new TrackerDriver();
+        addSteps(new StarteNerdGolfTrackerSteps(driver),
+                new HilfeAnzeigenSteps(driver));
 	}
 }
