@@ -23,8 +23,6 @@ Als funktionierend bekannte Setups:
 
 Die ausführbare Spezifikation verlässt sich darauf, dass der NerdGolfTracker seine Ausgabe auf einmal tätigt, technisch gesprochen: dass der Output-Stream nur einmal geflusht wird. Würde mehrmals geflusht werden, wäre das Lesen der Ausgabe im `TrackerDriver` unzuverlässig.
 
-Das Projekt-Verzeichnis muss `nerd-golf-tracker` heißen. Gradle verwendet den Verzeichnis-Namen standardmaßig für das Jar. Unsere Akzeptanztests verlassen sich im Moment darauf, dass das Jar auch so heißt.
-
 
 # Absichtliche Fehler
 
