@@ -34,3 +34,7 @@ archivesBaseName = "nerd-golf-tracker"
 jar.manifest {
     attributes('Main-Class': 'de.itagile.golf.Main')
 }
+
+test {
+    testLogging.showStandardStreams = true
+}
