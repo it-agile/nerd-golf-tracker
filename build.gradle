@@ -36,5 +36,6 @@ jar.manifest {
 }
 
 test {
+    dependsOn 'jar'
     testLogging.showStandardStreams = true
 }
