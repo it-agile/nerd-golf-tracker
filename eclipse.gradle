@@ -1,0 +1,20 @@
+apply plugin: 'eclipse'
+
+eclipse.project.file.withXml { ignoreSvn it.asNode() }
+def ignoreSvn (projectRoot) {
+    def xml = """
+<filteredResources> 
+    <filter> 
+        <id>${new Random().nextInt()}</id> 
+        <name></name> 
+        <type>26</type> 
+        <matcher> 
+            <id>org.eclipse.ui.ide.multiFilter</id> 
+            <arguments>1.0-name-matches-false-false-.svn</arguments> 
+        </matcher> 
+    </filter> 
+</filteredResources> 
+"""
+    projectRoot.append new XmlParser().parseText(xml)
+}
+
