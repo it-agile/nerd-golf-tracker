@@ -1,41 +1,40 @@
 apply plugin: 'eclipse'
 
-eclipse.project.file.withXml { addFilteredResources it }
-eclipse.project.file.withXml { ignoreSvn it }
-eclipse.project.file.withXml { ignoreGradleOutputDir it }
+eclipse.project.file.withXml { 
+    addFilteredResources it 
+    ignoreSvn it
+    ignoreGradleOutputDir it
+}
 
 def addFilteredResources (projectRoot) {
     projectRoot.asNode().append new XmlParser().parseText('<filteredResources/>')
 }
 
-def ignoreSvn (projectRoot) {
-    def xml = """
-    <filter> 
-        <id>${new Random().nextInt()}</id> 
-        <name></name> 
-        <type>26</type> 
-        <matcher> 
-            <id>org.eclipse.ui.ide.multiFilter</id> 
-            <arguments>1.0-name-matches-false-false-.svn</arguments> 
-        </matcher> 
-    </filter> 
-"""
+def addFilter (projectRoot, xml) {
     def filters = projectRoot.node.filteredResources.head()
     filters.append new XmlParser().parseText(xml)
 }
 
-def ignoreGradleOutputDir (projectRoot) {
-    def xml = """
+def createFilter (filter, matchFor) {
+    """
     <filter> 
         <id>${new Random().nextInt()}</id> 
-        <name></name>
-        <type>10</type>
-        <matcher>
-            <id>org.eclipse.ui.ide.multiFilter</id>
-            <arguments>1.0-projectRelativePath-matches-false-false-${buildDir.name}</arguments>
-        </matcher>
-    </filter>
+        <name></name> 
+        <type>${filter.type}</type> 
+        <matcher> 
+            <id>org.eclipse.ui.ide.multiFilter</id> 
+            <arguments>1.0-${filter.matcher}-matches-false-false-${matchFor}</arguments> 
+        </matcher> 
+    </filter> 
 """
-    def filters = projectRoot.node.filteredResources.head()
-    filters.append new XmlParser().parseText(xml)
+}
+
+def ignoreSvn (projectRoot) {
+    addFilter(projectRoot, 
+        createFilter(type: 26, matcher: 'name', '.svn'))
+}
+
+def ignoreGradleOutputDir (projectRoot) {
+    addFilter(projectRoot, 
+        createFilter(type: 10, matcher: 'projectRelativePath', buildDir.name))
 }
