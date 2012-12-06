@@ -1,9 +1,15 @@
 apply plugin: 'eclipse'
 
-eclipse.project.file.withXml { ignoreSvn it.asNode() }
+eclipse.project.file.withXml { addFilteredResources it }
+eclipse.project.file.withXml { ignoreSvn it }
+eclipse.project.file.withXml { ignoreGradleOutputDir it }
+
+def addFilteredResources (projectRoot) {
+    projectRoot.asNode().append new XmlParser().parseText('<filteredResources/>')
+}
+
 def ignoreSvn (projectRoot) {
     def xml = """
-<filteredResources> 
     <filter> 
         <id>${new Random().nextInt()}</id> 
         <name></name> 
@@ -13,8 +19,23 @@ def ignoreSvn (projectRoot) {
             <arguments>1.0-name-matches-false-false-.svn</arguments> 
         </matcher> 
     </filter> 
-</filteredResources> 
 """
-    projectRoot.append new XmlParser().parseText(xml)
+    def filters = projectRoot.node.filteredResources.head()
+    filters.append new XmlParser().parseText(xml)
 }
 
+def ignoreGradleOutputDir (projectRoot) {
+    def xml = """
+    <filter> 
+        <id>${new Random().nextInt()}</id> 
+        <name></name>
+        <type>10</type>
+        <matcher>
+            <id>org.eclipse.ui.ide.multiFilter</id>
+            <arguments>1.0-projectRelativePath-matches-false-false-${buildDir.name}</arguments>
+        </matcher>
+    </filter>
+"""
+    def filters = projectRoot.node.filteredResources.head()
+    filters.append new XmlParser().parseText(xml)
+}
