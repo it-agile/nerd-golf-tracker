@@ -1,3 +1,5 @@
+import groovy.xml.MarkupBuilder
+
 apply plugin: 'eclipse'
 
 eclipse.project.file.withXml { 
@@ -16,17 +18,18 @@ def addFilter (projectRoot, xml) {
 }
 
 def createFilter (filter, matchFor) {
-    """
-    <filter> 
-        <id>${new Random().nextInt()}</id> 
-        <name></name> 
-        <type>${filter.type}</type> 
-        <matcher> 
-            <id>org.eclipse.ui.ide.multiFilter</id> 
-            <arguments>1.0-${filter.matcher}-matches-false-false-${matchFor}</arguments> 
-        </matcher> 
-    </filter> 
-"""
+    def writer = new StringWriter()
+    def xml = new MarkupBuilder(writer)
+    xml.filter() {
+        id(new Random().nextInt())
+        name()
+        type(filter.type)
+        matcher {
+            id('org.eclipse.ui.ide.multiFilter')
+            arguments("1.0-${filter.matcher}-matches-false-false-${matchFor}")
+        }
+    }
+    writer.toString()
 }
 
 def ignoreSvn (projectRoot) {
