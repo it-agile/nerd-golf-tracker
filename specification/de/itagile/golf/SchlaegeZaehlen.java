@@ -7,7 +7,7 @@ public class SchlaegeZaehlen extends BaseScenario {
 	
 	public SchlaegeZaehlen() {
 		TrackerDriver driver = new TrackerDriver();
-		addSteps(new StarteNerdGolfTrackerSteps(driver),
+		addSteps(new NerdGolfTrackerSteps(driver),
 				 new SchlaegeZaehlenSteps(driver));
 	}
 }

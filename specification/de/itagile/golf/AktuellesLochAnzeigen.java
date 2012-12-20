@@ -6,7 +6,7 @@ public class AktuellesLochAnzeigen extends BaseScenario {
 
 	public AktuellesLochAnzeigen() {
 		TrackerDriver driver = new TrackerDriver();
-		addSteps(new StarteNerdGolfTrackerSteps(driver),
+		addSteps(new NerdGolfTrackerSteps(driver),
                 new AktuellesLochSteps(driver));
 	}
 }

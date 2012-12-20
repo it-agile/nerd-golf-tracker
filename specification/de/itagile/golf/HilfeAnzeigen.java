@@ -6,7 +6,7 @@ public class HilfeAnzeigen extends BaseScenario {
 	
 	public HilfeAnzeigen() {
         TrackerDriver driver = new TrackerDriver();
-        addSteps(new StarteNerdGolfTrackerSteps(driver),
+        addSteps(new NerdGolfTrackerSteps(driver),
                 new HilfeAnzeigenSteps(driver));
 	}
 }

@@ -15,8 +15,11 @@ public class TrackerDriver {
         process = starteProzess();
         reader = readerFor(process);
         writer = writerFor(process);
-        shutDownWhenSystemExits(process);
         speichereAntwort();
+    }
+
+    public void beende() {
+        process.destroy();
     }
 
     private PrintWriter writerFor(Process process) {
@@ -38,16 +41,6 @@ public class TrackerDriver {
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-	}
-
-	private void shutDownWhenSystemExits(final Process process) {
-		Runtime.getRuntime().addShutdownHook(new Thread(){
-			@Override
-			public void run() {
-				process.destroy();
-				super.run();
-			}
-		});
 	}
 
 	public void empfangeAnweisung(String anweisung) {
