@@ -44,3 +44,5 @@ Eine praktikable einfachere Lösung scheint:
 
 * OS X Java 6, OS X Java 7, Windows Java 7
 * daemon/no-daemon
+
+when upgrading Gradle check: jar, eclipse, idea
