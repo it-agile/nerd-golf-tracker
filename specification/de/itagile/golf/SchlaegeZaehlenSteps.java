@@ -1,31 +1,33 @@
 package de.itagile.golf;
 
-import de.itagile.golf.jbehave.BaseSteps;
+import static org.hamcrest.Matchers.containsString;
+
 import org.jbehave.scenario.annotations.Named;
 import org.jbehave.scenario.annotations.Then;
 import org.jbehave.scenario.annotations.When;
 
-import static org.hamcrest.Matchers.containsString;
+import de.itagile.golf.jbehave.BaseSteps;
 
 public class SchlaegeZaehlenSteps extends BaseSteps {
 
+	private TrackerDriver tracker;
     private int schlaege;
 
     public SchlaegeZaehlenSteps(TrackerDriver tracker) {
-        super(tracker);
+		this.tracker = tracker;
     }
 
     @When("ich den Ball <x>-mal schlage")
     public void schlageBall(@Named("x") int schlaege) {
         this.schlaege = schlaege;
         while (schlaege-- > 0) {
-            gibEin("Schlage Ball");
+            tracker.gibEin("Schlage Ball");
         }
     }
 
     @Then("zählt der NerdGolfTracker auch so viele Schläge")
     public void pruefeSchlaege() {
-        assertThatAntwort(containsString(String.valueOf(schlaege)));
+        tracker.assertThatAntwort(containsString(String.valueOf(schlaege)));
     }
 
 }

@@ -1,26 +1,29 @@
 package de.itagile.golf;
 
-import de.itagile.golf.jbehave.BaseSteps;
+import static org.hamcrest.Matchers.containsString;
+
 import org.jbehave.scenario.annotations.Named;
 import org.jbehave.scenario.annotations.Then;
 import org.jbehave.scenario.annotations.When;
 
-import static org.hamcrest.Matchers.containsString;
+import de.itagile.golf.jbehave.BaseSteps;
 
 public class HilfeAnzeigenSteps extends BaseSteps {
 
+	private TrackerDriver tracker;
+
 	public HilfeAnzeigenSteps(TrackerDriver tracker) {
-		super(tracker);
+		this.tracker = tracker;
 	}
 	
 	@When("ich die Hilfe aufrufe")
 	public void rufeHilfeAuf() {
-		gibEin("Hilfe");
+		tracker.gibEin("Hilfe");
 	}
 
 	@Then("listet der NerdGolfTracker einen Eintrag zu <Kommando> auf")
 	public void pruefeHilfeEintrag(@Named("Kommando") String kommando) {
-		assertThatAntwort(containsString(kommando));
+		tracker.assertThatAntwort(containsString(kommando));
 	}
 	
 }

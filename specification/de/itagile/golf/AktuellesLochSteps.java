@@ -1,30 +1,33 @@
 package de.itagile.golf;
 
-import de.itagile.golf.jbehave.BaseSteps;
+import static org.hamcrest.Matchers.containsString;
+
 import org.jbehave.scenario.annotations.Then;
 import org.jbehave.scenario.annotations.When;
 
-import static org.hamcrest.Matchers.containsString;
+import de.itagile.golf.jbehave.BaseSteps;
 
 public class AktuellesLochSteps extends BaseSteps {
 
+	private TrackerDriver tracker;
+
 	public AktuellesLochSteps(TrackerDriver tracker) {
-		super(tracker);
+		this.tracker = tracker;
 	}
 
     @When("ich zum nächsten Loch gehe")
     public void geheZumNaechstenLoch() {
-        gibEin("Nächstes Loch");
+        tracker.gibEin("Nächstes Loch");
     }
 
     @Then("bin ich auf dem $lochNo. Loch")
 	public void pruefeAktuellesLoch(int loch) {
 		pruefeLochAnzeige(loch);
-		gibEin("Schlage Ball");
+		tracker.gibEin("Schlage Ball");
 		pruefeLochAnzeige(loch);
 	}
 
 	private void pruefeLochAnzeige(int loch) {
-		assertThatAntwort(containsString(String.format("%d.Loch", loch)));
+		tracker.assertThatAntwort(containsString(String.format("%d.Loch", loch)));
 	}
 }

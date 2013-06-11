@@ -9,19 +9,21 @@ import de.itagile.golf.jbehave.BaseSteps;
 
 public class SchlagzahlZuruecksetzenSteps extends BaseSteps {
 
+	private TrackerDriver tracker;
+
 	public SchlagzahlZuruecksetzenSteps(TrackerDriver tracker) {
-		super(tracker);
+		this.tracker = tracker;
 	}
 
     @When("ich auf einem Loch gespielt habe")
     public void spieleAufEinemLochUndGeheWeiter() {
-        gibEin("Schlage Ball");
-        gibEin("Nächstes Loch");
+        tracker.gibEin("Schlage Ball");
+        tracker.gibEin("Nächstes Loch");
     }
 
 	@Then("zählen die Schläge auf dem nächsten Loch wieder von 0 an")
 	public void pruefeSchlaegeZaehlen() {
-        gibEin("Schlage Ball");
-		assertThatAntwort(containsString(String.valueOf(1)));
+        tracker.gibEin("Schlage Ball");
+		tracker.assertThatAntwort(containsString(String.valueOf(1)));
 	}
 }
