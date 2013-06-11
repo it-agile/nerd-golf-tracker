@@ -6,8 +6,8 @@ import de.itagile.golf.jbehave.BaseScenario;
 public class SchlaegeZaehlen extends BaseScenario {
 	
 	public SchlaegeZaehlen() {
-		TrackerDriver driver = new TrackerDriver();
-		addSteps(new NerdGolfTrackerSteps(driver),
-				 new SchlaegeZaehlenSteps(driver));
+		TrackerDriver tracker = new TrackerDriver();
+		addSteps(new NerdGolfTrackerSteps(tracker),
+				 new SchlaegeZaehlenSteps(tracker));
 	}
 }

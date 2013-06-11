@@ -9,13 +9,13 @@ import static org.hamcrest.Matchers.containsString;
 
 public class HilfeAnzeigenSteps extends BaseSteps {
 
-	public HilfeAnzeigenSteps(TrackerDriver driver) {
-		super(driver);
+	public HilfeAnzeigenSteps(TrackerDriver tracker) {
+		super(tracker);
 	}
 	
 	@When("ich die Hilfe aufrufe")
 	public void rufeHilfeAuf() {
-		empfangeAnweisung("Hilfe");
+		gibEin("Hilfe");
 	}
 
 	@Then("listet der NerdGolfTracker einen Eintrag zu <Kommando> auf")

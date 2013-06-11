@@ -8,19 +8,19 @@ import static org.hamcrest.Matchers.containsString;
 
 public class AktuellesLochSteps extends BaseSteps {
 
-	public AktuellesLochSteps(TrackerDriver driver) {
-		super(driver);
+	public AktuellesLochSteps(TrackerDriver tracker) {
+		super(tracker);
 	}
 
     @When("ich zum nächsten Loch gehe")
     public void geheZumNaechstenLoch() {
-        empfangeAnweisung("Nächstes Loch");
+        gibEin("Nächstes Loch");
     }
 
     @Then("bin ich auf dem $lochNo. Loch")
 	public void pruefeAktuellesLoch(int loch) {
 		pruefeLochAnzeige(loch);
-		empfangeAnweisung("Schlage Ball");
+		gibEin("Schlage Ball");
 		pruefeLochAnzeige(loch);
 	}
 

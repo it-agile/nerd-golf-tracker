@@ -8,22 +8,22 @@ import static org.junit.Assert.assertThat;
 
 public abstract class BaseSteps extends Steps {
 
-	private final TrackerDriver driver;
+	private final TrackerDriver tracker;
 
-	public BaseSteps(TrackerDriver driver) {
+	public BaseSteps(TrackerDriver tracker) {
 		super(ScenarioConfiguration.KEYWORDS);
-		this.driver = driver;
+		this.tracker = tracker;
 	}
 	
-	public void empfangeAnweisung(String anweisung) {
-		driver.empfangeAnweisung(anweisung);
+	public void gibEin(String anweisung) {
+		tracker.gibEin(anweisung);
 	}
 
 	public void assertThatAntwort(Matcher<String> matcher) {
-		assertThat(driver.letzteAntwort(), matcher);
+		assertThat(tracker.letzteAntwort(), matcher);
 	}
 
-    public TrackerDriver getDriver() {
-        return driver;
+    public TrackerDriver tracker() {
+        return tracker;
     }
 }

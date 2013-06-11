@@ -11,15 +11,15 @@ public class SchlaegeZaehlenSteps extends BaseSteps {
 
     private int schlaege;
 
-    public SchlaegeZaehlenSteps(TrackerDriver driver) {
-        super(driver);
+    public SchlaegeZaehlenSteps(TrackerDriver tracker) {
+        super(tracker);
     }
 
     @When("ich den Ball <x>-mal schlage")
     public void schlageBall(@Named("x") int schlaege) {
         this.schlaege = schlaege;
         while (schlaege-- > 0) {
-            empfangeAnweisung("Schlage Ball");
+            gibEin("Schlage Ball");
         }
     }
 

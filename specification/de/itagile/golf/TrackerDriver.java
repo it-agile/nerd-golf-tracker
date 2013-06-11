@@ -43,7 +43,7 @@ public class TrackerDriver {
 		}
 	}
 
-	public void empfangeAnweisung(String anweisung) {
+	public void gibEin(String anweisung) {
 		writer.println(anweisung);
 		speichereAntwort();
 	}

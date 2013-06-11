@@ -6,18 +6,18 @@ import org.jbehave.scenario.annotations.BeforeScenario;
 import org.jbehave.scenario.annotations.When;
 
 public class NerdGolfTrackerSteps extends BaseSteps {
-    public NerdGolfTrackerSteps(TrackerDriver driver) {
-        super(driver);
+    public NerdGolfTrackerSteps(TrackerDriver tracker) {
+        super(tracker);
     }
 
     @BeforeScenario
     public void starteNeuesSpiel() {
-        getDriver().starte();
+        tracker().starte();
     }
 
     @AfterScenario
     public void beendeTracker() {
-        getDriver().beende();
+        tracker().beende();
     }
 
     @When("ich den NerdGolfTracker starte")
