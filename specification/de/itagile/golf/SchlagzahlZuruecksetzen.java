@@ -1,7 +1,8 @@
 package de.itagile.golf;
 
-import de.itagile.golf.jbehave.BaseScenario;
 import org.junit.Ignore;
+
+import de.itagile.golf.jbehave.BaseScenario;
 
 @Ignore("in Arbeit")
 public class SchlagzahlZuruecksetzen extends BaseScenario {
