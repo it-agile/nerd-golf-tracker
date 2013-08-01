@@ -9,14 +9,10 @@ Einrücktiefe
 * `build.gradle`: 4 Leerzeichen
 
 
-# Inkompatibilitäten
-
-Gradle 1.0-m7 schaltet auf stumm, wenn der Daemon standardmäßig aktiviert ist (er ist in `gradle.properties`). Allerdings mit `--no-daemon` geht es auch dort.
-
-Als funktionierend bekannte Setups:
+# Requirements
 
 * Java 6 & 7
-* Gradle 1.0, 1.1
+* Gradle 1.6
 
 
 # Fallstricke
