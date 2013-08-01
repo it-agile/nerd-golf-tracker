@@ -12,6 +12,7 @@ eclipse {
         ignoreGradleOutputDir it
     }
 }
+tasks.eclipse.dependsOn(cleanEclipse)
 
 def addFilteredResources (projectRoot) {
     projectRoot.asNode().append new XmlParser().parseText('<filteredResources/>')
