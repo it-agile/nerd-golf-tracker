@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @Cucumber.Options(
 		strict = true, 
-		format = {"pretty", "html:target/cucumber"}, 
+		format = {"pretty"}, 
 		monochrome = true
 )
 public class RunCukesTest {
