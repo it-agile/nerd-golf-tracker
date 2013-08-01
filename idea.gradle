@@ -4,6 +4,13 @@ apply plugin: 'idea'
 
 idea.workspace.iws.withXml { doNotShowVcsRootErrors it }
 idea.project.ipr.withXml { disableSpellChecking it.asNode() }
+idea {
+    module {
+        testSourceDirs += sourceSets.cucumber.java.srcDirs
+        testSourceDirs += sourceSets.cucumber.resources.srcDirs
+        scopes.TEST.plus += configurations.cucumberRuntime
+    }
+}
 
 def doNotShowVcsRootErrors (workspaceXmlProvider) {
     def xml = '<option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />'

@@ -1,8 +1,9 @@
 package foo;
 
+import cucumber.api.java.en.Then;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import cucumber.api.java.en.Then;
 
 public class HelloStepdefs {
     @Then("buh")
