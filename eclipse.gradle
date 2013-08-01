@@ -2,10 +2,15 @@ import groovy.xml.MarkupBuilder
 
 apply plugin: 'eclipse'
 
-eclipse.project.file.withXml { 
-    addFilteredResources it 
-    ignoreSvn it
-    ignoreGradleOutputDir it
+eclipse {
+    classpath {
+        plusConfigurations += configurations.cucumberRuntime
+    }
+    project.file.withXml { 
+        addFilteredResources it 
+        ignoreSvn it
+        ignoreGradleOutputDir it
+    }
 }
 
 def addFilteredResources (projectRoot) {
