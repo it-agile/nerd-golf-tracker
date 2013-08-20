@@ -69,6 +69,7 @@ task cucumber() {
             classpath = configurations.cucumberRuntime + sourceSets.cucumber.output
             args = ['--strict', 
             	'-f', 'html:build/reports/cucumber', 
+            	'--tags', '~@in_arbeit',
             	'--glue', 'de.itagile.golf', 
             	'cucumber/resources']
         }
