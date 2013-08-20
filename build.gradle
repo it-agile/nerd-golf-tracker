@@ -34,8 +34,6 @@ test {
 
 sourceSets {
     cucumber {
-        java.srcDir 'cucumber/java'
-        resources.srcDir 'cucumber/resources'
         compileClasspath += sourceSets.main.output
         runtimeClasspath += sourceSets.main.output
     }
@@ -67,7 +65,7 @@ task cucumber() {
             	'-f', "html:${reporting.baseDir}/cucumber", 
             	'--tags', '~@in_arbeit',
             	'--glue', 'de.itagile.golf', 
-            	'cucumber/resources']
+            	'src/cucumber/resources']
         }
     }
 }
