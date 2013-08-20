@@ -25,13 +25,6 @@ jar.manifest {
     attributes('Main-Class': 'de.itagile.golf.Main')
 }
 
-test {
-    dependsOn 'jar'
-    testLogging.showStandardStreams = true
-}
-
-
-
 sourceSets {
     cucumber {
         compileClasspath += sourceSets.main.output
