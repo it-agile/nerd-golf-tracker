@@ -1,6 +1,5 @@
 apply plugin: 'java'
-
-defaultTasks 'clean', 'build', 'cucumber'
+defaultTasks 'clean', 'build'
 
 
 sourceCompatibility = '1.6'
@@ -64,6 +63,8 @@ task cucumber() {
         }
     }
 }
+cucumber.mustRunAfter test
+check.dependsOn cucumber
 
 
 apply from: 'eclipse.gradle'
