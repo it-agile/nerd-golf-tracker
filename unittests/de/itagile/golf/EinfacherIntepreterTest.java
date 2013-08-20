@@ -1,6 +1,6 @@
 package de.itagile.golf;
 
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.isA;
 import static org.junit.Assert.assertThat;
 
 import java.util.Arrays;
@@ -39,6 +39,6 @@ public class EinfacherIntepreterTest {
 	
 	@Test
 	public void interpretiertBefehle() throws Exception {
-		assertThat(interpreter.interpretiere(befehl), is(operation));
+		assertThat(interpreter.interpretiere(befehl), isA(operation));
 	}
 }
