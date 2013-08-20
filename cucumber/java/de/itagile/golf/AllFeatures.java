@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @Cucumber.Options(
 		strict = true, 
-		format = {"pretty"},
+//		format = {"pretty"},
 		tags = {"~@in_arbeit"},
 		monochrome = true
 )
