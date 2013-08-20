@@ -45,6 +45,8 @@ sourceSets {
     cucumber {
         java.srcDir 'cucumber/java'
         resources.srcDir 'cucumber/resources'
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
     }
 }
 
@@ -52,6 +54,7 @@ dependencies {
     cucumberCompile 'info.cukes:cucumber-java:1.1.4'
     cucumberCompile 'info.cukes:cucumber-junit:1.1.4'
     cucumberCompile 'junit:junit' 
+    cucumberCompile 'org.hamcrest:hamcrest-all:1.3'
 
     cucumberRuntime 'info.cukes:cucumber-picocontainer:1.1.4'
 }
@@ -68,7 +71,7 @@ task cucumber() {
     doLast {
         javaexec {
             main = 'cucumber.api.cli.Main'
-            classpath = configurations.cucumberRuntime + sourceSets.cucumber.output
+            classpath = sourceSets.cucumber.runtimeClasspath
             args = ['--strict', 
             	'-f', "html:${reporting.baseDir}/cucumber", 
             	'--tags', '~@in_arbeit',
@@ -80,3 +83,4 @@ task cucumber() {
 
 apply from: 'eclipse.gradle'
 apply from: 'idea.gradle'
+
