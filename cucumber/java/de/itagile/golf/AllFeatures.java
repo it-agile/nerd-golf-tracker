@@ -1,4 +1,4 @@
-package foo;
+package de.itagile.golf;
 
 import org.junit.runner.RunWith;
 
@@ -11,5 +11,5 @@ import cucumber.api.junit.Cucumber;
 		format = {"pretty"}, 
 		monochrome = true
 )
-public class RunCukesTest {
+public class AllFeatures {
 }
