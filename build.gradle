@@ -2,7 +2,6 @@ apply plugin: 'java'
 
 defaultTasks 'clean', 'build', 'cucumber'
 
-sourceSets.main.java { srcDir 'src' }
 sourceSets.test {
     java {
         srcDir 'unittests'
