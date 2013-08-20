@@ -2,11 +2,7 @@ apply plugin: 'java'
 
 defaultTasks 'clean', 'build', 'cucumber'
 
-sourceSets.test {
-    java {
-        srcDir 'unittests'
-    }
-}
+sourceSets.test.java { srcDir 'src/unittests/java' }
 
 sourceCompatibility = '1.6'
 tasks.withType(Compile) { 
