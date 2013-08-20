@@ -8,12 +8,12 @@ import org.jbehave.scenario.annotations.When;
 
 import de.itagile.golf.jbehave.BaseSteps;
 
-public class SchlaegeZaehlenSteps extends BaseSteps {
+public class SchlaegeZaehlenSteps_ extends BaseSteps {
 
-	private TrackerDriver tracker;
+	private TrackerDriver_ tracker;
     private int schlaege;
 
-    public SchlaegeZaehlenSteps(TrackerDriver tracker) {
+    public SchlaegeZaehlenSteps_(TrackerDriver_ tracker) {
 		this.tracker = tracker;
     }
 

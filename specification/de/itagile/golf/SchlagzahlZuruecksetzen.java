@@ -8,9 +8,9 @@ import de.itagile.golf.jbehave.BaseScenario;
 public class SchlagzahlZuruecksetzen extends BaseScenario {
 
 	public SchlagzahlZuruecksetzen() {
-		TrackerDriver tracker = new TrackerDriver();
-		addSteps(new NerdGolfTrackerSteps(tracker),
-				 new SchlagzahlZuruecksetzenSteps(tracker)
+		TrackerDriver_ tracker = new TrackerDriver_();
+		addSteps(new NerdGolfTrackerSteps_(tracker),
+				 new SchlagzahlZuruecksetzenSteps_(tracker)
 		);
 	}
 }

@@ -6,10 +6,10 @@ import org.jbehave.scenario.annotations.When;
 
 import de.itagile.golf.jbehave.BaseSteps;
 
-public class NerdGolfTrackerSteps extends BaseSteps {
-    private TrackerDriver tracker;
+public class NerdGolfTrackerSteps_ extends BaseSteps {
+    private TrackerDriver_ tracker;
 
-	public NerdGolfTrackerSteps(TrackerDriver tracker) {
+	public NerdGolfTrackerSteps_(TrackerDriver_ tracker) {
 		this.tracker = tracker;
     }
 

@@ -12,7 +12,7 @@ import org.hamcrest.Matcher;
 
 import de.itagile.golf.util.SystemProperties;
 
-public class TrackerDriver {
+public class TrackerDriver_ {
 
 	private Process process;
 	private BufferedReader reader;

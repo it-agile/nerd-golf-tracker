@@ -8,11 +8,11 @@ import org.jbehave.scenario.annotations.When;
 
 import de.itagile.golf.jbehave.BaseSteps;
 
-public class HilfeAnzeigenSteps extends BaseSteps {
+public class HilfeAnzeigenSteps_ extends BaseSteps {
 
-	private TrackerDriver tracker;
+	private TrackerDriver_ tracker;
 
-	public HilfeAnzeigenSteps(TrackerDriver tracker) {
+	public HilfeAnzeigenSteps_(TrackerDriver_ tracker) {
 		this.tracker = tracker;
 	}
 	

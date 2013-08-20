@@ -7,11 +7,11 @@ import org.jbehave.scenario.annotations.When;
 
 import de.itagile.golf.jbehave.BaseSteps;
 
-public class AktuellesLochSteps extends BaseSteps {
+public class AktuellesLochSteps_ extends BaseSteps {
 
-	private TrackerDriver tracker;
+	private TrackerDriver_ tracker;
 
-	public AktuellesLochSteps(TrackerDriver tracker) {
+	public AktuellesLochSteps_(TrackerDriver_ tracker) {
 		this.tracker = tracker;
 	}
 

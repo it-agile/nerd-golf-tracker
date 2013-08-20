@@ -7,11 +7,11 @@ import org.jbehave.scenario.annotations.When;
 
 import de.itagile.golf.jbehave.BaseSteps;
 
-public class SchlagzahlZuruecksetzenSteps extends BaseSteps {
+public class SchlagzahlZuruecksetzenSteps_ extends BaseSteps {
 
-	private TrackerDriver tracker;
+	private TrackerDriver_ tracker;
 
-	public SchlagzahlZuruecksetzenSteps(TrackerDriver tracker) {
+	public SchlagzahlZuruecksetzenSteps_(TrackerDriver_ tracker) {
 		this.tracker = tracker;
 	}
 
