@@ -11,9 +11,6 @@ configurations.all {
             }
         }
 
-        // cucumber-jvm 1.1.4 braucht scheinbar JUnit 4.11
-        forcedModules = ['junit:junit:4.11']
-
         replaceName 'hamcrest-core', with: 'hamcrest-all'
     }
 }
