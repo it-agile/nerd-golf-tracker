@@ -1,0 +1,30 @@
+sourceSets {
+    cucumber {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+dependencies {
+    cucumberCompile 'info.cukes:cucumber-java:1.1.4'
+    cucumberCompile 'info.cukes:cucumber-junit:1.1.4'
+    cucumberCompile 'junit:junit' 
+    cucumberCompile 'org.hamcrest:hamcrest-all:1.3'
+
+    cucumberRuntime 'info.cukes:cucumber-picocontainer:1.1.4'
+}
+task cucumber() {
+    dependsOn compileCucumberJava, jar
+    doLast {
+        javaexec {
+            main = 'cucumber.api.cli.Main'
+            classpath = sourceSets.cucumber.runtimeClasspath
+            args = ['--strict', 
+            	'-f', "html:${reporting.baseDir}/cucumber", 
+            	'--tags', '~@in_arbeit',
+            	'--glue', 'de.itagile.golf', 
+            	'src/cucumber/resources']
+        }
+    }
+}
+cucumber.mustRunAfter test
+check.dependsOn cucumber

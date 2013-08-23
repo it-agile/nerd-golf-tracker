@@ -1,0 +1,19 @@
+
+configurations.all {
+    resolutionStrategy {
+
+        def replaceName = { params, oldName ->
+            def newName = params.with
+            eachDependency { details ->
+                if (details.requested.name == oldName) {
+                    details.useTarget group: details.requested.group, name: newName, version: details.requested.version
+                }
+            }
+        }
+
+        // cucumber-jvm 1.1.4 braucht scheinbar JUnit 4.11
+        forcedModules = ['junit:junit:4.11']
+
+        replaceName 'hamcrest-core', with: 'hamcrest-all'
+    }
+}
