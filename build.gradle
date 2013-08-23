@@ -19,7 +19,7 @@ repositories {
     maven { url "http://localhost:8081/nexus/content/groups/public/" }
     mavenCentral()
 }
-applyFrom 'dependencyResolution'
+applyFrom 'testDependencies'
 
 
 archivesBaseName = "nerd-golf-tracker"
