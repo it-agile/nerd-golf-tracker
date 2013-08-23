@@ -1,9 +1,12 @@
+
 apply plugin: 'java'
 defaultTasks 'clean', 'build'
 
 def applyFrom (basenameWithoutExt) {
     apply from: "gradle/${basenameWithoutExt}.gradle"
 }
+applyFrom 'dslExtensions'
+
 
 sourceCompatibility = '1.6'
 tasks.withType(Compile) { 

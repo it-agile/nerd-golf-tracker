@@ -1,0 +1,14 @@
+
+configurations.all {
+    resolutionStrategy {
+        ext.replaceName = { params, oldName ->
+            def newName = params.with
+            eachDependency { details ->
+                if (details.requested.name == oldName) {
+                    details.useTarget group: details.requested.group, name: newName, version: details.requested.version
+                }
+            }
+        }
+    }
+}
+
