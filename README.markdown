@@ -1,4 +1,4 @@
-Quotes Language: german
+Quotes Language: German
 
 
 # Code-Formatierung
@@ -41,4 +41,8 @@ Eine praktikable einfachere Lösung scheint:
 * OS X Java 6, OS X Java 7, Windows Java 7
 * daemon/no-daemon
 
-when upgrading Gradle check: jar, eclipse, idea
+
+## Checklisten
+
+* Gradle-Update: jar, eclipse, idea
+* Änderungen an Source Sets, Dependencies, Konfigurationen: build, eclipse, idea, uploadArchives
