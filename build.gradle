@@ -23,6 +23,7 @@ archivesBaseName = "nerd-golf-tracker"
 jar.manifest {
     attributes('Main-Class': 'de.itagile.golf.Main')
 }
+applyFrom 'upload'
 
 
 sourceSets.test.java { srcDir 'src/unittests/java' }
