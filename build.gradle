@@ -12,8 +12,8 @@ defaultTasks 'clean', 'build'
 sourceCompatibility = '1.6'
 tasks.withType(Compile) { 
     options.compilerArgs << "-Xlint:-options" 
+    options.encoding = 'UTF-8'
 }
-[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 
 repositories {
