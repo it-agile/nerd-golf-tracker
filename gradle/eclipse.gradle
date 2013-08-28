@@ -11,6 +11,12 @@ eclipse {
         ignoreSvn()
         ignoreGradleOutputDir()
     }
+
+    // Zielsyntax:
+    //project.file.filteredResources {
+        //ignore name: '.svn'
+        //ignore relativeToProject: buildDir.name
+    //}
 }
 tasks.eclipse.dependsOn(cleanEclipse)
 
