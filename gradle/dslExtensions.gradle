@@ -14,15 +14,20 @@ configurations.all {
 
 
 apply plugin: 'eclipse'
-eclipse.project.file {
+eclipse.project.file { file ->
     ext.addFilteredResources = {
-        eclipse.project.file.withXml { root -> 
+        file.withXml { root -> 
             root.asNode().append new XmlParser().parseText('<filteredResources/>')
         }
     }
     ext.ignoreSvn = {
-        eclipse.project.file.withXml { root -> 
+        file.withXml { root -> 
             addFilter(root, createFilter(type: 26, matcher: 'name', '.svn'))
+        }
+    }
+    ext.ignoreGradleOutputDir = {
+        file.withXml { root -> 
+            addFilter(root, createFilter(type: 10, matcher: 'projectRelativePath', buildDir.name))
         }
     }
 }
@@ -48,5 +53,4 @@ def createFilter (filter, matchFor) {
     }
     writer.toString()
 }
-
 
