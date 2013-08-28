@@ -12,3 +12,13 @@ configurations.all {
     }
 }
 
+
+apply plugin: 'eclipse'
+eclipse.project.file {
+    ext.addFilteredResources = {
+        eclipse.project.file.withXml { root -> 
+            root.asNode().append new XmlParser().parseText('<filteredResources/>')
+        }
+    }
+}
+

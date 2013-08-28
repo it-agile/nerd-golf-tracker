@@ -6,17 +6,17 @@ eclipse {
     classpath {
         plusConfigurations += configurations.cucumberRuntime
     }
+    project.file {
+        addFilteredResources()
+    }
     project.file.withXml { 
-        addFilteredResources it 
         ignoreSvn it
         ignoreGradleOutputDir it
     }
 }
 tasks.eclipse.dependsOn(cleanEclipse)
 
-def addFilteredResources (projectRoot) {
-    projectRoot.asNode().append new XmlParser().parseText('<filteredResources/>')
-}
+
 
 def addFilter (projectRoot, xml) {
     def filters = projectRoot.node.filteredResources.head()
