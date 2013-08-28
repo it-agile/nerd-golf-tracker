@@ -8,9 +8,9 @@ eclipse {
     }
     project.file {
         addFilteredResources()
+        ignoreSvn()
     }
     project.file.withXml { 
-        ignoreSvn it
         ignoreGradleOutputDir it
     }
 }
@@ -38,10 +38,6 @@ def createFilter (filter, matchFor) {
     writer.toString()
 }
 
-def ignoreSvn (projectRoot) {
-    addFilter(projectRoot, 
-        createFilter(type: 26, matcher: 'name', '.svn'))
-}
 
 def ignoreGradleOutputDir (projectRoot) {
     addFilter(projectRoot, 

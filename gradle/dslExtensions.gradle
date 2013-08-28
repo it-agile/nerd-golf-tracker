@@ -20,5 +20,33 @@ eclipse.project.file {
             root.asNode().append new XmlParser().parseText('<filteredResources/>')
         }
     }
+    ext.ignoreSvn = {
+        eclipse.project.file.withXml { root -> 
+            addFilter(root, createFilter(type: 26, matcher: 'name', '.svn'))
+        }
+    }
 }
+
+import groovy.xml.MarkupBuilder
+
+def addFilter (projectRoot, xml) {
+    def filters = projectRoot.node.filteredResources.head()
+    filters.append new XmlParser().parseText(xml)
+}
+
+def createFilter (filter, matchFor) {
+    def writer = new StringWriter()
+    def xml = new MarkupBuilder(writer)
+    xml.filter() {
+        id(new Random().nextInt())
+        name()
+        type(filter.type)
+        matcher {
+            id('org.eclipse.ui.ide.multiFilter')
+            arguments("1.0-${filter.matcher}-matches-false-false-${matchFor}")
+        }
+    }
+    writer.toString()
+}
+
 
