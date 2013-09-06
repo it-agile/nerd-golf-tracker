@@ -4,6 +4,23 @@ sourceSets {
         runtimeClasspath += sourceSets.main.output
     }
 }
+
+
+class Cucumber extends JavaExec {
+    def Cucumber() {
+        setMain 'cucumber.api.cli.Main'
+        classpath project.sourceSets.cucumber.runtimeClasspath
+        dependsOn project.tasks.compileCucumberJava, project.tasks.jar
+
+        project.tasks.check.dependsOn this
+        mustRunAfter project.tasks.test
+        args '--strict',
+             '--glue', 'de.itagile.golf',
+             '-f', "html:${project.reporting.baseDir}/${name}", 
+             'src/cucumber/resources'
+    }
+}
+
 dependencies {
     cucumberCompile 'info.cukes:cucumber-java:1.1.4'
     cucumberCompile 'info.cukes:cucumber-junit:1.1.4'
@@ -11,19 +28,12 @@ dependencies {
 
     cucumberRuntime 'info.cukes:cucumber-picocontainer:1.1.4'
 }
-task cucumber() {
-    dependsOn compileCucumberJava, jar
-    doLast {
-        javaexec {
-            main = 'cucumber.api.cli.Main'
-            classpath = sourceSets.cucumber.runtimeClasspath
-            args = ['--strict', 
-            	'-f', "html:${reporting.baseDir}/cucumber", 
-            	'--tags', '~@in_arbeit',
-            	'--glue', 'de.itagile.golf', 
-            	'src/cucumber/resources']
-        }
-    }
+
+task cucumber(type: Cucumber) {
+    args '--tags', '~@in_arbeit'
 }
-cucumber.mustRunAfter test
-check.dependsOn cucumber
+task cucumberInArbeit(type: Cucumber) {
+    args '--tags', '@in_arbeit'
+    ignoreExitValue = true
+}
+
