@@ -8,16 +8,19 @@ sourceSets {
 
 class Cucumber extends JavaExec {
     def Cucumber() {
+        project.tasks.check.dependsOn this
+        mustRunAfter project.tasks.test
+
         setMain 'cucumber.api.cli.Main'
         classpath project.sourceSets.cucumber.runtimeClasspath
         dependsOn project.tasks.compileCucumberJava, project.tasks.jar
 
-        project.tasks.check.dependsOn this
-        mustRunAfter project.tasks.test
         args '--strict',
              '--glue', 'de.itagile.golf',
              '-f', "html:${project.reporting.baseDir}/${name}", 
              'src/cucumber/resources'
+
+        logging.captureStandardOutput LogLevel.INFO
     }
 }
 
