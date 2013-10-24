@@ -1,3 +1,3 @@
 #!/bin/sh
 
-java -jar build/libs/nerd-golf-tracker.jar
+java -jar `dirname $0`/build/libs/nerd-golf-tracker.jar
