@@ -1,3 +1,8 @@
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+    distributionUrl = "http://localhost:8081/nexus/service/local/repositories/releases/content/fakepath/gradle/${gradleVersion}/gradle-${gradleVersion}-all.zip"
+}
+
 
 def apply (String... basenamesWithoutExt) {
     basenamesWithoutExt.each { apply from: "gradle/${it}.gradle" }
