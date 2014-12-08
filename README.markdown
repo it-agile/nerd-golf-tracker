@@ -11,8 +11,8 @@ Einrücktiefe
 
 # Requirements
 
-* Java 6 & 7
-* Gradle 1.6
+* Java 7
+* Gradle 2.0
 
 
 # Fallstricke
@@ -33,16 +33,13 @@ Die ausführbare Spezifikation verlässt sich darauf, dass der NerdGolfTracker s
 Der Build sollte auf Kombinationen folgender Parameter funktionieren:
 
 * OS X/Windows/Ubuntu
-* Java 6/7
-* `gradle --daemon`/`gradle --no-daemon`
-    
+* Java 7/8
+
 Eine praktikable einfachere Lösung scheint:
 
-* OS X Java 6, OS X Java 7, Windows Java 7
-* daemon/no-daemon
+* OS X Java 7, OS X Java 8, Windows Java 7
 
 
 ## Checklisten
 
-* Gradle-Update: jar, eclipse, idea
-* Änderungen an Source Sets, Dependencies, Konfigurationen: build, eclipse, idea, uploadArchives
+* Gradle: <default>, eclipse, idea, uploadArchives

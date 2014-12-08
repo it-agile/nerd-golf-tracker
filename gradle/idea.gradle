@@ -8,7 +8,7 @@ idea {
     module {
         testSourceDirs += sourceSets.cucumber.java.srcDirs
         testSourceDirs += sourceSets.cucumber.resources.srcDirs
-        scopes.TEST.plus += configurations.cucumberRuntime
+        scopes.TEST.plus += [configurations.cucumberRuntime]
     }
 }
 

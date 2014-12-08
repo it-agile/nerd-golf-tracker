@@ -4,7 +4,7 @@ apply plugin: 'eclipse'
 
 eclipse {
     classpath {
-        plusConfigurations += configurations.cucumberRuntime
+        plusConfigurations += [configurations.cucumberRuntime]
     }
     project.file {
         addFilteredResources()
