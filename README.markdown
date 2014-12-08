@@ -14,6 +14,11 @@ Einrücktiefe
 * Java 7
 * Gradle 2.0
 
+Known to work
+
+* Java 8
+* Gradle 2.2.1
+
 
 # Fallstricke
 
