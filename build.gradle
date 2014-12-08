@@ -1,6 +1,7 @@
 task wrapper(type: Wrapper) {
     gradleVersion = '2.2.1'
-    distributionUrl = "http://localhost:8081/nexus/service/local/repositories/releases/content/fakepath/gradle/${gradleVersion}/gradle-${gradleVersion}-all.zip"
+    def repositoryPath = 'http://localhost:8081/nexus/service/local/repositories/releases/content'
+    distributionUrl = "${repositoryPath}/org/gradle/gradle/${gradleVersion}/gradle-${gradleVersion}-all.zip"
 }
 
 
