@@ -17,7 +17,7 @@ class Cucumber extends JavaExec {
 
         args '--strict',
              '--glue', 'de.itagile.golf',
-             '-f', "html:${project.reporting.baseDir}/${name}", 
+             '--plugin', "html:${project.reporting.baseDir}/${name}", 
              'src/cucumber/resources'
 
         logging.captureStandardOutput LogLevel.INFO
@@ -25,11 +25,11 @@ class Cucumber extends JavaExec {
 }
 
 dependencies {
-    cucumberCompile 'info.cukes:cucumber-java:1.1.4'
-    cucumberCompile 'info.cukes:cucumber-junit:1.1.4'
+    cucumberCompile 'info.cukes:cucumber-java:1.2.0'
+    cucumberCompile 'info.cukes:cucumber-junit:1.2.0'
     cucumberCompile junit, hamcrest
 
-    cucumberRuntime 'info.cukes:cucumber-picocontainer:1.1.4'
+    cucumberRuntime 'info.cukes:cucumber-picocontainer:1.2.0'
 }
 
 task cucumber(type: Cucumber) {
