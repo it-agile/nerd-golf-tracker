@@ -1,6 +1,6 @@
 
 dependencies {
-    ext.junit = 'junit:junit:4.11'
+    ext.junit = 'junit:junit:4.12'
     ext.hamcrest = 'org.hamcrest:hamcrest-all:1.3'
 }
 
