@@ -9,5 +9,5 @@ bin/
 .settings/org.eclipse.jdt.core.prefs
 
 # Idea
-nerd-golf-tracker.i??
+*.i??
 out/
