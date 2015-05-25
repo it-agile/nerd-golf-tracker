@@ -25,11 +25,11 @@ class Cucumber extends JavaExec {
 }
 
 dependencies {
-    cucumberCompile 'info.cukes:cucumber-java:1.2.0'
-    cucumberCompile 'info.cukes:cucumber-junit:1.2.0'
+    cucumberCompile 'info.cukes:cucumber-java:1.2.2'
+    cucumberCompile 'info.cukes:cucumber-junit:1.2.2'
     cucumberCompile junit, hamcrest
 
-    cucumberRuntime 'info.cukes:cucumber-picocontainer:1.2.0'
+    cucumberRuntime 'info.cukes:cucumber-picocontainer:1.2.2'
 }
 
 task cucumber(type: Cucumber) {
