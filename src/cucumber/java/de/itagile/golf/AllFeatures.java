@@ -11,7 +11,8 @@ import cucumber.api.junit.Cucumber;
 		strict = true, 
 //		plugin = {"pretty"},
 		tags = {"~@in_arbeit"},
-		monochrome = true
+		monochrome = true,
+		features = "src/cucumber/resources"
 )
 public class AllFeatures {
 }
