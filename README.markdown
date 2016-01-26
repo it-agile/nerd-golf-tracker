@@ -17,7 +17,7 @@ Einrücktiefe
 Known to work
 
 * Java 8
-* Gradle 2.2.1
+* Gradle 2.10
 
 
 # Fallstricke
