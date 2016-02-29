@@ -10,4 +10,5 @@ bin/
 
 # Idea
 *.i??
+.idea
 out/
