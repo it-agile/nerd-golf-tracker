@@ -2,6 +2,7 @@ package de.itagile.golf.util;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class CollectionUtils {
@@ -14,20 +15,20 @@ public class CollectionUtils {
 	private static List<Object> interleave(
 			Collection<?> collection, String separator) {
 		List<Object> interleaved = new ArrayList<>();
-		for (Object object: collection) {
+		collection.forEach(object->{
 			interleaved.add(object);
 			interleaved.add(separator);
-		}
+		});
 		if (! interleaved.isEmpty()) {
 			interleaved.remove(interleaved.size() - 1);
 		}
+
 		return interleaved;
 	}
 
 	private static String join(List<?> collection) {
 		StringBuilder result = new StringBuilder();
-		for (Object object: collection)
-			result.append(object.toString());
+		collection.forEach(object -> result.append(object.toString()));
 		return result.toString();
 	}
 
