@@ -1,5 +1,5 @@
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.10'
+    gradleVersion = '3.3'
     def repositoryPath = 'http://localhost:8081/nexus/service/local/repositories/releases/content'
     distributionUrl = "${repositoryPath}/org/gradle/gradle/${gradleVersion}/gradle-${gradleVersion}-all.zip"
 }
@@ -16,8 +16,8 @@ defaultTasks 'clean', 'build'
 
 
 sourceCompatibility = 1.7
-tasks.withType(JavaCompile) { 
-    options.compilerArgs << "-Xlint:-options" 
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:-options"
     options.encoding = 'UTF-8'
 }
 
@@ -46,4 +46,3 @@ apply 'cucumber'
 
 
 apply 'eclipse', 'idea'
-
