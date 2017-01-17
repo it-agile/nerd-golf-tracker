@@ -13,7 +13,7 @@ public class CollectionUtilsTest {
 
 	@Test
 	public void joinsEmptyCollectionToEmptyString() throws Exception {
-		assertThat(join(Arrays.<Object>asList(), ""), is(""));
+		assertThat(join(Arrays.asList(), ""), is(""));
 	}
 	@Test
 	public void joinsElementsOfCollectionUsingSeparator() throws Exception {

@@ -20,7 +20,7 @@ public class Hilfe implements Operation {
 
 	@Override
 	public String fuehreAus(Scorecard scorecard) {
-		List<String> hilfeTexte = new ArrayList<String>();
+		List<String> hilfeTexte = new ArrayList<>();
 		for (Befehl befehl : sammler.sammle()) {
 			hilfeTexte.add(hilfeZeileFuer(befehl));
 		}

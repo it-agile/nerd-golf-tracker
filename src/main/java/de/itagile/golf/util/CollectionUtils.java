@@ -6,14 +6,14 @@ import java.util.List;
 
 public class CollectionUtils {
 
-	public static String join(Collection<? extends Object> collection, String separator) {
+	public static String join(Collection<?> collection, String separator) {
 		List<Object> interleaved = interleave(collection, separator);
 		return join(interleaved);
 	}
 
 	private static List<Object> interleave(
-			Collection<? extends Object> collection, String separator) {
-		List<Object> interleaved = new ArrayList<Object>();
+			Collection<?> collection, String separator) {
+		List<Object> interleaved = new ArrayList<>();
 		for (Object object: collection) {
 			interleaved.add(object);
 			interleaved.add(separator);
@@ -24,7 +24,7 @@ public class CollectionUtils {
 		return interleaved;
 	}
 
-	private static String join(List<? extends Object> collection) {
+	private static String join(List<?> collection) {
 		StringBuilder result = new StringBuilder();
 		for (Object object: collection)
 			result.append(object.toString());

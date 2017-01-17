@@ -6,12 +6,10 @@ import java.util.Map;
 
 public class EinfacherInterpreter implements Interpreter {
 
-	private Map<String, Operation> operationen = new HashMap<String, Operation>();
+	private Map<String, Operation> operationen = new HashMap<>();
 
 	public EinfacherInterpreter() {
-		for (Befehl befehl : new BefehleSammler().sammle()) {
-			operationen.put(befehl.kommando(), befehl.operation());
-		}
+		new BefehleSammler().sammle().forEach(befehl -> operationen.put(befehl.kommando(), befehl.operation()));
 	}
 
 	@Override

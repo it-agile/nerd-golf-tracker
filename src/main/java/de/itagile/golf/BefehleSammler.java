@@ -10,7 +10,7 @@ import de.itagile.golf.befehl.SchlagBefehl;
 public class BefehleSammler {
 
 	public List<Befehl> sammle() {
-		List<Befehl> ernte = new ArrayList<Befehl>();
+		List<Befehl> ernte = new ArrayList<>();
 		ernte.add(new SchlagBefehl());
 		ernte.add(new LochwechselBefehl());
 		ernte.add(new HilfeBefehl());
