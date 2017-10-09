@@ -7,6 +7,7 @@ bin/
 .classpath
 .project
 .settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.buildship.core.prefs
 
 # Idea
 *.i??
