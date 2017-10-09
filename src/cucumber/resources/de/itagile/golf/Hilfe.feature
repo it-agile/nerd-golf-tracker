@@ -1,12 +1,10 @@
-# language: de
+Feature: Hilfe
 
-Funktionalität: Hilfe
+	Scenario Outline: Eintrag in der Hilfe
+        When ich die Hilfe aufrufe
+        Then listet der NerdGolfTracker einen Eintrag zu <Kommando> auf
 
-    Szenariogrundriss: Eintrag in der Hilfe
-        Wenn ich die Hilfe aufrufe
-        Dann listet der NerdGolfTracker einen Eintrag zu <Kommando> auf
-
-        Beispiele:
+        Examples:
             |Kommando|
             |Schlage Ball|
             |Nächstes Loch|
