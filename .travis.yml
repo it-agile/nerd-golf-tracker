@@ -13,5 +13,5 @@ deploy:
   api_key:
     secure: SHOULD_BE_GENERATED_BY_TRAVIC_CLI
   on:
-    repo: golfholger/nerd-golf-tracker
+    repo: golfholger/nerd-golf-tracker-2
     tags: true
