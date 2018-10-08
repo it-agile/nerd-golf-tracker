@@ -1,7 +1,5 @@
 task wrapper(type: Wrapper) {
     gradleVersion = '4.7'
-    def repositoryPath = 'http://localhost:8081/nexus/service/local/repositories/releases/content'
-    distributionUrl = "${repositoryPath}/org/gradle/gradle/${gradleVersion}/gradle-${gradleVersion}-bin.zip"
 }
 
 
@@ -23,7 +21,6 @@ tasks.withType(JavaCompile) {
 
 
 repositories {
-    maven { url "http://localhost:8081/nexus/content/groups/public/" }
     mavenCentral()
 }
 apply 'testDependencies'
