@@ -11,7 +11,7 @@ deploy:
   skip_cleanup: true
   file: build/libs/nerd-golf-tracker.jar
   api_key:
-    secure: SHOULD_BE_GENERATED_BY_TRAVIC_CLI
+    secure: RDS3eX4O9s9ciNYC7/r+s9jn94ZHfhBEYKjW35r5P6+767zRlyZcalzH8HO9bTZZmQOZh/Dq1s2/UnssclfdUdnRwwRnEGxaORFAHTmDfgcgtDgfM/9tjDTvf8/73Z7/oy8LpdxSe8MHzgYzQw5Qiayt859O0LRul1/usCCodBfNvndR7pLS8kEGjbmqE3WkqxubLAvlC+OVCrU83SbAX3mq0HXPC3aCwX1YKRVyhtfZkrYSuVeLLxgq9pohVTqhym1ulhMlM71eXaDVaXI1kVU59do2l5PfGXrPar2LwH/qj64Bv215CyTe3gSqROofkFeNT6sOWRaAAXEpnTqwsLyItNRX13frQlQnK42RLu1xRTAJuwPJJZDbTaNHvJfEbXCP4bn7m6/C62X6YUK9RHijQOKsEM1LA58v4O0PhMGTGOIFEThkXr9IEdWIlu16thjAdaLAVqHnY4NE7bZ4qmoy/tHaZ/79qAOJ/qcwveYaORDEMVc9hW2O9Vop0Za1kTll2Pf36BugFD6C6KMKeyS+085AQmSIPQovvTVkyVxy19/6ngxRTygPyLfsMipkhafOUhiwYZozlCroIQvbEnCHTmtFh4Bkm8sSevm1L+iDXKlJqveeJs1yWw1nuO/bjrsCn1PWJr+xXR/Ot5JReNWAiTcbGlF9O4ZLHcRh6Zs=
   on:
     repo: golfholger/nerd-golf-tracker-2
     tags: true
