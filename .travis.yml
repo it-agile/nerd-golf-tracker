@@ -4,14 +4,11 @@ before_cache:
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-    - "$HOME/.gradle/caches/"
-    - "$HOME/.gradle/wrapper/"
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
 deploy:
   provider: releases
   skip_cleanup: true
-  file: build/libs/nerd-golf-tracker.jar
   api_key:
-    secure: RDS3eX4O9s9ciNYC7/r+s9jn94ZHfhBEYKjW35r5P6+767zRlyZcalzH8HO9bTZZmQOZh/Dq1s2/UnssclfdUdnRwwRnEGxaORFAHTmDfgcgtDgfM/9tjDTvf8/73Z7/oy8LpdxSe8MHzgYzQw5Qiayt859O0LRul1/usCCodBfNvndR7pLS8kEGjbmqE3WkqxubLAvlC+OVCrU83SbAX3mq0HXPC3aCwX1YKRVyhtfZkrYSuVeLLxgq9pohVTqhym1ulhMlM71eXaDVaXI1kVU59do2l5PfGXrPar2LwH/qj64Bv215CyTe3gSqROofkFeNT6sOWRaAAXEpnTqwsLyItNRX13frQlQnK42RLu1xRTAJuwPJJZDbTaNHvJfEbXCP4bn7m6/C62X6YUK9RHijQOKsEM1LA58v4O0PhMGTGOIFEThkXr9IEdWIlu16thjAdaLAVqHnY4NE7bZ4qmoy/tHaZ/79qAOJ/qcwveYaORDEMVc9hW2O9Vop0Za1kTll2Pf36BugFD6C6KMKeyS+085AQmSIPQovvTVkyVxy19/6ngxRTygPyLfsMipkhafOUhiwYZozlCroIQvbEnCHTmtFh4Bkm8sSevm1L+iDXKlJqveeJs1yWw1nuO/bjrsCn1PWJr+xXR/Ot5JReNWAiTcbGlF9O4ZLHcRh6Zs=
-  on:
-    repo: golfholger/nerd-golf-tracker-2
-    tags: true
+    secure: ihzGRJN3r2KngxcrCqqj2Lcp+X3YlWOoKcYqxlLgNZYsYsU2eJjkRdk4JOXw0oeS2470PNNFUerS+tjrRbpDZwxpmIbb3NtqKt9s3ku1gITTvCzDHCTqUx0D6A3l9FR+6dKEWUIOV0CZ7JaFrfPlnKnZADQVUadF0Ybld5DNRfrQMHZdbS/iOAXX6KEIVQa4kVRe9TSIXs0ZQOIVlWIRPXgg2AnSZCmDv27HIdgxviwTCKWr9TKO2IXEcoUGJGi7Kfz4pVVokYbhoqA6AXmuXddx2nK6+zqTvaIb/ioRqyIauUneq5Z8ytzW8h9vjEjudarz0sC201NRVdzRttlmeWjvTKywe5q2uDDL6Zx6DtDcSmK43GtrtI2+zniQsKB39Q5pRGKIimYVWM1GHWl4EFw9GAbbzgKrk8tC3RK8obnlhP9TIV9lGAhjkH5ZgbppR/dIosKZ01DpYL5Od15PFnWguVjecxR+BPjUngB9pPd9goNtBQ1cBFC524UA3lhUkLQspsdelXCcUX3QjvxzcOrMXAw320ib7MSMejrgD4N3EjKsLnH/bicZBAwKEtn3hmVyucaKISjwZCXi2p8MOldRD0gFgFRofhg+almDKbaw28YEbgTA8VI9Db3H8Apz4ojEmV6xh5rpU7RC+WgjIfhMwUd6YTsCbeVLDrrKtWg=
+  file: build/libs/nerd-golf-tracker.jar
