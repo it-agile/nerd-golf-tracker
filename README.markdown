@@ -1,6 +1,6 @@
 Quotes Language: German
 
-* Java 80
+* Java 8
 * Gradle 4.7
 
 ## Fallstricke
