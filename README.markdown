@@ -1,7 +1,7 @@
 Quotes Language: German
 
 * Java 8
-* Gradle 4.7
+* Gradle 6.0.1
 
 ## Fallstricke
 
