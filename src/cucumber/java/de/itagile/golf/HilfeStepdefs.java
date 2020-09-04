@@ -1,9 +1,8 @@
 package de.itagile.golf;
 
 import static org.hamcrest.Matchers.containsString;
-
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 public class HilfeStepdefs {
 	

@@ -11,7 +11,7 @@ class Cucumber extends JavaExec {
         project.tasks.check.dependsOn this
         mustRunAfter project.tasks.test
 
-        setMain 'io.cucumber.core.cli.Main'
+        setMain 'cucumber.api.cli.Main'
         classpath project.sourceSets.cucumber.runtimeClasspath
         dependsOn project.tasks.compileCucumberJava, project.tasks.jar
 
@@ -23,11 +23,11 @@ class Cucumber extends JavaExec {
 }
 
 dependencies {
-    cucumberCompile 'io.cucumber:cucumber-java:5.7.0'
-    cucumberCompile 'io.cucumber:cucumber-junit:5.7.0'
+    cucumberCompile 'io.cucumber:cucumber-java:4.4.0'
+    cucumberCompile 'io.cucumber:cucumber-junit:4.4.0'
     cucumberCompile junit, hamcrest
 
-    cucumberCompile 'io.cucumber:cucumber-picocontainer:5.7.0'
+    cucumberCompile 'io.cucumber:cucumber-picocontainer:4.4.0'
 }
 
 task cucumber(type: Cucumber) {
