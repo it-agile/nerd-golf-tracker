@@ -2,8 +2,9 @@ package de.itagile.golf;
 
 import static java.lang.String.valueOf;
 import static org.hamcrest.Matchers.containsString;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class SchlaegeStepdefs {
 
@@ -14,7 +15,7 @@ public class SchlaegeStepdefs {
 		this.tracker = tracker;
 	}
 	
-	@When("ich den Ball (\\d+)-mal schlage")
+	@When("ich den Ball {int}-mal schlage")
     public void schlageBall(int schlaege) {
         this.schlaege = schlaege;
         while (schlaege-- > 0) {

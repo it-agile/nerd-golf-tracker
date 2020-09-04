@@ -11,32 +11,26 @@ class Cucumber extends JavaExec {
         project.tasks.check.dependsOn this
         mustRunAfter project.tasks.test
 
-        setMain 'cucumber.api.cli.Main'
+        setMain 'io.cucumber.core.cli.Main'
         classpath project.sourceSets.cucumber.runtimeClasspath
         dependsOn project.tasks.compileCucumberJava, project.tasks.jar
 
         args '--strict',
              '--glue', 'de.itagile.golf',
-             '--plugin', "html:${project.reporting.baseDir}/${name}", 
+             '--plugin', 'pretty', 
              'src/cucumber/resources'
-
-        logging.captureStandardOutput LogLevel.INFO
     }
 }
 
 dependencies {
-    cucumberCompile 'info.cukes:cucumber-java:1.2.5'
-    cucumberCompile 'info.cukes:cucumber-junit:1.2.5'
+    cucumberCompile 'io.cucumber:cucumber-java:5.7.0'
+    cucumberCompile 'io.cucumber:cucumber-junit:5.7.0'
     cucumberCompile junit, hamcrest
 
-    cucumberRuntime 'info.cukes:cucumber-picocontainer:1.2.5'
+    cucumberCompile 'io.cucumber:cucumber-picocontainer:5.7.0'
 }
 
 task cucumber(type: Cucumber) {
-    args '--tags', '~@in_arbeit'
-}
-task cucumberInArbeit(type: Cucumber) {
-    args '--tags', '@in_arbeit'
-    ignoreExitValue = true
+    args '--tags', 'not @in_arbeit'
 }
 
