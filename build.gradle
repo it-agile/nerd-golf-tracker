@@ -1,8 +1,3 @@
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.7'
-}
-
-
 def apply (String... basenamesWithoutExt) {
     basenamesWithoutExt.each { apply from: "gradle/${it}.gradle" }
 }
