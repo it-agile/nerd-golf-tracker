@@ -25,7 +25,8 @@ class Cucumber extends JavaExec {
 dependencies {
     cucumberCompile 'io.cucumber:cucumber-java:4.4.0'
     cucumberCompile 'io.cucumber:cucumber-junit:4.4.0'
-    cucumberCompile junit, hamcrest
+    cucumberCompile 'junit:junit:4.+'
+    cucumberCompile 'org.hamcrest:hamcrest:2.2'
 
     cucumberCompile 'io.cucumber:cucumber-picocontainer:4.4.0'
 }
