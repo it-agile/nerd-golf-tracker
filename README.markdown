@@ -15,4 +15,5 @@ Quotes Language: German
 
 ## Build-Server
 
-https://travis-ci.org/golfholger/nerd-golf-tracker
+https://travis-ci.com/golfholger/nerd-golf-tracker
+
