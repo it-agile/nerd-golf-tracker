@@ -1,3 +1,9 @@
+configurations {
+    cucumberCompile {
+        extendsFrom testImplementation
+    }
+}
+
 sourceSets {
     cucumber {
         compileClasspath += sourceSets.main.output
@@ -23,12 +29,9 @@ class Cucumber extends JavaExec {
 }
 
 dependencies {
-    cucumberCompile 'io.cucumber:cucumber-java:4.4.0'
-    cucumberCompile 'io.cucumber:cucumber-junit:4.4.0'
-    cucumberCompile 'junit:junit:4.+'
-    cucumberCompile 'org.hamcrest:hamcrest:2.2'
-
-    cucumberCompile 'io.cucumber:cucumber-picocontainer:4.4.0'
+    testImplementation 'io.cucumber:cucumber-java:4.4.0'
+    testImplementation 'io.cucumber:cucumber-junit:4.4.0'
+    testImplementation 'io.cucumber:cucumber-picocontainer:4.4.0'
 }
 
 task cucumber(type: Cucumber) {
