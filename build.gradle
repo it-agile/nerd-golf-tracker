@@ -28,7 +28,7 @@ sourceSets {
             srcDirs = ['src/unittests/java','src/cucumber/java']
         }
         resources {
-            srcDirs = ['src/unittests/resources']
+            srcDirs = ['src/cucumber/resources']
         }
     }
 }
