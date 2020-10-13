@@ -17,7 +17,7 @@ public class HilfeStepdefs {
 		tracker.gibEin("Hilfe");
 	}
 	
-	@Then("listet der NerdGolfTracker einen Eintrag zu (.*) auf")
+	@Then("listet der NerdGolfTracker einen Eintrag zu {string} auf")
 	public void pruefeHilfeEintrag(String kommando) {
 		tracker.assertThatAntwort(containsString(kommando));
 	}

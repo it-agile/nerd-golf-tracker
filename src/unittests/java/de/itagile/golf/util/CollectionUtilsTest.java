@@ -3,7 +3,7 @@ package de.itagile.golf.util;
 import static de.itagile.golf.util.CollectionUtils.join;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.Arrays;
 

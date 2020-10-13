@@ -9,8 +9,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		strict = true, 
-//		plugin = {"pretty"},
-		tags = {"~@in_arbeit"},
+		tags = {"not @in_arbeit"},
 		monochrome = true,
 		features = "src/cucumber/resources"
 )

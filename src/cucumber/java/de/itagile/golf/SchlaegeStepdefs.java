@@ -14,7 +14,7 @@ public class SchlaegeStepdefs {
 		this.tracker = tracker;
 	}
 	
-	@When("ich den Ball (\\d+)-mal schlage")
+	@When("ich den Ball {int}-mal schlage")
     public void schlageBall(int schlaege) {
         this.schlaege = schlaege;
         while (schlaege-- > 0) {

@@ -1,7 +1,7 @@
 Quotes Language: German
 
-* Java 8
-* Gradle 6.0.1
+* Java 8 or 11
+* Gradle 6.5.1
 
 ## Fallstricke
 
@@ -16,3 +16,4 @@ Quotes Language: German
 ## Build-Server
 
 https://travis-ci.com/golfholger/nerd-golf-tracker-2
+
