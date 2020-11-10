@@ -9,7 +9,6 @@
 plugins {
     id 'java'
     id 'application'
-    id 'eclipse'
 }
 
 defaultTasks 'clean', 'build'
@@ -63,7 +62,6 @@ task cucumber {
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = [  '--strict',
                       '--tags', 'not @in_arbeit',
-                      '--plugin', "html:${project.reporting.baseDir}/${name}",
                       '--plugin', 'pretty',
                       '--glue', 'de.itagile.golf',
                       'src/cucumber/resources']
