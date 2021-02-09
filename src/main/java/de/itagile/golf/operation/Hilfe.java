@@ -24,7 +24,7 @@ public class Hilfe implements Operation {
 		for (Befehl befehl : sammler.sammle()) {
 			hilfeTexte.add(hilfeZeileFuer(befehl));
 		}
-		return "Ich reagiere auf: \n" + CollectionUtils.join(hilfeTexte, SystemProperties.LINE_SEPARATOR);
+		return "Ich reagiere auf: " + SystemProperties.LINE_SEPARATOR + CollectionUtils.join(hilfeTexte, SystemProperties.LINE_SEPARATOR);
 	}
 
 	private String hilfeZeileFuer(Befehl befehl) {
