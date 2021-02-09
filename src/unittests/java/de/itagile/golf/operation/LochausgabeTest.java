@@ -15,6 +15,6 @@ public class LochausgabeTest {
 	public void gibtAktuellesLochAus() throws Exception {
 		Scorecard scorecard = mock(Scorecard.class);
 		when(scorecard.aktuellesLoch()).thenReturn(42);
-		assertThat(new Lochausgabe().fuehreAus(scorecard ), containsString("42.Loch"));
+		assertThat(new Lochausgabe().fuehreAus(scorecard ), containsString("42. Loch"));
 	}
 }
