@@ -36,6 +36,18 @@ public class SchlagzahlausgabeTest {
 		when(scorecard.anzahlSchlaege()).thenReturn(2);
 		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("Du hast 2 Schläge"));
 	}
+
+
+	@Test
+	public void meldetEinenErstenSchlagNachLochwechsel() throws Exception {
+		Scorecard scorecard = new EinfacheScorecard();
+		scorecard.erhoeheAnzahlSchlaege();
+		scorecard.erhoeheAnzahlSchlaege();
+		scorecard.schliesseLochAb();
+		scorecard.erhoeheAnzahlSchlaege();
+		Operation schlagzahlausgabe = new Schlagzahlausgabe(new Lochausgabe());
+		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("Du hast 1 Schlag"));
+	}
 	
 	@Test
 	public void integriertAusgabeDerFolgeoperation() throws Exception {
