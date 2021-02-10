@@ -9,14 +9,15 @@ public class EinfacherInterpreter implements Interpreter {
 	private Map<String, Operation> operationen = new HashMap<>();
 
 	public EinfacherInterpreter() {
-		new BefehleSammler().sammle().forEach(befehl -> operationen.put(befehl.kommando(), befehl.operation()));
+		new BefehleSammler().sammle().forEach(befehl -> operationen.put(befehl.kommando().toUpperCase(), befehl.operation()));
 	}
 
 	@Override
 	public Operation interpretiere(String string) {
-		if (operationen.get(string) == null) {
-			return operationen.get("Hilfe");
+		String befehl = string.toUpperCase();
+		if (operationen.get(befehl) == null) {
+			return operationen.get("HILFE");
 		}
-		return operationen.get(string);
+		return operationen.get(befehl);
 	}
 }
