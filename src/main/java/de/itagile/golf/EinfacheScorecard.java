@@ -8,11 +8,11 @@ public class EinfacheScorecard implements Scorecard {
 
 	public void erhoeheAnzahlSchlaege() {
 		anzahlSchlaege++;
+		anzahlGesamtschlaege++;
 	}
 
 	public void schliesseLochAb() {
 		aktuellesLoch++;
-		anzahlGesamtschlaege = anzahlGesamtschlaege + anzahlSchlaege;
 		anzahlSchlaege = 0;
 	}
 

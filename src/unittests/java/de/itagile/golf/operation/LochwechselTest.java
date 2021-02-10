@@ -1,19 +1,15 @@
 package de.itagile.golf.operation;
 
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 import de.itagile.golf.EinfacheScorecard;
-import org.hamcrest.MatcherAssert;
+import de.itagile.golf.Operation;
+import de.itagile.golf.Scorecard;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.itagile.golf.Operation;
-import de.itagile.golf.Scorecard;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.*;
 
 
 public class LochwechselTest {
@@ -40,7 +36,6 @@ public class LochwechselTest {
 		Scorecard scorecard = new EinfacheScorecard();
 		Schlag schlag = new Schlag(folgeOperation);
 		schlag.fuehreAus(scorecard);
-		lochwechsel.fuehreAus(scorecard);
 		assertThat(scorecard.anzahlGesamtschlaege(), is(1));
 	}
 
