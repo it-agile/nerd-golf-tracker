@@ -14,6 +14,9 @@ public class EinfacherInterpreter implements Interpreter {
 
 	@Override
 	public Operation interpretiere(String string) {
+		if (operationen.get(string) == null) {
+			return operationen.get("Hilfe");
+		}
 		return operationen.get(string);
 	}
 }
