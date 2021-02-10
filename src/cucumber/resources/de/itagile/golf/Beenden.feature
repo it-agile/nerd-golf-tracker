@@ -1,10 +1,10 @@
 # language: de
-Funktionalität: Aktuelles Loch anzeigen
-    
+Funktionalität: Das Programm wird beendet
+
     Szenario: direkt nach dem Start
-        Wenn ich den NerdGolfTracker starte
-        Dann bin ich auf dem 1. Loch
-    
-    Szenario: auf dem 2. Loch
-        Wenn ich zum nächsten Loch gehe
-        Dann bin ich auf dem 2. Loch
+        Wenn ich den Befehl "Beende" eingebe
+        Dann kommt die Ausgabe Und Tschüss...
+
+    Szenario: direkt nach dem Start klein beenden
+        Wenn ich den Befehl "beende" eingebe
+        Dann kommt die Ausgabe Und Tschüss...

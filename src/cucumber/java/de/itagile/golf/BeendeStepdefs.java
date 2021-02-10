@@ -15,14 +15,10 @@ public class BeendeStepdefs {
 		this.tracker = tracker;
 	}
 
-	@Wenn("ich den Befehl Beende eingebe")
-    public void beendeAnwendung() {
-            tracker.gibEin("Beende");
-    }
-	
 	@Dann("kommt die Ausgabe Und Tschüss...")
     public void pruefeEnde() {
         tracker.assertThatAntwort(equalTo("Und Tschüss..."));
     }
+
 
 }

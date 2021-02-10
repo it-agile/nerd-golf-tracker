@@ -19,7 +19,7 @@ public class Main {
 		konsole.println(tracker.starte()).beendeAusgabe();
 		String befehl = "";
 		
-		while (!befehl.equals(beendeBefehl.kommando())) {
+		while (!befehl.equalsIgnoreCase(beendeBefehl.kommando())) {
 			befehl = konsole.liesZeileEin();
 			konsole.println(tracker.reagiereAuf(befehl)).beendeAusgabe();
 		}
