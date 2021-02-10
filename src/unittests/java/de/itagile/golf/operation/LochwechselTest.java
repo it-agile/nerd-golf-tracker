@@ -7,6 +7,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import de.itagile.golf.EinfacheScorecard;
+import org.hamcrest.MatcherAssert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -31,6 +33,35 @@ public class LochwechselTest {
 	public void setztAnzahlSchlaegeZurueck() throws Exception {
 		lochwechsel.fuehreAus(scorecard);
 		verify(scorecard).schliesseLochAb();
+	}
+
+	@Test
+	public void ermittleGesamtanzahlSchlaege() throws Exception {
+		Scorecard scorecard = new EinfacheScorecard();
+		Schlag schlag = new Schlag(folgeOperation);
+		schlag.fuehreAus(scorecard);
+		lochwechsel.fuehreAus(scorecard);
+		assertThat(scorecard.anzahlGesamtschlaege(), is(1));
+	}
+
+	@Test
+	public void ermittleGesamtanzahlSchlaegeNach3Loechern() throws Exception {
+		Scorecard scorecard = new EinfacheScorecard();
+
+		Schlag schlag = new Schlag(folgeOperation);
+		schlag.fuehreAus(scorecard);
+		lochwechsel.fuehreAus(scorecard);
+
+		Schlag schlag2 = new Schlag(folgeOperation);
+		schlag2.fuehreAus(scorecard);
+		schlag2.fuehreAus(scorecard);
+		lochwechsel.fuehreAus(scorecard);
+
+		Schlag schlag3 = new Schlag(folgeOperation);
+		schlag3.fuehreAus(scorecard);
+		lochwechsel.fuehreAus(scorecard);
+
+		assertThat(scorecard.anzahlGesamtschlaege(), is(4));
 	}
 	
 	@Test

@@ -9,5 +9,5 @@ public interface Scorecard {
 	void schliesseLochAb();
 
 	int aktuellesLoch();
-
+	int anzahlGesamtschlaege();
 }

@@ -4,6 +4,7 @@ public class EinfacheScorecard implements Scorecard {
 
 	private int aktuellesLoch = 1;
 	private int anzahlSchlaege;
+	private int anzahlGesamtschlaege;
 
 	public void erhoeheAnzahlSchlaege() {
 		anzahlSchlaege++;
@@ -11,6 +12,7 @@ public class EinfacheScorecard implements Scorecard {
 
 	public void schliesseLochAb() {
 		aktuellesLoch++;
+		anzahlGesamtschlaege = anzahlGesamtschlaege + anzahlSchlaege;
 		anzahlSchlaege = 0;
 	}
 
@@ -20,5 +22,9 @@ public class EinfacheScorecard implements Scorecard {
 
 	public int aktuellesLoch() {
 		return aktuellesLoch;
+	}
+
+	public int anzahlGesamtschlaege() {
+		return anzahlGesamtschlaege;
 	}
 }
