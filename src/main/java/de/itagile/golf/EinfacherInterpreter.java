@@ -14,6 +14,10 @@ public class EinfacherInterpreter implements Interpreter {
 
 	@Override
 	public Operation interpretiere(String string) {
-		return operationen.get(string.toUpperCase());
+		String befehl = string.toUpperCase();
+		if (operationen.get(befehl) == null) {
+			return operationen.get("HILFE");
+		}
+		return operationen.get(befehl);
 	}
 }
