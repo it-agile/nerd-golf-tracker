@@ -7,6 +7,10 @@ public class Lochwechselausgabe implements Operation {
 
 	private final Operation folgeoperation;
 
+	public Lochwechselausgabe() {
+		folgeoperation = new DoNothingOperation();
+	}
+	
 	public Lochwechselausgabe(Operation folgeoperation) {
 		this.folgeoperation = folgeoperation;
 	}

@@ -22,7 +22,7 @@ public class LochwechselTest {
 	public void setup() {
 		scorecard = mock(Scorecard.class);
 		folgeOperation = mock(Operation.class);
-		lochwechsel = new Lochwechsel(folgeOperation);		
+		lochwechsel = new Lochwechsel();		
 	}
 	
 	@Test
@@ -59,10 +59,5 @@ public class LochwechselTest {
 		assertThat(scorecard.anzahlGesamtschlaege(), is(4));
 	}
 	
-	@Test
-	public void gibtAusgabeDerFolgeoperationMitAus() throws Exception {
-		when(folgeOperation.fuehreAus(any(Scorecard.class))).thenReturn("folgeoperationAusgabe");
-		
-		assertThat(lochwechsel.fuehreAus(scorecard), is("folgeoperationAusgabe"));	
-	}
+	
 }

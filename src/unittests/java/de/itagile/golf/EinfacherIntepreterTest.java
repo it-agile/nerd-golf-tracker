@@ -31,7 +31,7 @@ public class EinfacherIntepreterTest {
 	public static List<Object[]> parameters() {
 		Object[][] testData = new Object[][] {
 				{"Schlage Ball", Schlag.class},
-				{"Nächstes Loch", Lochwechsel.class},
+				{"Nächstes Loch", Operation.class},
 				{"Hilfe", Hilfe.class},
 				{"hilfe", Hilfe.class},
 				{"hilfE", Hilfe.class},
