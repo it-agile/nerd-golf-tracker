@@ -1,10 +1,10 @@
 # language: en
-Feature: Aktuelles Loch anzeigen
+Feature: display current hole
 
-    Scenario: direkt nach dem Start
+    Scenario: right after the start
         When ich den NerdGolfTracker starte
         Then bin ich auf dem 1. Loch
 
-    Scenario: auf dem 2. Loch
+    Scenario: on the 2nd hole
         When ich zum nächsten Loch gehe
         Then bin ich auf dem 2. Loch

@@ -1,7 +1,7 @@
 # language: en
-Feature: Hilfe
+Feature: help
 
-  Scenario Outline: Eintrag in der Hilfe
+  Scenario Outline: help entry
         When ich die Hilfe aufrufe
         Then listet der NerdGolfTracker einen Eintrag zu "<Kommando>" auf
 

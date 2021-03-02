@@ -1,7 +1,7 @@
 # language: en
-Feature: Schläge pro Loch zählen
+Feature: count strokes per hole
 
-    Scenario Outline: Schläge auf einem Loch zählen
+    Scenario Outline: count strokes on one hole
         When ich den Ball <x>-mal schlage
         Then zählt der NerdGolfTracker auch so viele Schläge
 
@@ -10,7 +10,7 @@ Feature: Schläge pro Loch zählen
             |1|
             |2|
 
-    Scenario: Lochwechsel
+    Scenario: go to next hole
         When ich auf einem Loch gespielt habe
         Then zählen die Schläge auf dem nächsten Loch wieder von 0 an
 
