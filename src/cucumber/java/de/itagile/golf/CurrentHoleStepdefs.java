@@ -19,10 +19,10 @@ public class CurrentHoleStepdefs {
     }
 	
 	@Then("bin ich auf dem {int}. Loch")
-	public void checkCurrentHole(int erwartetesLoch) {
-		checkHoleDisplay(erwartetesLoch);
+	public void checkCurrentHole(int expectedHole) {
+		checkHoleDisplay(expectedHole);
 		tracker.enter("Schlage Ball");
-		checkHoleDisplay(erwartetesLoch);
+		checkHoleDisplay(expectedHole);
 	}
 
 	private void checkHoleDisplay(int hole) {
