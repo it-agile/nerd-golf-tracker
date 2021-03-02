@@ -4,25 +4,25 @@ package de.itagile.golf;
 
 public class Tracker {
 
-	public Scorecard scorecard = new EinfacheScorecard();
+	public ScoreCard scoreCard = new SimpleScoreCard();
 	private Interpreter interpreter;
-	private Operation startoperation;
+	private Operation startOperation;
 
-	public Tracker(Interpreter interpreter, Operation startoperation) {
+	public Tracker(Interpreter interpreter, Operation startOperation) {
 		this.interpreter = interpreter;
-		this.startoperation = startoperation;
+		this.startOperation = startOperation;
 	}
 	
-	public String reagiereAuf(String eingabe) {
-		return interpreter.interpretiere(eingabe).fuehreAus(scorecard);
+	public String respondTo(String input) {
+		return interpreter.interpret(input).run(scoreCard);
 	}
 
-	public String starte() {
-		return startoperation.fuehreAus(scorecard);
+	public String start() {
+		return startOperation.run(scoreCard);
 	}
 
-	public void setStartoperation(Operation startoperation) {
-		this.startoperation = startoperation;
+	public void setStartOperation(Operation startOperation) {
+		this.startOperation = startOperation;
 	}
 
 }

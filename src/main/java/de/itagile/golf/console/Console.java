@@ -1,4 +1,4 @@
-package de.itagile.golf.konsole;
+package de.itagile.golf.console;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,27 +9,27 @@ import java.io.UnsupportedEncodingException;
 
 import de.itagile.golf.util.SystemProperties;
 
-public class Konsole {
+public class Console {
 
 	public PrintWriter writer;
 	public BufferedReader reader;
 	
-	public Konsole() throws UnsupportedEncodingException {
-		String encoding = KonsoleEncoding.fuerSystemEncoding(SystemProperties.FILE_ENCODING);
+	public Console() throws UnsupportedEncodingException {
+		String encoding = ConsoleEncoding.forSystemEncoding(SystemProperties.FILE_ENCODING);
 		writer = new PrintWriter(new OutputStreamWriter(System.out, encoding));
 		reader = new BufferedReader(new InputStreamReader(System.in, encoding));
 	}
 	
-	public void beendeAusgabe() {
+	public void closeOutput() {
 		writer.flush();
 	}
 
-	public Konsole println(String line) {
+	public Console println(String line) {
 		writer.println(line);
 		return this;
 	}
 
-	public String liesZeileEin() throws IOException {
+	public String readLine() throws IOException {
 		return reader.readLine();
 	}
 }

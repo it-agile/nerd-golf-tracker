@@ -2,23 +2,23 @@ package de.itagile.golf;
 
 import java.io.IOException;
 
-import de.itagile.golf.konsole.Konsole;
-import de.itagile.golf.operation.Lochausgabe;
-import de.itagile.golf.operation.Startausgabe;
+import de.itagile.golf.console.Console;
+import de.itagile.golf.operation.HoleDisplay;
+import de.itagile.golf.operation.StartDisplay;
 
 public class Main {
 	
 	public static void main(String[] args) throws IOException {
-		Konsole konsole = new Konsole();
+		Console console = new Console();
 		
-		Startausgabe startoperation = new Startausgabe(new Lochausgabe());
-		Tracker tracker = new Tracker(new EinfacherInterpreter(), startoperation);
+		StartDisplay startOperation = new StartDisplay(new HoleDisplay());
+		Tracker tracker = new Tracker(new SimpleInterpreter(), startOperation);
 
-		konsole.println(tracker.starte()).beendeAusgabe();
+		console.println(tracker.start()).closeOutput();
 		
 		while (true) {
-			String befehl = konsole.liesZeileEin();
-			konsole.println(tracker.reagiereAuf(befehl)).beendeAusgabe();
+			String command = console.readLine();
+			console.println(tracker.respondTo(command)).closeOutput();
 		}
 	}
 }

@@ -1,13 +1,13 @@
 package de.itagile.golf;
 
-public interface Scorecard {
+public interface ScoreCard {
 
-	void erhoeheAnzahlSchlaege();
+	void increaseScore();
 
-	int anzahlSchlaege();
+	int score();
 
-	void schliesseLochAb();
+	void completeCurrentHole();
 
-	int aktuellesLoch();
+	int currentHole();
 
 }

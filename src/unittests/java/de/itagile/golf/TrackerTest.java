@@ -11,20 +11,20 @@ import org.junit.Test;
 public class TrackerTest {
 
 	private Interpreter interpreter = mock(Interpreter.class);		
-	private Operation startoperation = mock(Operation.class);
-	private Tracker tracker = new Tracker(interpreter, startoperation);
+	private Operation startOperation = mock(Operation.class);
+	private Tracker tracker = new Tracker(interpreter, startOperation);
 
 	@Test
-	public void gibtErgebnisDerAusgeloestenOperationZurueck() throws Exception {
+	public void returnsResultOfOperationRun() throws Exception {
 		Operation operation = mock(Operation.class);
-		when(interpreter.interpretiere("foo")).thenReturn(operation);
-		when(operation.fuehreAus(any(Scorecard.class))).thenReturn("bar");
-		assertThat(tracker.reagiereAuf("foo"), is("bar"));
+		when(interpreter.interpret("foo")).thenReturn(operation);
+		when(operation.run(any(ScoreCard.class))).thenReturn("bar");
+		assertThat(tracker.respondTo("foo"), is("bar"));
 	}
 	
 	@Test
-	public void gibtErgebnisDerStartoperationZurueck() throws Exception {
-		when(startoperation.fuehreAus(any(Scorecard.class))).thenReturn("foo");
-		assertThat(tracker.starte(), is("foo"));
+	public void returnsResultOfStartOperation() throws Exception {
+		when(startOperation.run(any(ScoreCard.class))).thenReturn("foo");
+		assertThat(tracker.start(), is("foo"));
 	}
 }
