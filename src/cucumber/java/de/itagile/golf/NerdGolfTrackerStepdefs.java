@@ -22,7 +22,7 @@ public class NerdGolfTrackerStepdefs {
         tracker.stop();
     }
 
-	@When("ich den NerdGolfTracker starte")
+	@When("I start the NerdGolfTracker")
     public void startNerdGolfTracker() {
         // only there to write more readable scenarios
     }

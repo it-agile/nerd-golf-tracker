@@ -2,9 +2,9 @@
 Feature: display current hole
 
     Scenario: right after the start
-        When ich den NerdGolfTracker starte
-        Then bin ich auf dem 1. Loch
+        When I start the NerdGolfTracker
+        Then I am on the 1. hole
 
     Scenario: on the 2nd hole
-        When ich zum nächsten Loch gehe
-        Then bin ich auf dem 2. Loch
+        When I go to the next hole
+        Then I am on the 2. hole
