@@ -9,7 +9,7 @@ Feature: count strokes per hole
             |x|
             |1|
             |2|
-
+    @wip
     Scenario: go to next hole
         When ich auf einem Loch gespielt habe
         Then zählen die Schläge auf dem nächsten Loch wieder von 0 an

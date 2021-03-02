@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		strict = true, 
-		tags = {"not @in_arbeit"},
+		tags = {"not @wip"},
 		monochrome = true,
 		features = "src/cucumber/resources"
 )

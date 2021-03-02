@@ -61,7 +61,7 @@ task cucumber {
             main = "cucumber.api.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = [  '--strict',
-                      '--tags', 'not @in_arbeit',
+                      '--tags', 'not @wip',
                       '--plugin', 'pretty',
                       '--glue', 'de.itagile.golf',
                       'src/cucumber/resources']
@@ -69,8 +69,8 @@ task cucumber {
     }
 }
 
-build {
-    dependsOn cucumber
+task buildWithCucumber {
+    dependsOn build, cucumber
 }
 
 
