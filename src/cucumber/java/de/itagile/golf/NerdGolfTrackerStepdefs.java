@@ -2,7 +2,7 @@ package de.itagile.golf;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import cucumber.api.java.de.Wenn;
+import cucumber.api.java.en.When;
 
 public class NerdGolfTrackerStepdefs {
 	
@@ -13,18 +13,18 @@ public class NerdGolfTrackerStepdefs {
 	}
 
 	@Before
-    public void starteNeuesSpiel() {
-        tracker.starte();
+    public void startNewGame() {
+        tracker.start();
     }
 
 	@After
-    public void beendeTracker() {
-        tracker.beende();
+    public void stopTracker() {
+        tracker.stop();
     }
 
-	@Wenn("ich den NerdGolfTracker starte")
-    public void starteNerdGolfTracker() {
-        // nur da, um lesbarere Szenarien zu schreiben
+	@When("ich den NerdGolfTracker starte")
+    public void startNerdGolfTracker() {
+        // only there to write more readable scenarios
     }
 
 }
