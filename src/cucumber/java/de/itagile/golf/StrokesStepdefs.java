@@ -19,13 +19,13 @@ public class StrokesStepdefs {
     public void strikeBall(int strokes) {
         this.schlaege = strokes;
         while (strokes-- > 0) {
-            tracker.enter("Schlage Ball");
+            tracker.enter("strike ball");
         }
     }
 	
 	@When("I played on a hole")
     public void playedOnaHoleAndGoToNext() {
-        tracker.enter("Schlage Ball");
+        tracker.enter("strike ball");
         tracker.enter("next hole");
     }
 	
@@ -36,7 +36,7 @@ public class StrokesStepdefs {
 	
 	@Then("the score for the next hole is reset to 0")
 	public void checkStrokeCounting() {
-        tracker.enter("Schlage Ball");
+        tracker.enter("strike ball");
 		tracker.assertThatAnswer(containsString(valueOf(1)));
 	}
 

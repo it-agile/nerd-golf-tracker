@@ -12,7 +12,7 @@ public class StrokeCommand implements Command {
 	}
 
 	public String command() {
-		return "Schlage Ball";
+		return "strike ball";
 	}
 
 	public String description() {

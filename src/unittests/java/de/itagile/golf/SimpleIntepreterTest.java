@@ -30,7 +30,7 @@ public class SimpleIntepreterTest {
 	@Parameters
 	public static List<Object[]> parameters() {
 		Object[][] testData = new Object[][] {
-				{"Schlage Ball", Stroke.class},
+				{"strike ball", Stroke.class},
 				{"next hole", NextHole.class},
 				{"help", Help.class},
 				};

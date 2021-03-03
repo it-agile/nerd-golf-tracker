@@ -7,6 +7,6 @@ Feature: help
 
         Examples:
             |command|
-            |Schlage Ball|
+            |strike ball|
             |next hole|
             |help|

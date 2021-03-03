@@ -21,7 +21,7 @@ public class CurrentHoleStepdefs {
 	@Then("I am on the {int}. hole")
 	public void checkCurrentHole(int expectedHole) {
 		checkHoleDisplay(expectedHole);
-		tracker.enter("Schlage Ball");
+		tracker.enter("strike ball");
 		checkHoleDisplay(expectedHole);
 	}
 
