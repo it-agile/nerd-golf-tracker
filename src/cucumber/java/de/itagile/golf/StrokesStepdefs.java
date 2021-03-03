@@ -15,7 +15,7 @@ public class StrokesStepdefs {
 		this.tracker = tracker;
 	}
 	
-	@When("ich den Ball {int}-mal schlage")
+	@When("I strike the ball {int} times")
     public void strikeBall(int strokes) {
         this.schlaege = strokes;
         while (strokes-- > 0) {
@@ -23,18 +23,18 @@ public class StrokesStepdefs {
         }
     }
 	
-	@When("ich auf einem Loch gespielt habe")
-    public void playOnOneHoleAndGoToNext() {
+	@When("I played on a hole")
+    public void playedOnaHoleAndGoToNext() {
         tracker.enter("Schlage Ball");
         tracker.enter("Nächstes Loch");
     }
 	
-	@Then("zählt der NerdGolfTracker auch so viele Schläge")
+	@Then("the NerdGolfTracker also counts so many strokes")
     public void checkStrokes() {
         tracker.assertThatAnswer(containsString(valueOf(schlaege)));
     }
 	
-	@Then("zählen die Schläge auf dem nächsten Loch wieder von 0 an")
+	@Then("the score for the next hole is reset to 0")
 	public void checkStrokeCounting() {
         tracker.enter("Schlage Ball");
 		tracker.assertThatAnswer(containsString(valueOf(1)));

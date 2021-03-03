@@ -2,8 +2,8 @@
 Feature: count strokes per hole
 
     Scenario Outline: count strokes on one hole
-        When ich den Ball <x>-mal schlage
-        Then zählt der NerdGolfTracker auch so viele Schläge
+        When I strike the ball <x> times
+        Then the NerdGolfTracker also counts so many strokes
 
         Examples:
             |x|
@@ -11,6 +11,6 @@ Feature: count strokes per hole
             |2|
     @wip
     Scenario: go to next hole
-        When ich auf einem Loch gespielt habe
-        Then zählen die Schläge auf dem nächsten Loch wieder von 0 an
+        When I played on a hole
+        Then the score for the next hole is reset to 0
 
