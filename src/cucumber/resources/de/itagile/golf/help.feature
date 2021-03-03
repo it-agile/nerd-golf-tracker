@@ -9,4 +9,4 @@ Feature: help
             |command|
             |Schlage Ball|
             |Nächstes Loch|
-            |Hilfe|
+            |help|

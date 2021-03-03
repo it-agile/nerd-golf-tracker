@@ -32,7 +32,7 @@ public class SimpleIntepreterTest {
 		Object[][] testData = new Object[][] {
 				{"Schlage Ball", Stroke.class},
 				{"Nächstes Loch", NextHole.class},
-				{"Hilfe", Help.class},
+				{"help", Help.class},
 				};
 		return Arrays.asList(testData);
 	}

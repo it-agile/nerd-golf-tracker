@@ -8,7 +8,7 @@ import de.itagile.golf.operation.Help;
 public class HelpCommand implements Command {
 
 	public String command() {
-		return "Hilfe";
+		return "help";
 	}
 
 	public Operation operation() {

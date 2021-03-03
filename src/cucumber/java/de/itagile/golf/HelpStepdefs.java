@@ -14,7 +14,7 @@ public class HelpStepdefs {
 	
 	@When("I open the help")
 	public void callHelp() {
-		tracker.enter("Hilfe");
+		tracker.enter("help");
 	}
 	
 	@Then("NerdGolfTracker displays an entry about {string}")
