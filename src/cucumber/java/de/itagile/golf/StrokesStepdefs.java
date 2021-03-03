@@ -26,7 +26,7 @@ public class StrokesStepdefs {
 	@When("I played on a hole")
     public void playedOnaHoleAndGoToNext() {
         tracker.enter("Schlage Ball");
-        tracker.enter("Nächstes Loch");
+        tracker.enter("next hole");
     }
 	
 	@Then("the NerdGolfTracker also counts so many strokes")

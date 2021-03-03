@@ -31,7 +31,7 @@ public class SimpleIntepreterTest {
 	public static List<Object[]> parameters() {
 		Object[][] testData = new Object[][] {
 				{"Schlage Ball", Stroke.class},
-				{"Nächstes Loch", NextHole.class},
+				{"next hole", NextHole.class},
 				{"help", Help.class},
 				};
 		return Arrays.asList(testData);

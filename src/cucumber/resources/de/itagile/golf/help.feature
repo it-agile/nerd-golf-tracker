@@ -8,5 +8,5 @@ Feature: help
         Examples:
             |command|
             |Schlage Ball|
-            |Nächstes Loch|
+            |next hole|
             |help|

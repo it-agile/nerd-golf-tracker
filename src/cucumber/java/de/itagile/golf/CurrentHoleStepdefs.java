@@ -15,7 +15,7 @@ public class CurrentHoleStepdefs {
 	
 	@When("I go to the next hole")
     public void goToNextHole() {
-        tracker.enter("Nächstes Loch");
+        tracker.enter("next hole");
     }
 	
 	@Then("I am on the {int}. hole")

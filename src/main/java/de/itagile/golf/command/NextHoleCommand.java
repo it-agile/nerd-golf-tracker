@@ -12,7 +12,7 @@ public class NextHoleCommand implements Command {
 	}
 
 	public String command() {
-		return "Nächstes Loch";
+		return "next hole";
 	}
 
 	public String description() {
