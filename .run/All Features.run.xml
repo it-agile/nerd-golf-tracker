@@ -1,0 +1,22 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All Features" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+    <option name="CUCUMBER_CORE_VERSION" value="4" />
+    <option name="FILE_PATH" value="$PROJECT_DIR$/src/cucumber/resources/de/itagile/golf/" />
+    <option name="GLUE" value="de.itagile.golf" />
+    <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+    <module name="nerd-golf-tracker.test" />
+    <option name="PROGRAM_PARAMETERS" value="--tags &quot;not @wip&quot; --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter" />
+    <option name="SUGGESTED_NAME" value="Feature: Aktuelles Loch anzeigen" />
+    <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="cucumber.api.cli.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks="build" externalProjectPath="$PROJECT_DIR$" vmOptions="" scriptParameters="" />
+    </method>
+  </configuration>
+</component>
