@@ -16,7 +16,7 @@ public class StrokeCommand implements Command {
 	}
 
 	public String description() {
-		return "dann zähle ich mit";
+		return "then I count the score";
 	}
 
 }

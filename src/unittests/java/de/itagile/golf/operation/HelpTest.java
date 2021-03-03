@@ -17,13 +17,13 @@ public class HelpTest {
 
 	@Test
 	public void displaysIntro() throws Exception {
-		assertThat(helpText(), containsString("Ich reagiere auf:"));
+		assertThat(helpText(), containsString("I respond to:"));
 	}
 
 	@Test
 	public void displaysDescriptionOfCommand() throws Exception {
-		assertThat(helpText(dummyCommand("Kommando", "Beschreibung")),
-				containsString("Kommando (...Beschreibung)"));
+		assertThat(helpText(dummyCommand("command", "description")),
+				containsString("command (...description)"));
 	}
 
 	@Test

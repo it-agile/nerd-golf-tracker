@@ -16,7 +16,7 @@ public class NextHoleCommand implements Command {
 	}
 
 	public String description() {
-		return "dann zähle ich für das nächste Loch mit";
+		return "then I count the score for the next hole";
 	}
 
 }

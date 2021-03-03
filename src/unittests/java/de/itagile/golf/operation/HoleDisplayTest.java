@@ -15,6 +15,6 @@ public class HoleDisplayTest {
 	public void displaysCurrentHole() throws Exception {
 		ScoreCard scoreCard = mock(ScoreCard.class);
 		when(scoreCard.currentHole()).thenReturn(42);
-		assertThat(new HoleDisplay().run(scoreCard ), containsString("42.Loch"));
+		assertThat(new HoleDisplay().run(scoreCard ), containsString("42. hole"));
 	}
 }

@@ -19,12 +19,12 @@ public class ScoreDisplayTest {
 	@Test
 	public void displaysOneStroke() throws Exception {
 		when(scoreCard.score()).thenReturn(1);
-		assertThat(scoreDisplay.run(scoreCard), containsString("1 Schlag"));
+		assertThat(scoreDisplay.run(scoreCard), containsString("1 stroke"));
 	}
 	
 	@Test
 	public void integratesDisplayOfFollowUpOperation() throws Exception {
-		when(followUpOperation.run(scoreCard)).thenReturn("folgeausgabe");
-		assertThat(scoreDisplay.run(scoreCard), containsString("folgeausgabe"));
+		when(followUpOperation.run(scoreCard)).thenReturn("follow-up operation display");
+		assertThat(scoreDisplay.run(scoreCard), containsString("follow-up operation display"));
 	}
 }

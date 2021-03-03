@@ -13,6 +13,6 @@ public class NextHoleDisplay implements Operation {
 
 	@Override
 	public String run(ScoreCard scoreCard) {
-		return "Deine Schlagzahl wurde zurückgesetzt und Du bist " + followUpOperation.run(scoreCard);
+		return "Your score has been reset and your are " + followUpOperation.run(scoreCard);
 	}
 }

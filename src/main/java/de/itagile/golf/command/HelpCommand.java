@@ -16,7 +16,7 @@ public class HelpCommand implements Command {
 	}
 
 	public String description() {
-		return "dann zeige ich Dir das hier";
+		return "then I display this";
 	}
 
 }

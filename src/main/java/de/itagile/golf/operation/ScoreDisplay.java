@@ -13,7 +13,7 @@ public class ScoreDisplay implements Operation {
 
 	@Override
 	public String run(ScoreCard scoreCard) {
-		String template = "Du hast %d Schlag %s";
+		String template = "Your score is %d strokes %s";
 		return String.format(template,
 							 scoreCard.score(),
 							 followUpOperation.run(scoreCard));

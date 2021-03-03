@@ -13,6 +13,6 @@ public class StartDisplay implements Operation {
 	
 	@Override
 	public String run(ScoreCard scoreCard) {
-		return "Du bist " + followUpOperation.run(scoreCard);
+		return "You are " + followUpOperation.run(scoreCard);
 	}
 }

@@ -35,8 +35,8 @@ public class NextHoleTest {
 	
 	@Test
 	public void displaysAlsoTheDisplayOfFollowUpOperation() throws Exception {
-		when(followUpOperation.run(any(ScoreCard.class))).thenReturn("folgeoperationAusgabe");
+		when(followUpOperation.run(any(ScoreCard.class))).thenReturn("follow-up operation display");
 		
-		assertThat(nextHole.run(scoreCard), is("folgeoperationAusgabe"));
+		assertThat(nextHole.run(scoreCard), is("follow-up operation display"));
 	}
 }

@@ -19,13 +19,13 @@ public class NextHoleDisplayTest {
 
 	@Test
 	public void displaysScoreReset() throws Exception {
-		assertThat(nextHoleDisplay.run(scoreCard), containsString("Deine Schlagzahl wurde zurückgesetzt"));
+		assertThat(nextHoleDisplay.run(scoreCard), containsString("Your score has been reset"));
 	}
 	
 	@Test
 	public void displaysDisplayOfFollowUpOperation() throws Exception {
-		when(followUpOperation.run(any(ScoreCard.class))).thenReturn("folgeoperationAusgabe");
+		when(followUpOperation.run(any(ScoreCard.class))).thenReturn("follow-up operation display");
 		
-		assertThat(nextHoleDisplay.run(scoreCard), containsString("folgeoperationAusgabe"));
+		assertThat(nextHoleDisplay.run(scoreCard), containsString("follow-up operation display"));
 	}
 }
