@@ -1,17 +1,17 @@
-Quotes Language: German
+Quotes Language: English
 
 * Java 8 or 11
 * Gradle 6.5.1
 
-## Fallstricke
+## Pitfalls
 
-* Umlaute machen auf Windows-Systemen manchmal Ärger
-* Bei Windows sollte GIT konfiguriert werden, dass CRLFs richtig behandelt werden: git config --global core.autocrlf true
+* Umlauts sometimes cause trouble on Windows systems
+* On Windows, GIT should be configured to handle CRLFs properly: git config --global core.autocrlf true
 
-## Checklisten
+## Checklists
 
-* Gradle: <default> oder build
-* Dann Importieren in Eclipse oder IDEA
+* Gradle: <default> or build
+* Then import into Eclipse or IDEA
 
 ## Build-Server
 
