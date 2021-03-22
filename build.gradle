@@ -11,7 +11,7 @@ plugins {
     id 'application'
 }
 
-defaultTasks 'clean', 'build'
+defaultTasks 'clean', 'buildWithCucumber'
 
 repositories {
     mavenCentral()
