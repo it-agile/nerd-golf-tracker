@@ -1,7 +1,7 @@
 package de.itagile.golf.operation;
 
 import de.itagile.golf.Operation;
-import de.itagile.golf.ScoreCard;
+import de.itagile.golf.ScoreCardCamelCaseProblem;
 
 public class NextHoleDisplay implements Operation {
 
@@ -12,7 +12,7 @@ public class NextHoleDisplay implements Operation {
 	}
 
 	@Override
-	public String run(ScoreCard scoreCard) {
+	public String run(ScoreCardCamelCaseProblem scoreCard) {
 		return "Your score has been reset and your are " + followUpOperation.run(scoreCard);
 	}
 }

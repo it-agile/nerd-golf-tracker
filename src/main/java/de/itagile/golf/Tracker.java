@@ -4,7 +4,7 @@ package de.itagile.golf;
 
 public class Tracker {
 
-	public ScoreCard scoreCard = new SimpleScoreCard();
+	public ScoreCardCamelCaseProblem scoreCard = new SimpleScoreCardCamelCaseProblem();
 	private Interpreter interpreter;
 	private Operation startOperation;
 

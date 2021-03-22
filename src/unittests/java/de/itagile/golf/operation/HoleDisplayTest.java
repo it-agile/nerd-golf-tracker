@@ -7,13 +7,13 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 
-import de.itagile.golf.ScoreCard;
+import de.itagile.golf.ScoreCardCamelCaseProblem;
 
 public class HoleDisplayTest {
 
 	@Test
 	public void displaysCurrentHole() throws Exception {
-		ScoreCard scoreCard = mock(ScoreCard.class);
+		ScoreCardCamelCaseProblem scoreCard = mock(ScoreCardCamelCaseProblem.class);
 		when(scoreCard.currentHole()).thenReturn(42);
 		assertThat(new HoleDisplay().run(scoreCard ), containsString("42. hole"));
 	}

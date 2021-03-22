@@ -11,18 +11,18 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.itagile.golf.Operation;
-import de.itagile.golf.ScoreCard;
+import de.itagile.golf.ScoreCardCamelCaseProblem;
 
 
 public class NextHoleTest {
 	
-	private ScoreCard scoreCard;
+	private ScoreCardCamelCaseProblem scoreCard;
 	private NextHole nextHole;
 	private Operation followUpOperation;
 
 	@Before
 	public void setup() {
-		scoreCard = mock(ScoreCard.class);
+		scoreCard = mock(ScoreCardCamelCaseProblem.class);
 		followUpOperation = mock(Operation.class);
 		nextHole = new NextHole(followUpOperation);
 	}
@@ -35,7 +35,7 @@ public class NextHoleTest {
 	
 	@Test
 	public void displaysAlsoTheDisplayOfFollowUpOperation() throws Exception {
-		when(followUpOperation.run(any(ScoreCard.class))).thenReturn("follow-up operation display");
+		when(followUpOperation.run(any(ScoreCardCamelCaseProblem.class))).thenReturn("follow-up operation display");
 		
 		assertThat(nextHole.run(scoreCard), is("follow-up operation display"));
 	}

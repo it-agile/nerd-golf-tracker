@@ -6,9 +6,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.Test;
 
 
-public class SimpleScoreCardTest {
+public class SimpleScoreCardCamelCaseProblemTest {
 
-	private ScoreCard scoreCard = new SimpleScoreCard();
+	private ScoreCardCamelCaseProblem scoreCard = new SimpleScoreCardCamelCaseProblem();
 	
 	@Test
 	public void incrementsScoreOnce() throws Exception {

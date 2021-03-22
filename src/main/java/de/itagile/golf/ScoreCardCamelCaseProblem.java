@@ -1,6 +1,6 @@
 package de.itagile.golf;
 
-public interface ScoreCard {
+public interface ScoreCardCamelCaseProblem {
 
 	void increaseScore();
 

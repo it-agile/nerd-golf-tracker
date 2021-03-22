@@ -1,6 +1,6 @@
 package de.itagile.golf;
 
-public class SimpleScoreCard implements ScoreCard {
+public class SimpleScoreCardCamelCaseProblem implements ScoreCardCamelCaseProblem {
 
 	private int currentHole = 1;
 	private int score;

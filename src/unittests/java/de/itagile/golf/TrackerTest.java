@@ -18,13 +18,13 @@ public class TrackerTest {
 	public void returnsResultOfOperationRun() throws Exception {
 		Operation operation = mock(Operation.class);
 		when(interpreter.interpret("foo")).thenReturn(operation);
-		when(operation.run(any(ScoreCard.class))).thenReturn("bar");
+		when(operation.run(any(ScoreCardCamelCaseProblem.class))).thenReturn("bar");
 		assertThat(tracker.respondTo("foo"), is("bar"));
 	}
 	
 	@Test
 	public void returnsResultOfStartOperation() throws Exception {
-		when(startOperation.run(any(ScoreCard.class))).thenReturn("foo");
+		when(startOperation.run(any(ScoreCardCamelCaseProblem.class))).thenReturn("foo");
 		assertThat(tracker.start(), is("foo"));
 	}
 }

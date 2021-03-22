@@ -9,11 +9,11 @@ import static org.mockito.Mockito.when;
 import org.junit.Test;
 
 import de.itagile.golf.Operation;
-import de.itagile.golf.ScoreCard;
+import de.itagile.golf.ScoreCardCamelCaseProblem;
 
 public class NextHoleDisplayTest {
 	
-	private ScoreCard scoreCard = mock(ScoreCard.class);
+	private ScoreCardCamelCaseProblem scoreCard = mock(ScoreCardCamelCaseProblem.class);
 	private Operation followUpOperation = mock(Operation.class);
 	private NextHoleDisplay nextHoleDisplay = new NextHoleDisplay(followUpOperation);
 
@@ -24,7 +24,7 @@ public class NextHoleDisplayTest {
 	
 	@Test
 	public void displaysDisplayOfFollowUpOperation() throws Exception {
-		when(followUpOperation.run(any(ScoreCard.class))).thenReturn("follow-up operation display");
+		when(followUpOperation.run(any(ScoreCardCamelCaseProblem.class))).thenReturn("follow-up operation display");
 		
 		assertThat(nextHoleDisplay.run(scoreCard), containsString("follow-up operation display"));
 	}

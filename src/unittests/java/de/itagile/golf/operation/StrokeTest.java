@@ -9,12 +9,12 @@ import static org.mockito.Mockito.when;
 import org.junit.Test;
 
 import de.itagile.golf.Operation;
-import de.itagile.golf.ScoreCard;
+import de.itagile.golf.ScoreCardCamelCaseProblem;
 
 
 public class StrokeTest {
 
-	private ScoreCard scoreCard = mock(ScoreCard.class);
+	private ScoreCardCamelCaseProblem scoreCard = mock(ScoreCardCamelCaseProblem.class);
 	private Operation followUpOperation = mock(Operation.class);
 	private Stroke stroke = new Stroke(followUpOperation);
 
