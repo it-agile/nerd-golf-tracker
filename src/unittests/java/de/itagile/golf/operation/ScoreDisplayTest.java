@@ -8,11 +8,11 @@ import static org.mockito.Mockito.when;
 import org.junit.Test;
 
 import de.itagile.golf.Operation;
-import de.itagile.golf.ScoreCardCamelCaseProblem;
+import de.itagile.golf.ScoreCard;
 
 public class ScoreDisplayTest {
 
-	private ScoreCardCamelCaseProblem scoreCard = mock(ScoreCardCamelCaseProblem.class);
+	private ScoreCard scoreCard = mock(ScoreCard.class);
 	private Operation followUpOperation = mock(Operation.class);
 	private Operation scoreDisplay = new ScoreDisplay(followUpOperation);
 	

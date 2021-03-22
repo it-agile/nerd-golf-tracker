@@ -1,7 +1,7 @@
 package de.itagile.golf.operation;
 
 import de.itagile.golf.Operation;
-import de.itagile.golf.ScoreCardCamelCaseProblem;
+import de.itagile.golf.ScoreCard;
 
 public final class NextHole implements Operation {
 	
@@ -11,7 +11,7 @@ public final class NextHole implements Operation {
 		this.followUpOperation = followUpOperation;
 	}
 
-	public String run(ScoreCardCamelCaseProblem scoreCard) {
+	public String run(ScoreCard scoreCard) {
 		scoreCard.completeCurrentHole();
 		return followUpOperation.run(scoreCard);
 	}

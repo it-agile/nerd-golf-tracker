@@ -1,7 +1,7 @@
 package de.itagile.golf.operation;
 
 import de.itagile.golf.Operation;
-import de.itagile.golf.ScoreCardCamelCaseProblem;
+import de.itagile.golf.ScoreCard;
 
 public class ScoreDisplay implements Operation {
 
@@ -12,7 +12,7 @@ public class ScoreDisplay implements Operation {
 	}
 
 	@Override
-	public String run(ScoreCardCamelCaseProblem scoreCard) {
+	public String run(ScoreCard scoreCard) {
 		String template = "Your score is %d strokes %s";
 		return String.format(template,
 							 scoreCard.score(),

@@ -1,7 +1,7 @@
 package de.itagile.golf.operation;
 
 import de.itagile.golf.Operation;
-import de.itagile.golf.ScoreCardCamelCaseProblem;
+import de.itagile.golf.ScoreCard;
 
 public class StartDisplay implements Operation {
 
@@ -12,7 +12,7 @@ public class StartDisplay implements Operation {
 	}
 	
 	@Override
-	public String run(ScoreCardCamelCaseProblem scoreCard) {
+	public String run(ScoreCard scoreCard) {
 		return "You are " + followUpOperation.run(scoreCard);
 	}
 }
