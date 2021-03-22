@@ -1,6 +1,6 @@
 Quotes Language: English
 
-* Java 8 or 11
+* Java 8 or 11+
 * Gradle 6.5.1
 
 ## Pitfalls
