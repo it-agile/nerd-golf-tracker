@@ -3,8 +3,8 @@ package de.itagile.golf;
 import static java.lang.String.valueOf;
 import static org.hamcrest.Matchers.containsString;
 
-import cucumber.api.java.de.Dann;
-import cucumber.api.java.de.Wenn;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class SchlaegeStepdefs {
 
@@ -15,7 +15,7 @@ public class SchlaegeStepdefs {
 		this.tracker = tracker;
 	}
 	
-	@Wenn("ich den Ball {int}-mal schlage")
+	@When("ich den Ball {int}-mal schlage")
     public void schlageBall(int schlaege) {
         this.schlaege = schlaege;
         while (schlaege-- > 0) {
@@ -23,18 +23,18 @@ public class SchlaegeStepdefs {
         }
     }
 	
-	@Wenn("ich auf einem Loch gespielt habe")
+	@When("ich auf einem Loch gespielt habe")
     public void spieleAufEinemLochUndGeheWeiter() {
         tracker.gibEin("Schlage Ball");
         tracker.gibEin("Nächstes Loch");
     }
 	
-	@Dann("zählt der NerdGolfTracker auch so viele Schläge")
+	@Then("zählt der NerdGolfTracker auch so viele Schläge")
     public void pruefeSchlaege() {
         tracker.assertThatAntwort(containsString(valueOf(schlaege)));
     }
 	
-	@Dann("zählen die Schläge auf dem nächsten Loch wieder von 0 an")
+	@Then("zählen die Schläge auf dem nächsten Loch wieder von 0 an")
 	public void pruefeSchlaegeZaehlen() {
         tracker.gibEin("Schlage Ball");
 		tracker.assertThatAntwort(containsString(valueOf(1)));

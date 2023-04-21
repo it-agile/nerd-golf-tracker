@@ -1,10 +1,8 @@
 package de.itagile.golf;
 
+import org.junit.jupiter.api.Test;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-
-import org.junit.Test;
-
 
 public class EinfacheScorecardTest {
 
@@ -13,6 +11,7 @@ public class EinfacheScorecardTest {
 	@Test
 	public void inkrementiertSchlagzahlEinmal() throws Exception {
 		scorecard.erhoeheAnzahlSchlaege();
+
 		assertThat(scorecard.anzahlSchlaege(), is(1));
 	}
 	

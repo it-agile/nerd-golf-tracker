@@ -34,43 +34,21 @@ sourceSets {
 }
 
 test {
-    exclude '**/AllFeatures.class'
+	useJUnitPlatform()
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.+'
-    testImplementation 'org.hamcrest:hamcrest:2.2'
-    testImplementation 'org.mockito:mockito-core:2.+'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.+'
+	testImplementation 'org.junit.jupiter:junit-jupiter-params:5.8.+'
+    testImplementation 'org.mockito:mockito-core:5.+'
+    testImplementation 'org.hamcrest:hamcrest-library:2.2'
     
-    testImplementation 'io.cucumber:cucumber-java:4.4.0'
-    testImplementation 'io.cucumber:cucumber-junit:4.4.0'
-    testImplementation 'io.cucumber:cucumber-picocontainer:4.4.0'
-}
-
-configurations {
-    cucumberRuntime {
-        extendsFrom testImplementation
-    }
-}
-
-task cucumber {
-    dependsOn assemble, testClasses
-    
-    doLast {
-        javaexec {
-            main = "cucumber.api.cli.Main"
-            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = [  '--strict',
-                      '--tags', 'not @in_arbeit',
-                      '--plugin', 'pretty',
-                      '--glue', 'de.itagile.golf',
-                      'src/cucumber/resources']
-        }
-    }
-}
-
-build {
-    dependsOn cucumber
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    	    
+    testImplementation 'io.cucumber:cucumber-java:7.11.+'
+	testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.11.+'
+    testImplementation 'io.cucumber:cucumber-picocontainer:7.11.+'
+	testImplementation 'org.junit.platform:junit-platform-suite:1.9.+'
 }
 
 

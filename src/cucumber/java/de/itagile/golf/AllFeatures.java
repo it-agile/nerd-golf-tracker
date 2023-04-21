@@ -1,17 +1,13 @@
 package de.itagile.golf;
 
-import org.junit.runner.RunWith;
+import org.junit.platform.suite.api.ExcludeTags;
+import org.junit.platform.suite.api.IncludeEngines;
+import org.junit.platform.suite.api.SelectClasspathResource;
+import org.junit.platform.suite.api.Suite;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
-
-
-@RunWith(Cucumber.class)
-@CucumberOptions(
-		strict = true, 
-		tags = {"not @in_arbeit"},
-		monochrome = true,
-		features = "src/cucumber/resources"
-)
+@Suite
+@SelectClasspathResource("de/itagile/golf")
+@ExcludeTags("in_arbeit")
+@IncludeEngines("cucumber")
 public class AllFeatures {
 }

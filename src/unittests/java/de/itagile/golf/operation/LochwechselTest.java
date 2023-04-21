@@ -2,13 +2,13 @@ package de.itagile.golf.operation;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.mockito.Matchers.any;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import de.itagile.golf.Operation;
 import de.itagile.golf.Scorecard;
@@ -20,7 +20,7 @@ public class LochwechselTest {
 	private Lochwechsel lochwechsel;
 	private Operation folgeOperation;
 
-	@Before
+	@BeforeEach
 	public void setup() {
 		scorecard = mock(Scorecard.class);
 		folgeOperation = mock(Operation.class);

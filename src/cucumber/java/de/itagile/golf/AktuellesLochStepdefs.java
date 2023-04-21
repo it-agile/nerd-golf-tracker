@@ -2,8 +2,8 @@ package de.itagile.golf;
 
 import static org.hamcrest.Matchers.containsString;
 
-import cucumber.api.java.de.Dann;
-import cucumber.api.java.de.Wenn;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class AktuellesLochStepdefs {
 
@@ -13,12 +13,12 @@ public class AktuellesLochStepdefs {
 		this.tracker = tracker;
 	}
 	
-	@Wenn("ich zum nächsten Loch gehe")
+	@When("ich zum nächsten Loch gehe")
     public void geheZumNaechstenLoch() {
         tracker.gibEin("Nächstes Loch");
     }
 	
-	@Dann("bin ich auf dem {int}. Loch")
+	@Then("bin ich auf dem {int}. Loch")
 	public void pruefeAktuellesLoch(int erwartetesLoch) {
 		pruefeLochAnzeige(erwartetesLoch);
 		tracker.gibEin("Schlage Ball");
