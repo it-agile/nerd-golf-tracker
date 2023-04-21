@@ -1,7 +1,7 @@
 Quotes Language: German
 
-* Java 8 or 11
-* Gradle 6.5.1
+* Java 17
+* Gradle 8.1
 
 ## Fallstricke
 
@@ -10,10 +10,10 @@ Quotes Language: German
 
 ## Checklisten
 
-* Gradle: <default> oder build
-* Dann Importieren in Eclipse oder IDEA
+* Projekt auschecken und in Eclipse/IDEA importieren
+* Tests ausprobieren (Alle sind Grün)
+* Gradle: <default> oder build aufrufen
 
 ## Build-Server
 
-https://travis-ci.com/golfholger/nerd-golf-tracker
-
+* In Github selbst über Github-Workflows
