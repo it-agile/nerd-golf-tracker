@@ -3,8 +3,8 @@ package de.itagile.golf.operation;
 import static de.itagile.golf.util.SystemProperties.LINE_SEPARATOR;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -13,21 +13,21 @@ import org.junit.jupiter.api.Test;
 import de.itagile.golf.Befehl;
 import de.itagile.golf.BefehleSammler;
 
-public class HilfeTest {
+class HilfeTest {
 
 	@Test
-	public void zeigtIntroAn() throws Exception {
+	void zeigtIntroAn() throws Exception {
 		assertThat(hilfetext(), containsString("Ich reagiere auf:"));
 	}
 
 	@Test
-	public void zeigtBeschreibungZumKommando() throws Exception {
+	void zeigtBeschreibungZumKommando() throws Exception {
 		assertThat(hilfetext(dummyBefehl("Kommando", "Beschreibung")), 
 				containsString("Kommando (...Beschreibung)"));
 	}
 
 	@Test
-	public void gibtProKommandoEineZeileAus() throws Exception {
+	void gibtProKommandoEineZeileAus() throws Exception {
 		String hilfetextFuerZweiBefehle = hilfetext(mock(Befehl.class), mock(Befehl.class));
 		assertThat(anzahlZeilen(hilfetextFuerZweiBefehle), is(2));
 	}
@@ -51,4 +51,5 @@ public class HilfeTest {
 		when(befehl.beschreibung()).thenReturn(beschreibung);
 		return befehl;
 	}
+
 }

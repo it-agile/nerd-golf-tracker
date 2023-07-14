@@ -9,14 +9,16 @@ import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
-public class CollectionUtilsTest {
+class CollectionUtilsTest {
 
 	@Test
-	public void joinsEmptyCollectionToEmptyString() throws Exception {
+	void joinsEmptyCollectionToEmptyString() throws Exception {
 		assertThat(join(Arrays.asList(), ""), is(""));
 	}
+
 	@Test
-	public void joinsElementsOfCollectionUsingSeparator() throws Exception {
+	void joinsElementsOfCollectionUsingSeparator() throws Exception {
 		assertThat(join(asList(1, 2), ", "), is("1, 2"));
 	}
+
 }

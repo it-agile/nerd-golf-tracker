@@ -3,8 +3,6 @@ package de.itagile.golf;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.params.ParameterizedTest;
@@ -15,7 +13,7 @@ import de.itagile.golf.operation.Hilfe;
 import de.itagile.golf.operation.Lochwechsel;
 import de.itagile.golf.operation.Schlag;
 
-public class EinfacherIntepreterTest {
+class EinfacherIntepreterTest {
 
 	private Interpreter interpreter = new EinfacherInterpreter();
 	
@@ -29,7 +27,8 @@ public class EinfacherIntepreterTest {
 	
 	@ParameterizedTest
 	@MethodSource("schlagParameter")
-	public void interpretiertBefehle(String befehl, Class<Operation> operation) throws Exception {
+	void interpretiertBefehle(String befehl, Class<Operation> operation) throws Exception {
 		assertThat(interpreter.interpretiere(befehl), instanceOf(operation));
 	}
+
 }
