@@ -12,12 +12,12 @@ import org.junit.jupiter.api.Test;
 class CollectionUtilsTest {
 
 	@Test
-	void joinsEmptyCollectionToEmptyString() throws Exception {
+	void joinsEmptyCollectionToEmptyString() {
 		assertThat(join(Arrays.asList(), ""), is(""));
 	}
 
 	@Test
-	void joinsElementsOfCollectionUsingSeparator() throws Exception {
+	void joinsElementsOfCollectionUsingSeparator() {
 		assertThat(join(asList(1, 2), ", "), is("1, 2"));
 	}
 

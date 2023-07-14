@@ -12,7 +12,7 @@ import de.itagile.golf.Scorecard;
 class LochausgabeTest {
 
 	@Test
-	void gibtAktuellesLochAus() throws Exception {
+	void gibtAktuellesLochAus() {
 		Scorecard scorecard = mock(Scorecard.class);
 		when(scorecard.aktuellesLoch()).thenReturn(42);
 		assertThat(new Lochausgabe().fuehreAus(scorecard ), containsString("42.Loch"));

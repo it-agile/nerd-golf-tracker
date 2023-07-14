@@ -17,13 +17,13 @@ class SchlagzahlausgabeTest {
 	private Operation schlagzahlausgabe = new Schlagzahlausgabe(folgeoperation);
 	
 	@Test
-	void meldetEinenSchlag() throws Exception {
+	void meldetEinenSchlag() {
 		when(scorecard.anzahlSchlaege()).thenReturn(1);
 		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("1 Schlag"));
 	}
 	
 	@Test
-	void integriertAusgabeDerFolgeoperation() throws Exception {
+	void integriertAusgabeDerFolgeoperation() {
 		when(folgeoperation.fuehreAus(scorecard)).thenReturn("folgeausgabe");
 		assertThat(schlagzahlausgabe.fuehreAus(scorecard), containsString("folgeausgabe"));
 	}

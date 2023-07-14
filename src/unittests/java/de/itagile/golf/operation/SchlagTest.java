@@ -18,13 +18,13 @@ class SchlagTest {
 	private Schlag schlag = new Schlag(folgeoperation);
 
 	@Test
-	void erhoehtAnzahlSchlaegeAufScorecard() throws Exception {
+	void erhoehtAnzahlSchlaegeAufScorecard() {
 		schlag.fuehreAus(scorecard);
 		verify(scorecard).erhoeheAnzahlSchlaege();
 	}
 
 	@Test
-	void gibtErgebnisDerFolgeoperationZurueck() throws Exception {
+	void gibtErgebnisDerFolgeoperationZurueck() {
 		when(folgeoperation.fuehreAus(scorecard)).thenReturn("foo");
 		assertThat(schlag.fuehreAus(scorecard), is("foo"));
 	}

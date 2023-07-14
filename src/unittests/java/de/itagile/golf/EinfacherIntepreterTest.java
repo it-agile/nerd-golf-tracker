@@ -28,7 +28,7 @@ class EinfacherIntepreterTest {
 	
 	@ParameterizedTest
 	@MethodSource("schlagParameter")
-	void interpretiertBefehle(String befehl, Class<Operation> operation) throws Exception {
+	void interpretiertBefehle(String befehl, Class<Operation> operation) {
 		assertThat(interpreter.interpretiere(befehl), instanceOf(operation));
 	}
 

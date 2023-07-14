@@ -19,13 +19,13 @@ class LochwechselTest {
 	private Lochwechsel lochwechsel = new Lochwechsel(folgeOperation);
 
 	@Test
-	void setztAnzahlSchlaegeZurueck() throws Exception {
+	void setztAnzahlSchlaegeZurueck() {
 		lochwechsel.fuehreAus(scorecard);
 		verify(scorecard).schliesseLochAb();
 	}
 	
 	@Test
-	void gibtAusgabeDerFolgeoperationMitAus() throws Exception {
+	void gibtAusgabeDerFolgeoperationMitAus() {
 		when(folgeOperation.fuehreAus(any(Scorecard.class))).thenReturn("folgeoperationAusgabe");
 		
 		assertThat(lochwechsel.fuehreAus(scorecard), is("folgeoperationAusgabe"));	

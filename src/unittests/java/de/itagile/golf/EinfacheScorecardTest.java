@@ -10,32 +10,32 @@ class EinfacheScorecardTest {
 	private Scorecard scorecard = new EinfacheScorecard();
 	
 	@Test
-	void inkrementiertSchlagzahlEinmal() throws Exception {
+	void inkrementiertSchlagzahlEinmal() {
 		scorecard.erhoeheAnzahlSchlaege();
 
 		assertThat(scorecard.anzahlSchlaege(), is(1));
 	}
 	
 	@Test
-	void inkrementiertSchlagzahlMehrmals() throws Exception {
+	void inkrementiertSchlagzahlMehrmals() {
 		scorecard.erhoeheAnzahlSchlaege();
 		scorecard.erhoeheAnzahlSchlaege();
 		assertThat(scorecard.anzahlSchlaege(), is(2));
 	}
 	
 	@Test
-	void setztSchlagzahlZurueck() throws Exception {
+	void setztSchlagzahlZurueck() {
 		scorecard.erhoeheAnzahlSchlaege();
 		scorecard.schliesseLochAb();
 	}
 	
 	@Test
-	void hatInitialErstesLoch() throws Exception {
+	void hatInitialErstesLoch() {
 		assertThat(scorecard.aktuellesLoch(), is(1));
 	}
 	
 	@Test
-	void zaehltAktuellesLoch() throws Exception {
+	void zaehltAktuellesLoch() {
 		scorecard.schliesseLochAb();
 		assertThat(scorecard.aktuellesLoch(), is(2));
 	}

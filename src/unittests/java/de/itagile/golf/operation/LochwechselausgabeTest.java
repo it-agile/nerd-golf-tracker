@@ -18,12 +18,12 @@ class LochwechselausgabeTest {
 	private Lochwechselausgabe lochwechselausgabe = new Lochwechselausgabe(folgeoperation);	
 
 	@Test
-	void gibtZuruecksetzenAus() throws Exception {
+	void gibtZuruecksetzenAus() {
 		assertThat(lochwechselausgabe.fuehreAus(scorecard), containsString("Deine Schlagzahl wurde zurückgesetzt"));
 	}
 	
 	@Test
-	void gibtAusgabeDerFolgeoperationMitAus() throws Exception {
+	void gibtAusgabeDerFolgeoperationMitAus() {
 		when(folgeoperation.fuehreAus(any(Scorecard.class))).thenReturn("folgeoperationAusgabe");
 		
 		assertThat(lochwechselausgabe.fuehreAus(scorecard), containsString("folgeoperationAusgabe"));	

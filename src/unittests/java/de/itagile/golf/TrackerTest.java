@@ -15,7 +15,7 @@ class TrackerTest {
 	private Tracker tracker = new Tracker(interpreter, startoperation);
 
 	@Test
-	void gibtErgebnisDerAusgeloestenOperationZurueck() throws Exception {
+	void gibtErgebnisDerAusgeloestenOperationZurueck() {
 		Operation operation = mock(Operation.class);
 		when(interpreter.interpretiere("foo")).thenReturn(operation);
 		when(operation.fuehreAus(any(Scorecard.class))).thenReturn("bar");
@@ -23,7 +23,7 @@ class TrackerTest {
 	}
 	
 	@Test
-	void gibtErgebnisDerStartoperationZurueck() throws Exception {
+	void gibtErgebnisDerStartoperationZurueck() {
 		when(startoperation.fuehreAus(any(Scorecard.class))).thenReturn("foo");
 		assertThat(tracker.starte(), is("foo"));
 	}

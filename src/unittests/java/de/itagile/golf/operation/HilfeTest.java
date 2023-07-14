@@ -16,18 +16,18 @@ import de.itagile.golf.BefehleSammler;
 class HilfeTest {
 
 	@Test
-	void zeigtIntroAn() throws Exception {
+	void zeigtIntroAn() {
 		assertThat(hilfetext(), containsString("Ich reagiere auf:"));
 	}
 
 	@Test
-	void zeigtBeschreibungZumKommando() throws Exception {
+	void zeigtBeschreibungZumKommando() {
 		assertThat(hilfetext(dummyBefehl("Kommando", "Beschreibung")), 
 				containsString("Kommando (...Beschreibung)"));
 	}
 
 	@Test
-	void gibtProKommandoEineZeileAus() throws Exception {
+	void gibtProKommandoEineZeileAus() {
 		String hilfetextFuerZweiBefehle = hilfetext(mock(Befehl.class), mock(Befehl.class));
 		assertThat(anzahlZeilen(hilfetextFuerZweiBefehle), is(2));
 	}

@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 class KonsoleEncodingTest {
 	
 	@Test
-	void ersetztCp1252DurchCp850FuerWindowsKonsolen() throws Exception {
+	void ersetztCp1252DurchCp850FuerWindowsKonsolen() {
 		assertThat(KonsoleEncoding.fuerSystemEncoding("Cp1252"), is("Cp850"));
 	}
 	
 	@Test
-	void waehltUtf8Andernfalls() throws Exception {
+	void waehltUtf8Andernfalls() {
 		assertThat(KonsoleEncoding.fuerSystemEncoding("foo"), is("UTF-8"));
 	}
 
