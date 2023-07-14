@@ -2,6 +2,7 @@ package de.itagile.golf;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import java.util.stream.Stream;
 
@@ -19,9 +20,9 @@ class EinfacherIntepreterTest {
 	
 	private static Stream<Arguments> schlagParameter() {
 	    return Stream.of(
-	      Arguments.of("Schlage Ball", Schlag.class),
-	      Arguments.of("Nächstes Loch", Lochwechsel.class),
-	      Arguments.of("Hilfe", Hilfe.class)
+	      arguments("Schlage Ball", Schlag.class),
+	      arguments("Nächstes Loch", Lochwechsel.class),
+	      arguments("Hilfe", Hilfe.class)
 	    );
 	}
 	
