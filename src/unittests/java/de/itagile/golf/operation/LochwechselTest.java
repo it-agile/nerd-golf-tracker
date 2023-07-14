@@ -7,7 +7,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import de.itagile.golf.Operation;
@@ -15,17 +14,10 @@ import de.itagile.golf.Scorecard;
 
 class LochwechselTest {
 	
-	private Scorecard scorecard;
-	private Lochwechsel lochwechsel;
-	private Operation folgeOperation;
+	private Scorecard scorecard = mock(Scorecard.class);
+	private Operation folgeOperation = mock(Operation.class);
+	private Lochwechsel lochwechsel = new Lochwechsel(folgeOperation);
 
-	@BeforeEach
-	void setup() {
-		scorecard = mock(Scorecard.class);
-		folgeOperation = mock(Operation.class);
-		lochwechsel = new Lochwechsel(folgeOperation);		
-	}
-	
 	@Test
 	void setztAnzahlSchlaegeZurueck() throws Exception {
 		lochwechsel.fuehreAus(scorecard);
