@@ -34,21 +34,21 @@ sourceSets {
 }
 
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
 
 dependencies {
-	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.+'
-	testImplementation 'org.junit.jupiter:junit-jupiter-params:5.8.+'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.+'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.8.+'
     testImplementation 'org.mockito:mockito-core:5.+'
     testImplementation 'org.hamcrest:hamcrest-library:2.2'
     
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     	    
     testImplementation 'io.cucumber:cucumber-java:7.11.+'
-	testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.11.+'
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.11.+'
     testImplementation 'io.cucumber:cucumber-picocontainer:7.11.+'
-	testImplementation 'org.junit.platform:junit-platform-suite:1.9.+'
+    testImplementation 'org.junit.platform:junit-platform-suite:1.9.+'
 }
 
 
