@@ -11,8 +11,8 @@ Quotes Language: German
 ## Checklisten
 
 * Projekt auschecken und in Eclipse/IDEA importieren
-* Tests ausprobieren (Alle sind Grün)
-* Gradle: <default> oder build aufrufen
+* in der Konsole `./gradlew` bzw. `gradlew.bat`aufrufen 
+* in Idea oder Eclipse alle Tests ausprobieren (Alle sind Grün)
 
 ## Build-Server
 
