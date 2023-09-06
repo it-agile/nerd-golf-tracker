@@ -12,7 +12,7 @@ Quotes Language: German
 
 * Projekt auschecken und in Eclipse/IDEA importieren
 * in der Konsole `./gradlew` bzw. `gradlew.bat`aufrufen 
-* in Idea oder Eclipse alle Tests ausprobieren (Alle sind Grün)
+* in Idea oder Eclipse Unit Tests ausprobieren (Alle sind Grün)
 
 ## Build-Server
 
