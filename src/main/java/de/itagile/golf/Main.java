@@ -14,6 +14,7 @@ public class Main {
 		Startausgabe startoperation = new Startausgabe(new Lochausgabe());
 		Tracker tracker = new Tracker(new EinfacherInterpreter(), startoperation);
 
+		//Dies das Mob Test
 		konsole.println(tracker.starte()).beendeAusgabe();
 		
 		while (true) {
