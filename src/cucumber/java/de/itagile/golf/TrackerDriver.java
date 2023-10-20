@@ -40,12 +40,9 @@ public class TrackerDriver {
 
 	private Process starteProzess() {
 		try {
-			String command = String.format(
-					"java -Dfile.encoding=%s -jar %s", 
-					SystemProperties.FILE_ENCODING,
-					"build/libs/nerd-golf-tracker.jar");
-			return Runtime.getRuntime().exec(
-					command);
+			return new ProcessBuilder("java", 
+					"-Dfile.encoding=" + SystemProperties.FILE_ENCODING, 
+					"-jar", "build/libs/nerd-golf-tracker.jar").start();
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}

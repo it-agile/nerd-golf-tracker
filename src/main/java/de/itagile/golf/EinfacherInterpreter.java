@@ -1,15 +1,15 @@
 package de.itagile.golf;
 
-import java.util.HashMap;
-import java.util.Map;
+import static java.util.stream.Collectors.toMap;
 
+import java.util.Map;
 
 public class EinfacherInterpreter implements Interpreter {
 
-	private Map<String, Operation> operationen = new HashMap<>();
+	private final Map<String, Operation> operationen;
 
 	public EinfacherInterpreter() {
-		new BefehleSammler().sammle().forEach(befehl -> operationen.put(befehl.kommando(), befehl.operation()));
+		operationen = new BefehleSammler().sammle().stream().collect(toMap(Befehl::kommando, Befehl::operation));
 	}
 
 	@Override
