@@ -11,21 +11,21 @@ import org.junit.jupiter.api.Test;
 class TrackerTest {
 
 	private Interpreter interpreter = mock(Interpreter.class);		
-	private Operation startoperation = mock(Operation.class);
-	private Tracker tracker = new Tracker(interpreter, startoperation);
+	private Operation startOperation = mock(Operation.class);
+	private Tracker tracker = new Tracker(interpreter, startOperation);
 
 	@Test
-	void gibtErgebnisDerAusgeloestenOperationZurueck() {
+	void returnsResultOfOperation() {
 		Operation operation = mock(Operation.class);
-		when(interpreter.interpretiere("foo")).thenReturn(operation);
-		when(operation.fuehreAus(any(Scorecard.class))).thenReturn("bar");
-		assertThat(tracker.reagiereAuf("foo"), is("bar"));
+		when(interpreter.interpret("foo")).thenReturn(operation);
+		when(operation.execute(any(Scorecard.class))).thenReturn("bar");
+		assertThat(tracker.respondTo("foo"), is("bar"));
 	}
 	
 	@Test
-	void gibtErgebnisDerStartoperationZurueck() {
-		when(startoperation.fuehreAus(any(Scorecard.class))).thenReturn("foo");
-		assertThat(tracker.starte(), is("foo"));
+	void resturnsResultOfStartOperation() {
+		when(startOperation.execute(any(Scorecard.class))).thenReturn("foo");
+		assertThat(tracker.start(), is("foo"));
 	}
 
 }

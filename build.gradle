@@ -60,7 +60,7 @@ task cucumber() {
               '--plugin', 'pretty',
               '--plugin', 'html:build/reports/tests/cucumber-report.html', 
               '--glue', 'de.itagile.golf',
-              '--tags', 'not @in_arbeit', 
+              '--tags', 'not @ignore', 
               'src/cucumber/resources'
               ]
         }

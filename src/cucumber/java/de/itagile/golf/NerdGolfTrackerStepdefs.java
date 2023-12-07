@@ -13,18 +13,18 @@ public class NerdGolfTrackerStepdefs {
 	}
 
 	@Before
-    public void starteNeuesSpiel() {
-        tracker.starte();
+    public void startNewGame() {
+        tracker.start();
     }
 
 	@After
-    public void beendeTracker() {
-        tracker.beende();
+    public void endTracker() {
+        tracker.finish();
     }
 
 	@When("ich den NerdGolfTracker starte")
-    public void starteNerdGolfTracker() {
-        // nur da, um lesbarere Szenarien zu schreiben
+    public void startNerdGolfTracker() {
+        // empty method, just to make scenarios easier to read
     }
 
 }

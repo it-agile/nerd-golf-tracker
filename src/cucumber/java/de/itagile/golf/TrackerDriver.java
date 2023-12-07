@@ -19,14 +19,14 @@ public class TrackerDriver {
 	private PrintWriter writer;
 	private String letzteAntwort;
 	
-    public void starte() {
+    public void start() {
         process = starteProzess();
         reader = readerFor(process);
         writer = writerFor(process);
         speichereAntwort();
     }
 
-    public void beende() {
+    public void finish() {
         process.destroy();
     }
 
@@ -48,12 +48,12 @@ public class TrackerDriver {
 		}
 	}
 
-	public void gibEin(String anweisung) {
+	public void input(String anweisung) {
 		writer.println(anweisung);
 		speichereAntwort();
 	}
 	
-	public String letzteAntwort() {
+	public String lastAnswer() {
 		return letzteAntwort;
 	}
 
@@ -74,7 +74,7 @@ public class TrackerDriver {
 		return collector.toString();
 	}
 
-	public void assertThatAntwort(Matcher<String> matcher) {
-		assertThat(letzteAntwort(), matcher);
+	public void assertThatAnswer(Matcher<String> matcher) {
+		assertThat(lastAnswer(), matcher);
 	}
 }
