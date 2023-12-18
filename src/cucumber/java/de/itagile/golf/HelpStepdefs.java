@@ -13,12 +13,12 @@ public class HelpStepdefs {
 		this.tracker = tracker;
 	}
 	
-	@When("ich die Hilfe aufrufe")
+	@When("I call for help")
 	public void callHelp() {
 		tracker.input("Help");
 	}
 	
-	@Then("listet der NerdGolfTracker einen Eintrag zu {string} auf")
+	@Then("the NerdGolfTracker lists an entry for {string}")
 	public void checkHelpOutput(String kommando) {
 		tracker.assertThatAnswer(containsString(kommando));
 	}

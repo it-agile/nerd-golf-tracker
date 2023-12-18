@@ -1,8 +1,8 @@
 Feature: Count hits per hole
 
     Scenario Outline: Count hits on one hole
-        When ich den Ball <x>-mal schlage
-        Then zählt der NerdGolfTracker auch so viele Schläge
+        When I hit the ball <x> times
+        Then the NerdGolfTracker counts this many hits
 
         Examples:
             |x|
@@ -11,6 +11,6 @@ Feature: Count hits per hole
 
     @ignore
     Scenario: Count hits on next hole
-        When ich auf einem Loch gespielt habe
-        Then zählen die Schläge auf dem nächsten Loch wieder von 0 an
+        When I played one hole
+        Then counting of hits start at 0 for the new hole
 

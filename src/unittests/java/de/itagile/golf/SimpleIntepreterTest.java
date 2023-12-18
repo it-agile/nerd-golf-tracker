@@ -28,8 +28,8 @@ class SimpleIntepreterTest {
 	
 	@ParameterizedTest
 	@MethodSource("hitParameter")
-	void interpretiertBefehle(String befehl, Class<Operation> operation) {
-		assertThat(interpreter.interpret(befehl), instanceOf(operation));
+	void interpretCommand(String command, Class<Operation> operation) {
+		assertThat(interpreter.interpret(command), instanceOf(operation));
 	}
 
 }

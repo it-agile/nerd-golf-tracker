@@ -17,13 +17,13 @@ public class TrackerDriver {
 	private Process process;
 	private BufferedReader reader;
 	private PrintWriter writer;
-	private String letzteAntwort;
+	private String lastAnswer;
 	
     public void start() {
-        process = starteProzess();
+        process = startProcess();
         reader = readerFor(process);
         writer = writerFor(process);
-        speichereAntwort();
+        saveAnswer();
     }
 
     public void finish() {
@@ -38,7 +38,7 @@ public class TrackerDriver {
 		return new BufferedReader(new InputStreamReader(process.getInputStream()));
 	}
 
-	private Process starteProzess() {
+	private Process startProcess() {
 		try {
 			return new ProcessBuilder("java", 
 					"-Dfile.encoding=" + SystemProperties.FILE_ENCODING, 
@@ -48,18 +48,18 @@ public class TrackerDriver {
 		}
 	}
 
-	public void input(String anweisung) {
-		writer.println(anweisung);
-		speichereAntwort();
+	public void input(String command) {
+		writer.println(command);
+		saveAnswer();
 	}
 	
 	public String lastAnswer() {
-		return letzteAntwort;
+		return lastAnswer;
 	}
 
-	private void speichereAntwort() {
+	private void saveAnswer() {
 		try {
-			letzteAntwort = readOutputFrom(reader);
+			lastAnswer = readOutputFrom(reader);
 		} catch (IOException exception) {
 			throw new RuntimeException(exception);
 		}

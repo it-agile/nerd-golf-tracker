@@ -13,12 +13,12 @@ public class CurrentHoleStepdefs {
 		this.tracker = tracker;
 	}
 	
-	@When("ich zum nächsten Loch gehe")
+	@When("I go to the next hole")
     public void gotToTheNextHole() {
         tracker.input("Next hole");
     }
 	
-	@Then("bin ich auf dem {int}. Loch")
+	@Then("I am on the {int}. hole")
 	public void checkCurrentHole(int expectedHole) {
 		checkHoleOuptput(expectedHole);
 		tracker.input("Hit ball");

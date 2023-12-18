@@ -1,8 +1,8 @@
 Feature: Help
 
   Scenario Outline: Help entry
-        When ich die Hilfe aufrufe
-        Then listet der NerdGolfTracker einen Eintrag zu "<Command>" auf
+        When I call for help
+        Then the NerdGolfTracker lists an entry for "<Command>"
 
         Examples:
             |Command|

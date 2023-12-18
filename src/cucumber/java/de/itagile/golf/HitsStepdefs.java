@@ -15,7 +15,7 @@ public class HitsStepdefs {
 		this.tracker = tracker;
 	}
 	
-	@When("ich den Ball {int}-mal schlage")
+	@When("I hit the ball {int} times")
     public void hitBall(int hits) {
         this.hits = hits;
         while (hits-- > 0) {
@@ -23,18 +23,18 @@ public class HitsStepdefs {
         }
     }
 	
-	@When("ich auf einem Loch gespielt habe")
+	@When("I played one hole")
     public void hitAtOneHoleAndGoToTheNext() {
         tracker.input("Hit ball");
         tracker.input("Next hole");
     }
 	
-	@Then("zählt der NerdGolfTracker auch so viele Schläge")
+	@Then("the NerdGolfTracker counts this many hits")
     public void checkHits() {
         tracker.assertThatAnswer(containsString(valueOf(hits)));
     }
 	
-	@Then("zählen die Schläge auf dem nächsten Loch wieder von 0 an")
+	@Then("counting of hits start at 0 for the new hole")
 	public void checkHitsAfterHoleChange() {
         tracker.input("Hit ball");
 		tracker.assertThatAnswer(containsString(valueOf(1)));

@@ -15,7 +15,7 @@ public class Console {
 	public BufferedReader reader;
 	
 	public Console() throws UnsupportedEncodingException {
-		String encoding = ConsoleEncoding.fuerSystemEncoding(SystemProperties.FILE_ENCODING);
+		String encoding = ConsoleEncoding.forSystemEncoding(SystemProperties.FILE_ENCODING);
 		writer = new PrintWriter(new OutputStreamWriter(System.out, encoding));
 		reader = new BufferedReader(new InputStreamReader(System.in, encoding));
 	}
