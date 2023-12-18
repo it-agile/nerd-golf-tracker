@@ -1,19 +1,20 @@
-Quotes Language: German
+Quotes Language: Englisch
 
 * Java 11
 * Gradle 8.1
 
-## Fallstricke
+## Troubleshooting
 
-* Umlaute machen auf Windows-Systemen manchmal Ärger
-* Bei Windows sollte GIT konfiguriert werden, dass CRLFs richtig behandelt werden: git config --global core.autocrlf true
+* Umlaut encoding is a problem on different mchines
+* With Windows git should be configured so that CRLFs is executed in the right way: git config --global core.autocrlf true
 
-## Checklisten
+## Checklist
 
-* Projekt auschecken und in Eclipse/IDEA importieren
-* in der Konsole `./gradlew` bzw. `gradlew.bat`aufrufen 
-* in Idea oder Eclipse Unit Tests ausprobieren (Alle sind Grün)
+* clone repository
+* import project into IDE
+* call `./gradlew` or `gradlew.bat` in your console
+* run Unit Tests in IDE (All should be green)
 
 ## Build-Server
 
-* In Github selbst über Github-Workflows
+* In github using github-Actions
